@@ -7,7 +7,12 @@ use Hallyz\Page;
  * Páginas do Site - INICIO
  */
 
-$app->get("/niveis/urgente", function() {
+
+  //////////////////////////////////////////////////
+ ///                    NIVEIS                  ///
+//////////////////////////////////////////////////
+
+$app->get("/levels/urgent", function() {
 
     header("Location: /");
 
@@ -15,7 +20,7 @@ $app->get("/niveis/urgente", function() {
 
 });
 
-$app->get("/niveis/atencao", function() {
+$app->get("/levels/attention", function() {
 
     header("Location: /");
 
@@ -23,7 +28,7 @@ $app->get("/niveis/atencao", function() {
 
 });
 
-$app->get("/niveis/normal", function() {
+$app->get("/levels/normal", function() {
 
     header("Location: /");
 
@@ -31,15 +36,7 @@ $app->get("/niveis/normal", function() {
 
 });
 
-$app->get("/projetos/informacoes", function() {
-
-    header("Location: /");
-
-    exit;
-
-});
-
-$app->get("/niveis", function() {
+$app->get("/levels", function() {
 
     $page = new Page();
 
@@ -47,21 +44,139 @@ $app->get("/niveis", function() {
 
 });
 
-$app->get("/atividades", function() {
+
+
+  //////////////////////////////////////////////////////
+ ///                    TAREFAS                     ///
+//////////////////////////////////////////////////////
+
+$app->get("/projects/:idproject/delete", function($idproject) {
+
+    header("Location: /projects");
+
+    exit;
+
+});
+
+$app->get("/projects/:idproject/details", function($idproject) {
 
     $page = new Page();
 
-    $page->setTpl("index");
+    $page->setTpl("/projects-details");
 
 });
 
-$app->get("/projetos", function() {
+$app->post("/projects/:idproject", function($idproject) {
+
+    header("Location: /projects");
+
+    exit;
+
+});
+
+$app->get("/tasks/:idproject", function($idproject) {
 
     $page = new Page();
 
-    $page->setTpl("index");
+    $page->setTpl("tasks-update");
 
 });
+
+$app->post("/tasks/create", function() {
+
+    header("Location: /tasks");
+
+    exit;
+
+});
+
+$app->get("/tasks/create", function() {
+
+    $page = new Page();
+
+    $page->setTpl("tasks-create");
+
+});
+
+$app->get("/tasks", function() {
+
+    $page = new Page();
+
+    $page->setTpl("tasks", [
+        "tasks" => []
+    ]);
+
+});
+
+
+
+  //////////////////////////////////////////////////////
+ ///                    PROJETOS                    ///
+//////////////////////////////////////////////////////
+
+$app->get("/projects/:idproject/delete", function($idproject) {
+
+    header("Location: /projects");
+
+    exit;
+
+});
+
+$app->get("/projects/:idproject/details", function($idproject) {
+
+    $page = new Page();
+
+    $page->setTpl("/projects-details");
+
+});
+
+$app->post("/projects/:idproject", function($idproject) {
+
+    header("Location: /projects");
+
+    exit;
+
+});
+
+$app->get("/projects/:idproject", function($idproject) {
+
+    $page = new Page();
+
+    $page->setTpl("projects-update");
+
+});
+
+$app->post("/projects/create", function() {
+
+    header("Location: /projects");
+
+    exit;
+
+});
+
+$app->get("/projects/create", function() {
+
+    $page = new Page();
+
+    $page->setTpl("projects-create");
+
+});
+
+$app->get("/projects", function() {
+
+    $page = new Page();
+
+    $page->setTpl("projects", [
+        "projects" => []
+    ]);
+
+});
+
+
+
+  //////////////////////////////////////////////////////
+ ///                    PRINCIPAL                   ///
+//////////////////////////////////////////////////////
 
 $app->get("/newsletter", function() {
 
