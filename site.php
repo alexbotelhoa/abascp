@@ -18,7 +18,7 @@ use Hallyz\Model\Task;
 
 $app->get("/", function() {
 
-    $projects = Project::listAll();
+    $projects = Project::listSlide();
 
     $projectslate = Project::listAllLate();
 
@@ -62,29 +62,62 @@ $app->get("/newsletter", function() {
 
 $app->get("/projects", function() {
 
-    $projects = Project::listAll();
+    (isset($_SESSION['ordemproject'])) ? $ordem = $_SESSION['ordemproject'] : $ordem = "desproject";
+
+    $page = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
+
+    $projects = new Project();
+
+    $pagination = $projects->getProjectPage($page);
+
+    $pages = [];
+
+    for ($i = 1; $i <= $pagination['pages']; $i++) {
+        array_push($pages, [
+            'link' => '/projects?page=' . $i,
+            'page' => $i
+        ]);
+    }
 
     $page = new Page();
 
     $page->setTpl("projects", [
-        "projects" => $projects,
+        "projects" => $pagination['data'],
         "error" => Message::getError(),
-        "success" => Message::getSuccess()
+        "success" => Message::getSuccess(),
+        "pages" => $pages
     ]);
 
 });
 
 $app->get("/projects/:ordem", function($ordem) {
 
-    $projects = Project::listAll($ordem);
+    switch ($ordem) {
 
-    $page = new Page();
+        case "ordid":
+            $_SESSION['ordemproject'] = "idproject";
+            break;
+        case "ordproj":
+            $_SESSION['ordemproject'] = "desproject";
+            break;
+        case "ordini":
+            $_SESSION['ordemproject'] = "dtstart";
+            break;
+        case "ordfim":
+            $_SESSION['ordemproject'] = "dtfinish";
+            break;
+        case "ordrate":
+            $_SESSION['ordemproject'] = "rtproject";
+            break;
+        case "ordlate":
+            $_SESSION['ordemproject'] = "stproject";
+            break;
 
-    $page->setTpl("projects", [
-        "projects" => $projects,
-        "error" => Message::getError(),
-        "success" => Message::getSuccess()
-    ]);
+    }
+
+    header("Location: /projects");
+
+    exit;
 
 });
 
@@ -210,29 +243,62 @@ $app->get("/projects/:idproject/delete", function($idproject) {
 
 $app->get("/tasks", function() {
 
-    $tasks = Task::listAll();
+    (isset($_SESSION['ordemtask'])) ? $ordem = $_SESSION['ordemtask'] : $ordem = "destask";
+
+    $page = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
+
+    $tasks = new Task();
+
+    $pagination = $tasks->getTaskPage($page);
+
+    $pages = [];
+
+    for ($i = 1; $i <= $pagination['pages']; $i++) {
+        array_push($pages, [
+            'link' => '/tasks?page=' . $i,
+            'page' => $i
+        ]);
+    }
 
     $page = new Page();
 
     $page->setTpl("tasks", [
-        "tasks" => $tasks,
+        "tasks" => $pagination['data'],
         "error" => Message::getError(),
-        "success" => Message::getSuccess()
+        "success" => Message::getSuccess(),
+        "pages" => $pages
     ]);
 
 });
 
 $app->get("/tasks/:ordem", function($ordem) {
 
-    $tasks = Task::listAll($ordem);
+    switch ($ordem) {
 
-    $page = new Page();
+        case "ordid":
+            $_SESSION['ordemtask'] = "idtask";
+            break;
+        case "ordtask":
+            $_SESSION['ordemtask'] = "destask";
+            break;
+        case "ordproj":
+            $_SESSION['ordemtask'] = "desproject";
+            break;
+        case "ordini":
+            $_SESSION['ordemtask'] = "a.dtstart";
+            break;
+        case "ordfim":
+            $_SESSION['ordemtask'] = "a.dtfinish";
+            break;
+        case "ordsit":
+            $_SESSION['ordemtask'] = "sttask";
+            break;
 
-    $page->setTpl("tasks", [
-        "tasks" => $tasks,
-        "error" => Message::getError(),
-        "success" => Message::getSuccess()
-    ]);
+    }
+
+    header("Location: /tasks");
+
+    exit;
 
 });
 
@@ -348,7 +414,6 @@ $app->get("/tasks/:idtask/delete", function($idtask) {
 //////////////////////////////////////////////////////
 
 $app->get("/status", function() {
-
 
     (isset($_SESSION['ordemlate'])) ? $ordemlate = $_SESSION['ordemlate'] : $ordemlate = "desproject";
 

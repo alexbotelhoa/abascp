@@ -8,37 +8,15 @@ use Hallyz\Model;
 class Project extends Model
 {
 
-    public static function listAll($ordem = "desproject")
+    public static function listAll($ordem)
     {
-
-        switch ($ordem) {
-
-            case "ordid":
-                $ordem = "idproject";
-                break;
-            case "ordproj":
-                $ordem = "desproject";
-                break;
-            case "ordini":
-                $ordem = "dtstart";
-                break;
-            case "ordfim":
-                $ordem = "dtfinish";
-                break;
-            case "ordrate":
-                $ordem = "rtproject";
-                break;
-            case "ordlate":
-                $ordem = "stproject";
-                break;
-
-        }
 
         $sql = new Sql();
 
         return $sql->select("SELECT * FROM tb_projects ORDER BY " . $ordem . " ASC");
 
     }
+
 
     public static function listAllLate($ordem = "idproject")
     {
@@ -55,6 +33,15 @@ class Project extends Model
         $sql = new Sql();
 
         return $sql->select("SELECT * FROM tb_projects WHERE stproject = 0 ORDER BY " . $ordem . " ASC");
+
+    }
+
+    public static function listSlide()
+    {
+
+        $sql = new Sql();
+
+        return $sql->select("SELECT * FROM tb_projects ORDER BY idproject DESC LIMIT 6");
 
     }
 
@@ -173,6 +160,42 @@ class Project extends Model
     {
 
         return parent::getValues();
+
+    }
+
+    public static function checkList($list)
+    {
+
+        foreach ($list as &$row) {
+
+            $p = new Project();
+
+            $p->setData($row);
+
+            $row = $p->getValues();
+
+        }
+
+        return $list;
+
+    }
+
+    public function getProjectPage($page = 1, $itemsPerPage = 6)
+    {
+
+        $start = ($page - 1) * $itemsPerPage;
+
+        $sql = new Sql();
+
+        $resultProjects = $sql->select("SELECT SQL_CALC_FOUND_ROWS * FROM tb_projects LIMIT $start, $itemsPerPage");
+
+        $resultTotal = $sql->select("SELECT FOUND_ROWS() AS nrtotal");
+
+        return [
+            'data' => Project::checkList($resultProjects),
+            'total' => (int)$resultTotal[0]['nrtotal'],
+            'pages' => ceil($resultTotal[0]['nrtotal'] / $itemsPerPage)
+        ];
 
     }
 

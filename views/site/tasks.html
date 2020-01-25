@@ -85,6 +85,22 @@
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="product-pagination text-center">
+                <nav>
+                    <ul class="pagination">
+
+                        {loop="$pages"}
+                        <li><a href="{$value.link}">{$value.page}</a></li>
+                        {/loop}
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
 </section> <!-- /.content -->
 
 <!--

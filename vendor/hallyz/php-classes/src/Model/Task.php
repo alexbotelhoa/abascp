@@ -8,31 +8,8 @@ use Hallyz\Model;
 class Task extends Model
 {
 
-    public static function listAll($ordem = "destask")
+    public static function listAll($ordem)
     {
-
-        switch ($ordem) {
-
-            case "ordid":
-                $ordem = "idtask";
-                break;
-            case "ordtask":
-                $ordem = "destask";
-                break;
-            case "ordproj":
-                $ordem = "desproject";
-                break;
-            case "ordini":
-                $ordem = "a.dtstart";
-                break;
-            case "ordfim":
-                $ordem = "a.dtfinish";
-                break;
-            case "ordsit":
-                $ordem = "sttask";
-                break;
-
-        }
 
         $sql = new Sql();
 
@@ -112,6 +89,42 @@ class Task extends Model
     {
 
         return parent::getValues();
+
+    }
+
+    public static function checkList($list)
+    {
+
+        foreach ($list as &$row) {
+
+            $p = new Task();
+
+            $p->setData($row);
+
+            $row = $p->getValues();
+
+        }
+
+        return $list;
+
+    }
+
+    public function getTaskPage($page = 1, $itemsPerPage = 6)
+    {
+
+        $start = ($page - 1) * $itemsPerPage;
+
+        $sql = new Sql();
+
+        $resultTasks = $sql->select("SELECT SQL_CALC_FOUND_ROWS *, a.dtstart, a.dtfinish FROM tb_tasks a INNER JOIN tb_projects b USING(idproject) LIMIT $start, $itemsPerPage");
+
+        $resultTotal = $sql->select("SELECT FOUND_ROWS() AS nrtotal");
+
+        return [
+            'data' => Task::checkList($resultTasks),
+            'total' => (int)$resultTotal[0]['nrtotal'],
+            'pages' => ceil($resultTotal[0]['nrtotal'] / $itemsPerPage)
+        ];
 
     }
 
