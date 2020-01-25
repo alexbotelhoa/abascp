@@ -12,19 +12,11 @@ use Hallyz\Page;
  ///                    STATUS                      ///
 //////////////////////////////////////////////////////
 
-$app->get("/status/notlate", function() {
+$app->get("/status", function() {
 
-    header("Location: /");
+    $page = new Page();
 
-    exit;
-
-});
-
-$app->get("/status/late", function() {
-
-    header("Location: /");
-
-    exit;
+    $page->setTpl("status");
 
 });
 

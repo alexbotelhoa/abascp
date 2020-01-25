@@ -94,6 +94,7 @@
 						<li class="active"><a href="/">Home</a></li>
 						<li><a href="/projects">Projetos</a></li>
 						<li><a href="/tasks">Tarefas</a></li>
+						<li><a href="/status">Status</a></li>
 					</ul>
 				</div>
 			</div>
