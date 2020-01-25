@@ -1,6 +1,7 @@
 <?php
 
 use Hallyz\Page;
+use Hallyz\Model\Message;
 use Hallyz\Model\Project;
 use Hallyz\Model\Task;
 
@@ -63,10 +64,14 @@ $app->get("/projects", function() {
 
     $projects = Project::listAll();
 
+    //$checkTaks = Project::checkTask((int)$projects->getidproject());
+
     $page = new Page();
 
     $page->setTpl("projects", [
-        "projects" => $projects
+        "projects" => $projects,
+        "error" => Message::getError(),
+        "success" => Message::getSuccess()
     ]);
 
 });
@@ -86,6 +91,8 @@ $app->post("/projects/create", function() {
     $project->setData($_POST);
 
     $project->save();
+
+    Message::setSuccess("Dados incluídos com sucesso!");
 
     header("Location: /projects");
 
@@ -124,6 +131,8 @@ $app->post("/projects/:idproject", function($idproject) {
 
     $project->save();
 
+    Message::setSuccess("Dados alterados com sucesso!");
+
     header("Location: /projects");
 
     exit;
@@ -153,17 +162,29 @@ $app->get("/projects/:idproject/details", function($idproject) {
 
 $app->get("/projects/:idproject/delete", function($idproject) {
 
+    $checkTaks = Project::checkTask($idproject);
+
+    if (count($checkTaks) > 0) {
+
+        Message::setError("Existem tarefas vinculadas a esse projeto!");
+
+        header("Location: /projects");
+
+        exit;
+
+    }
+
     $project = new Project();
 
     $project->get((int)$idproject);
 
-    $project->setData($_POST);
-
     $project->delete();
+
+    Message::setSuccess("Dados excluídos com sucesso!");
 
     header("Location: /projects");
 
-    exit;
+        exit;
 
 });
 
@@ -180,7 +201,9 @@ $app->get("/tasks", function() {
     $page = new Page();
 
     $page->setTpl("tasks", [
-        "tasks" => $tasks
+        "tasks" => $tasks,
+        "error" => Message::getError(),
+        "success" => Message::getSuccess()
     ]);
 
 });
@@ -202,6 +225,8 @@ $app->post("/tasks/create", function() {
     $tasks->setData($_POST);
 
     $tasks->save();
+
+    Message::setSuccess("Dados incluídos com sucesso!");
 
     header("Location: /tasks");
 
@@ -240,6 +265,8 @@ $app->post("/tasks/:idtask", function($idtask) {
 
     $tasks->save();
 
+    Message::setSuccess("Dados alterados com sucesso!");
+
     header("Location: /tasks");
 
     exit;
@@ -256,6 +283,8 @@ $app->get("/tasks/:idtask/situation", function($idtask) {
 
     $tasks->situation($idtask, $situation);
 
+    Message::setSuccess("Dados alterados com sucesso!");
+
     header("Location: /tasks");
 
     exit;
@@ -268,9 +297,9 @@ $app->get("/tasks/:idtask/delete", function($idtask) {
 
     $tasks->get((int)$idtask);
 
-    $tasks->setData($_POST);
-
     $tasks->delete();
+
+    Message::setSuccess("Dados excluídos com sucesso!");
 
     header("Location: /tasks");
 
@@ -298,7 +327,5 @@ $app->get("/status", function() {
     ]);
 
 });
-
-
 
 ?>

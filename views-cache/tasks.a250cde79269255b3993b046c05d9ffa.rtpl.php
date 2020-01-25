@@ -23,9 +23,26 @@
     <div class="row">
         <div class="col-md-12">
             <div class="box box-primary">
-
                 <div class="box-header">
-                    <a href="/tasks/create" class="btn btn-success">Cadastrar Tarefa</a>
+                    <div class="col-xs-4">
+                        <a href="/tasks/create" class="btn btn-success">Cadastrar Tarefa</a>
+                    </div>
+
+                    <?php if( $error != '' ){ ?>
+                    <div class="col-xs-8">
+                        <div class="box-header bg-red">
+                            <?php echo htmlspecialchars( $error, ENT_COMPAT, 'UTF-8', FALSE ); ?>
+                        </div>
+                    </div>
+                    <?php } ?>
+
+                    <?php if( $success != '' ){ ?>
+                    <div class="col-xs-8">
+                        <div class="box-header bg-green">
+                            <?php echo htmlspecialchars( $success, ENT_COMPAT, 'UTF-8', FALSE ); ?>
+                        </div>
+                    </div>
+                    <?php } ?>
                 </div> <!-- /.box-header -->
 
                 <div class="box-body no-padding">
@@ -53,7 +70,7 @@
                                 <?php if( $value1["sttask"] == 0 ){ ?>
                                     <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation" class="btn btn-danger btn-xs"><i class="fa fa-folder"></i> Fechado</a>
                                 <?php }else{ ?>
-                                    <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation" class="btn btn-primary btn-xs"><i class="fa fa-folder-open"></i> Aberto </a>
+                                    <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation" class="btn btn-success btn-xs"><i class="fa fa-folder-open"></i> Aberto </a>
                                 <?php } ?>
                             </td>
                             <td>
@@ -65,7 +82,6 @@
                         </tbody>
                     </table>
                 </div> <!-- /.box-body -->
-
             </div>
         </div>
     </div>

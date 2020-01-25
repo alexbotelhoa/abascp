@@ -35,6 +35,23 @@ class Project extends Model
 
     }
 
+    public static function checkTask($idproject)
+    {
+
+        $sql = new Sql();
+
+        return $sql->select("SELECT * FROM tb_tasks WHERE idproject = :IDPROJECT", array(
+            ":IDPROJECT" => $idproject
+        ));
+
+    }
+
+
+
+  //************************************************************************************//
+ //                                  FIM DOS STATICOS                                  //
+//************************************************************************************//
+
     public function save()
     {
 

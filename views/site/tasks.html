@@ -23,9 +23,26 @@
     <div class="row">
         <div class="col-md-12">
             <div class="box box-primary">
-
                 <div class="box-header">
-                    <a href="/tasks/create" class="btn btn-success">Cadastrar Tarefa</a>
+                    <div class="col-xs-4">
+                        <a href="/tasks/create" class="btn btn-success">Cadastrar Tarefa</a>
+                    </div>
+
+                    {if="$error != ''"}
+                    <div class="col-xs-8">
+                        <div class="box-header bg-red">
+                            {$error}
+                        </div>
+                    </div>
+                    {/if}
+
+                    {if="$success != ''"}
+                    <div class="col-xs-8">
+                        <div class="box-header bg-green">
+                            {$success}
+                        </div>
+                    </div>
+                    {/if}
                 </div> <!-- /.box-header -->
 
                 <div class="box-body no-padding">
@@ -53,7 +70,7 @@
                                 {if="$value.sttask == 0"}
                                     <a href="/tasks/{$value.idtask}/situation" class="btn btn-danger btn-xs"><i class="fa fa-folder"></i> Fechado</a>
                                 {else}
-                                    <a href="/tasks/{$value.idtask}/situation" class="btn btn-primary btn-xs"><i class="fa fa-folder-open"></i> Aberto </a>
+                                    <a href="/tasks/{$value.idtask}/situation" class="btn btn-success btn-xs"><i class="fa fa-folder-open"></i> Aberto </a>
                                 {/if}
                             </td>
                             <td>
@@ -65,7 +82,6 @@
                         </tbody>
                     </table>
                 </div> <!-- /.box-body -->
-
             </div>
         </div>
     </div>

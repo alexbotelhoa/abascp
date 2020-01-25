@@ -23,9 +23,26 @@
     <div class="row">
         <div class="col-md-12">
             <div class="box box-primary">
-
                 <div class="box-header">
-                    <a href="/projects/create" class="btn btn-success">Cadastrar Projeto</a>
+                    <div class="col-xs-4">
+                        <a href="/projects/create" class="btn btn-success">Cadastrar Projeto</a>
+                    </div>
+
+                    <?php if( $error != '' ){ ?>
+                    <div class="col-xs-8">
+                        <div class="box-header bg-red">
+                            <?php echo htmlspecialchars( $error, ENT_COMPAT, 'UTF-8', FALSE ); ?>
+                        </div>
+                    </div>
+                    <?php } ?>
+
+                    <?php if( $success != '' ){ ?>
+                    <div class="col-xs-8">
+                        <div class="box-header bg-green">
+                            <?php echo htmlspecialchars( $success, ENT_COMPAT, 'UTF-8', FALSE ); ?>
+                        </div>
+                    </div>
+                    <?php } ?>
                 </div> <!-- /.box-header -->
 
                 <div class="box-body no-padding">
@@ -36,8 +53,9 @@
                                 <th>Nome Projeto</th>
                                 <th>Data Incício</th>
                                 <th>Data Fim</th>
+                                <th>Task</th>
                                 <th>Rate</th>
-                                <th>Atrasado</th>
+                                <th>Late</th>
                                 <th style="width: 140px">Opções</th>
                             </tr>
                         </thead>
@@ -48,8 +66,13 @@
                                     <td><?php echo htmlspecialchars( $value1["desproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                                     <td><?php echo formatDate($value1["dtstart"]); ?></td>
                                     <td><?php echo formatDate($value1["dtfinish"]); ?></td>
+                                    <td><?php echo qtdTask($value1["idproject"]); ?></td>
                                     <td><?php echo htmlspecialchars( $value1["rtproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>%</td>
-                                    <td><?php if( $value1["stproject"] == 0 ){ ?>Não<?php }else{ ?>Sim<?php } ?></td>
+                                    <?php if( $value1["stproject"] == 0 ){ ?>
+                                        <td class="bg-green" align="center">Não</td>
+                                    <?php }else{ ?>
+                                        <td class="bg-red" align="center">Sim</td>
+                                    <?php } ?>
                                     <td>
                                         <a href="/projects/<?php echo htmlspecialchars( $value1["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
                                         <a href="/projects/<?php echo htmlspecialchars( $value1["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
@@ -59,7 +82,6 @@
                         </tbody>
                     </table>
                 </div> <!-- /.box-body -->
-
             </div>
         </div>
     </div>
