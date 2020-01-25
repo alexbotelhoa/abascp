@@ -180,14 +180,14 @@ class Project extends Model
 
     }
 
-    public function getProjectPage($page = 1, $itemsPerPage = 6)
+    public function getProjectPage($ordem, $page = 1, $itemsPerPage = 6)
     {
 
         $start = ($page - 1) * $itemsPerPage;
 
         $sql = new Sql();
 
-        $resultProjects = $sql->select("SELECT SQL_CALC_FOUND_ROWS * FROM tb_projects LIMIT $start, $itemsPerPage");
+        $resultProjects = $sql->select("SELECT SQL_CALC_FOUND_ROWS * FROM tb_projects ORDER BY " . $ordem . " ASC LIMIT $start, $itemsPerPage");
 
         $resultTotal = $sql->select("SELECT FOUND_ROWS() AS nrtotal");
 

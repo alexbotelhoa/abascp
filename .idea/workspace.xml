@@ -6,10 +6,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site.php" afterPath="$PROJECT_DIR$/site.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Project.php" afterPath="$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Project.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Task.php" afterPath="$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Task.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views-cache/projects.a250cde79269255b3993b046c05d9ffa.rtpl.php" afterPath="$PROJECT_DIR$/views-cache/projects.a250cde79269255b3993b046c05d9ffa.rtpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views-cache/tasks.a250cde79269255b3993b046c05d9ffa.rtpl.php" afterPath="$PROJECT_DIR$/views-cache/tasks.a250cde79269255b3993b046c05d9ffa.rtpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/site/projects.html" afterPath="$PROJECT_DIR$/views/site/projects.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/site/tasks.html" afterPath="$PROJECT_DIR$/views/site/tasks.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views-cache/projects-update.a250cde79269255b3993b046c05d9ffa.rtpl.php" afterPath="$PROJECT_DIR$/views-cache/projects-update.a250cde79269255b3993b046c05d9ffa.rtpl.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,8 +56,8 @@
       <file leaf-file-name="site.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/site.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="64" column="98" lean-forward="false" selection-start-line="64" selection-start-column="88" selection-end-line="64" selection-end-column="98" />
+            <state relative-caret-position="250">
+              <caret line="251" column="46" lean-forward="false" selection-start-line="251" selection-start-column="46" selection-end-line="251" selection-end-column="46" />
               <folding>
                 <element signature="e#7#23#0#PHP" expanded="true" />
               </folding>
@@ -166,8 +163,8 @@
         <option value="$PROJECT_DIR$/views/site/projects.html" />
         <option value="$PROJECT_DIR$/views/site/tasks.html" />
         <option value="$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Project.php" />
-        <option value="$PROJECT_DIR$/site.php" />
         <option value="$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Task.php" />
+        <option value="$PROJECT_DIR$/site.php" />
       </list>
     </option>
   </component>
@@ -275,7 +272,7 @@
       <workItem from="1579789047418" duration="1688000" />
       <workItem from="1579792689889" duration="24585000" />
       <workItem from="1579822715345" duration="19779000" />
-      <workItem from="1579894301239" duration="72907000" />
+      <workItem from="1579894301239" duration="74218000" />
     </task>
     <task id="LOCAL-00001" summary="Logo">
       <created>1579822745710</created>
@@ -319,11 +316,18 @@
       <option name="project" value="LOCAL" />
       <updated>1579989784910</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Melhorias em Abstrações de Código&#10;Construção da Paginação">
+      <created>1579994555134</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1579994555134</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124239000" />
+    <option name="totallyTimeSpent" value="125550000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1913" y="0" width="1432" height="1047" extended-state="0" />
@@ -383,7 +387,8 @@
     <MESSAGE value="Finalizados os Front-End" />
     <MESSAGE value="Criado Classe de Mensagens&#10;Melhorias nos Fronts&#10;Criado novas funções" />
     <MESSAGE value="Várias Correções&#10;Aplicação de Ordenagem nos Front" />
-    <option name="LAST_COMMIT_MESSAGE" value="Várias Correções&#10;Aplicação de Ordenagem nos Front" />
+    <MESSAGE value="Melhorias em Abstrações de Código&#10;Construção da Paginação" />
+    <option name="LAST_COMMIT_MESSAGE" value="Melhorias em Abstrações de Código&#10;Construção da Paginação" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -821,54 +826,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Task.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="109" column="5" lean-forward="true" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
-          <folding>
-            <element signature="e#32#50#0#PHP" expanded="true" />
-            <marker date="1579994476375" expanded="true" signature="204:303" ph="SELECT * FRO... tb_projects" />
-            <marker date="1579994476375" expanded="true" signature="204:318" ph="SELECT *, a.... tb_tasks" />
-            <marker date="1579994476375" expanded="true" signature="204:321" ph="SELECT *, a.... tb_tasks" />
-            <marker date="1579994476375" expanded="true" signature="1272:1380" ph="SELECT * FRO... tb_projects" />
-            <marker date="1579994476375" expanded="true" signature="1272:1384" ph="SELECT *, a.... tb_tasks" />
-            <marker date="1579994476375" expanded="true" signature="1635:1694" ph="UPDATE tb_ta... " />
-            <marker date="1579994476375" expanded="true" signature="1671:1694" ph="DELETE FROM " />
-            <marker date="1579994476375" expanded="true" signature="1873:1916" ph="DELETE FROM " />
-            <marker date="1579994476375" expanded="true" signature="2475:2599" ph="SELECT SQL_C... tb_tasks" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Project.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2993">
-          <caret line="185" column="45" lean-forward="true" selection-start-line="185" selection-start-column="45" selection-end-line="185" selection-end-column="45" />
-          <folding>
-            <element signature="e#32#50#0#PHP" expanded="true" />
-            <marker date="1579994136828" expanded="true" signature="207:241" ph="SELECT * FRO... tb_projects" />
-            <marker date="1579994136828" expanded="true" signature="207:242" ph="SELECT * FRO... tb_products" />
-            <marker date="1579994136828" expanded="true" signature="207:255" ph="SELECT * FRO... tb_projects" />
-            <marker date="1579994136828" expanded="true" signature="207:260" ph="SELECT * FRO... tb_projects" />
-            <marker date="1579994136828" expanded="true" signature="397:451" ph="SELECT * FRO... tb_projects" />
-            <marker date="1579994136828" expanded="true" signature="397:470" ph="SELECT * FRO... tb_projects" />
-            <marker date="1579994136828" expanded="true" signature="609:663" ph="SELECT * FRO... tb_projects" />
-            <marker date="1579994136828" expanded="true" signature="609:682" ph="SELECT * FRO... tb_projects" />
-            <marker date="1579994136828" expanded="true" signature="796:845" ph="SELECT * FRO... tb_projects" />
-            <marker date="1579994136828" expanded="true" signature="796:853" ph="SELECT * FRO... tb_projects" />
-            <marker date="1579994136828" expanded="true" signature="977:1028" ph="SELECT * FRO... tb_tasks" />
-            <marker date="1579994136828" expanded="true" signature="1221:1744" ph="SELECT ( SEL... tb_projects" />
-            <marker date="1579994136828" expanded="true" signature="1267:1416" ph="SELECT count... tb_tasks" />
-            <marker date="1579994136828" expanded="true" signature="1482:1631" ph="SELECT count... tb_tasks" />
-            <marker date="1579994136828" expanded="true" signature="3256:3310" ph="SELECT * FRO... tb_projects" />
-            <marker date="1579994136828" expanded="true" signature="3545:3597" ph="DELETE FROM " />
-            <marker date="1579994136828" expanded="true" signature="4171:4216" ph="SELECT * FRO... tb_projects" />
-            <marker date="1579994136828" expanded="true" signature="4171:4217" ph="SELECT * FRO... tb_projects" />
-            <marker date="1579994136828" expanded="true" signature="4171:4231" ph="SELECT SQL_C... tb_projects" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/site/tasks.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
@@ -877,10 +834,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Task.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="114" column="45" lean-forward="true" selection-start-line="114" selection-start-column="45" selection-end-line="114" selection-end-column="45" />
+          <folding>
+            <element signature="e#32#50#0#PHP" expanded="true" />
+            <marker date="1579995776674" expanded="true" signature="204:303" ph="SELECT * FRO... tb_projects" />
+            <marker date="1579995776674" expanded="true" signature="204:318" ph="SELECT *, a.... tb_tasks" />
+            <marker date="1579995776674" expanded="true" signature="204:321" ph="SELECT *, a.... tb_tasks" />
+            <marker date="1579995776674" expanded="true" signature="1272:1380" ph="SELECT * FRO... tb_projects" />
+            <marker date="1579995776674" expanded="true" signature="1272:1384" ph="SELECT *, a.... tb_tasks" />
+            <marker date="1579995776674" expanded="true" signature="1635:1694" ph="UPDATE tb_ta... " />
+            <marker date="1579995776674" expanded="true" signature="1671:1694" ph="DELETE FROM " />
+            <marker date="1579995776674" expanded="true" signature="1873:1916" ph="DELETE FROM " />
+            <marker date="1579995776674" expanded="true" signature="2496:2700" ph="SELECT SQL_C... tb_tasks" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Project.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="189" column="86" lean-forward="false" selection-start-line="189" selection-start-column="86" selection-end-line="189" selection-end-column="114" />
+          <folding>
+            <element signature="e#32#50#0#PHP" expanded="true" />
+            <marker date="1579995614446" expanded="true" signature="207:241" ph="SELECT * FRO... tb_projects" />
+            <marker date="1579995614446" expanded="true" signature="207:242" ph="SELECT * FRO... tb_products" />
+            <marker date="1579995614446" expanded="true" signature="207:255" ph="SELECT * FRO... tb_projects" />
+            <marker date="1579995614446" expanded="true" signature="207:260" ph="SELECT * FRO... tb_projects" />
+            <marker date="1579995614446" expanded="true" signature="397:451" ph="SELECT * FRO... tb_projects" />
+            <marker date="1579995614446" expanded="true" signature="397:470" ph="SELECT * FRO... tb_projects" />
+            <marker date="1579995614446" expanded="true" signature="609:663" ph="SELECT * FRO... tb_projects" />
+            <marker date="1579995614446" expanded="true" signature="609:682" ph="SELECT * FRO... tb_projects" />
+            <marker date="1579995614446" expanded="true" signature="796:845" ph="SELECT * FRO... tb_projects" />
+            <marker date="1579995614446" expanded="true" signature="796:853" ph="SELECT * FRO... tb_projects" />
+            <marker date="1579995614446" expanded="true" signature="977:1028" ph="SELECT * FRO... tb_tasks" />
+            <marker date="1579995614446" expanded="true" signature="1221:1744" ph="SELECT ( SEL... tb_projects" />
+            <marker date="1579995614446" expanded="true" signature="1267:1416" ph="SELECT count... tb_tasks" />
+            <marker date="1579995614446" expanded="true" signature="1482:1631" ph="SELECT count... tb_tasks" />
+            <marker date="1579995614446" expanded="true" signature="3256:3310" ph="SELECT * FRO... tb_projects" />
+            <marker date="1579995614446" expanded="true" signature="3545:3597" ph="DELETE FROM " />
+            <marker date="1579995614446" expanded="true" signature="4179:4224" ph="SELECT * FRO... tb_projects" />
+            <marker date="1579995614446" expanded="true" signature="4179:4253" ph="SELECT * FRO... tb_projects" />
+            <marker date="1579995614446" expanded="true" signature="4179:4267" ph="SELECT SQL_C... tb_projects" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/site.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="64" column="98" lean-forward="false" selection-start-line="64" selection-start-column="88" selection-end-line="64" selection-end-column="98" />
+        <state relative-caret-position="250">
+          <caret line="251" column="46" lean-forward="false" selection-start-line="251" selection-start-column="46" selection-end-line="251" selection-end-column="46" />
           <folding>
             <element signature="e#7#23#0#PHP" expanded="true" />
           </folding>

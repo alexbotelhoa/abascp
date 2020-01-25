@@ -68,7 +68,7 @@ $app->get("/projects", function() {
 
     $projects = new Project();
 
-    $pagination = $projects->getProjectPage($page);
+    $pagination = $projects->getProjectPage($ordem, $page);
 
     $pages = [];
 
@@ -249,7 +249,7 @@ $app->get("/tasks", function() {
 
     $tasks = new Task();
 
-    $pagination = $tasks->getTaskPage($page);
+    $pagination = $tasks->getTaskPage($ordem, $page);
 
     $pages = [];
 

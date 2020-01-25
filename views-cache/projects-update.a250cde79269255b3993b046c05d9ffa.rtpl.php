@@ -9,7 +9,7 @@
     <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="/projects">Projetos</a></li>
-        <li class="active"><a href="/projects/<?php echo htmlspecialchars( $project["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">Editar</a></li>
+        <li class="active"><a href="/projects/<?php echo htmlspecialchars( $project["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/update">Editar</a></li>
     </ol>
 </section> <!-- /.content-header -->
 
@@ -30,7 +30,7 @@
                 </div> <!-- /.box-header -->
 
                 <!-- form start -->
-                <form role="form" action="/projects/<?php echo htmlspecialchars( $project["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" method="post" enctype="multipart/form-data">
+                <form role="form" action="/projects/<?php echo htmlspecialchars( $project["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/update" method="post" enctype="multipart/form-data">
                     <div class="box-body">
                       <div class="form-group">
                         <label for="desproject">Nome Projeto</label>

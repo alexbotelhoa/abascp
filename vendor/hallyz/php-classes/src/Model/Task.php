@@ -109,14 +109,19 @@ class Task extends Model
 
     }
 
-    public function getTaskPage($page = 1, $itemsPerPage = 6)
+    public function getTaskPage($ordem, $page = 1, $itemsPerPage = 6)
     {
 
         $start = ($page - 1) * $itemsPerPage;
 
         $sql = new Sql();
 
-        $resultTasks = $sql->select("SELECT SQL_CALC_FOUND_ROWS *, a.dtstart, a.dtfinish FROM tb_tasks a INNER JOIN tb_projects b USING(idproject) LIMIT $start, $itemsPerPage");
+        $resultTasks = $sql->select("
+            SELECT SQL_CALC_FOUND_ROWS *, a.dtstart, a.dtfinish 
+            FROM tb_tasks a 
+            INNER JOIN tb_projects b USING(idproject) 
+            ORDER BY " . $ordem . " ASC 
+            LIMIT $start, $itemsPerPage");
 
         $resultTotal = $sql->select("SELECT FOUND_ROWS() AS nrtotal");
 
