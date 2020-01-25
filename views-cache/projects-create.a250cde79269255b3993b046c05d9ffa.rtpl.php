@@ -6,14 +6,17 @@
 
 <!-- Content Header (Page header) -->
 <section class="content-header">
-    <h1>
-        Cadastrar Projeto
-    </h1>
     <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="/projects">Projetos</a></li>
         <li class="active"><a href="/projects/create">Cadastrar</a></li>
     </ol>
+</section> <!-- /.content-header -->
+
+<section class="content-header">
+    <h1>
+        Cadastrar Projeto
+    </h1>
 </section> <!-- /.content-header -->
 
 <!-- Main content -->
@@ -30,15 +33,15 @@
                 <form role="form" action="/projects/create" method="post">
                     <div class="box-body">
                         <div class="form-group">
-                            <label for="desproject">Nome do Projeto</label>
+                            <label for="desproject">Nome Projeto</label>
                             <input type="text" class="form-control" id="desproject" name="desproject" placeholder="Digite o nome do projeto">
                         </div>
                         <div class="form-group">
-                            <label for="dtstart">Previsão de Início</label>
+                            <label for="dtstart">Data Início</label>
                             <input type="date" class="form-control" id="dtstart" name="dtstart" step="0.01" placeholder="dd/mm/yyy">
                         </div>
                         <div class="form-group">
-                            <label for="dtfinish">Previsão de Fim</label>
+                            <label for="dtfinish">Data Fim</label>
                             <input type="date" class="form-control" id="dtfinish" name="dtfinish" step="0.01" placeholder="dd/mm/yyyy">
                         </div>
                     </div> <!-- /.box-body -->

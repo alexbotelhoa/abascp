@@ -32,20 +32,27 @@
                 <!-- form start -->
                 <form role="form" action="/tasks/{$task.idtask}" method="post" enctype="multipart/form-data">
                     <div class="box-body">
-                      <div class="form-group">
-                        <label for="destask">Nome Tarefa</label>
-                        <input type="text" class="form-control" id="destask" name="destask" placeholder="Digite o nome da tarefa" value="{$task.destask}">
-                      </div>
-                      <div class="form-group">
-                        <label for="dtstart">Data Início</label>
-                        <input type="date" class="form-control" id="dtstart" name="dtstart" step="0.01" placeholder="dd/mm/yyy" value="{$task.dtstart}">
-                      </div>
-                      <div class="form-group">
-                        <label for="dtfinish">Data Fim</label>
-                        <input type="date" class="form-control" id="dtfinish" name="dtfinish" step="0.01" placeholder="dd/mm/yyy" value="{$task.dtfinish}">
-                      </div>
+                        <div class="form-group">
+                            <label for="destask">Nome Tarefa</label>
+                            <input type="text" class="form-control" id="destask" name="destask" placeholder="Digite o nome da tarefa" value="{$task.destask}">
+                        </div>
+                        <div class="form-group">
+                            <label for="idproject">Nome Projeto</label>
+                            <select class="form-control" name="idproject">
+                                {loop="$projects"}
+                                <option {if="$value.idproject === $task.idproject"}selected="selected"{/if} value="{$value.idproject}">{$value.desproject}</option>
+                                {/loop}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dtstart">Data Início</label>
+                            <input type="date" class="form-control" id="dtstart" name="dtstart" step="0.01" placeholder="dd/mm/yyy" value="{$task.dtstart}">
+                        </div>
+                        <div class="form-group">
+                            <label for="dtfinish">Data Fim</label>
+                            <input type="date" class="form-control" id="dtfinish" name="dtfinish" step="0.01" placeholder="dd/mm/yyy" value="{$task.dtfinish}">
+                        </div>
                     </div> <!-- /.box-body -->
-
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary">Salvar</button>
                     </div>

@@ -36,9 +36,9 @@
                                 <th>Nome Projeto</th>
                                 <th>Data Incício</th>
                                 <th>Data Fim</th>
-                                <th>Andamento</th>
-                                <th>Status</th>
-                                <th style="width: 140px">&nbsp;</th>
+                                <th>Rate</th>
+                                <th>Atrasado</th>
+                                <th style="width: 140px">Opções</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,10 +46,10 @@
                                 <tr>
                                     <td>{$value.idproject}</td>
                                     <td>{$value.desproject}</td>
-                                    <td>{$value.dtstart}</td>
-                                    <td>{$value.dtfinish}</td>
+                                    <td>{function="formatDate($value.dtstart)"}</td>
+                                    <td>{function="formatDate($value.dtfinish)"}</td>
                                     <td>{$value.rtproject}%</td>
-                                    <td>{$value.stproject}</td>
+                                    <td>{if="$value.stproject == 0"}Não{else}Sim{/if}</td>
                                     <td>
                                         <a href="/projects/{$value.idproject}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
                                         <a href="/projects/{$value.idproject}/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>

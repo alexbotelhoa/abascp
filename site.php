@@ -1,6 +1,8 @@
 <?php
 
 use Hallyz\Page;
+use Hallyz\Model\Project;
+use Hallyz\Model\Task;
 
 /*
  * ##########################################################################################
@@ -8,79 +10,46 @@ use Hallyz\Page;
  */
 
 
-  //////////////////////////////////////////////////////
- ///                    STATUS                      ///
+
+//////////////////////////////////////////////////////
+///                    PRINCIPAL                   ///
 //////////////////////////////////////////////////////
 
-$app->get("/status", function() {
+$app->get("/", function() {
+
+    $projects = Project::listAll();
+
+    $projectslate = Project::listAllLate();
+
+    $nrlates = count($projectslate);
+
+    $projectsnotlate = Project::listAllNotLate();
+
+    $nrnotlates = count($projectsnotlate);
 
     $page = new Page();
 
-    $page->setTpl("status");
-
-});
-
-
-
-  //////////////////////////////////////////////////////
- ///                    TAREFAS                     ///
-//////////////////////////////////////////////////////
-
-$app->get("/tasks", function() {
-
-    $page = new Page();
-
-    $page->setTpl("tasks", [
-        "tasks" => []
+    $page->setTpl("index", [
+        "projects" => $projects,
+        "nrnotlates" => (int)$nrnotlates,
+        "nrlates" => $nrlates
     ]);
 
 });
 
-$app->get("/tasks/create", function() {
+$app->get("/45-98413-6611", function() {
 
     $page = new Page();
 
-    $page->setTpl("tasks-create");
+    $page->setTpl("index");
 
 });
 
-$app->post("/tasks/create", function() {
-
-    header("Location: /tasks");
-
-    exit;
-
-});
-
-$app->get("/tasks/:idtask", function($idtask) {
+$app->get("/newsletter", function() {
 
     $page = new Page();
 
-    $page->setTpl("tasks-update");
-
-});
-
-$app->post("/tasks/:idtask", function($idtask) {
-
-    header("Location: /tasks");
-
-    exit;
-
-});
-
-$app->get("/tasks/:idtask/details", function($idtask) {
-
-    $page = new Page();
-
-    $page->setTpl("/projects-details");
-
-});
-
-$app->get("/tasks/:idtask/delete", function($idtask) {
-
-    header("Location: /tasks");
-
-    exit;
+    $page->setTpl("index");
 
 });
 
@@ -92,10 +61,12 @@ $app->get("/tasks/:idtask/delete", function($idtask) {
 
 $app->get("/projects", function() {
 
+    $projects = Project::listAll();
+
     $page = new Page();
 
     $page->setTpl("projects", [
-        "projects" => []
+        "projects" => $projects
     ]);
 
 });
@@ -110,6 +81,12 @@ $app->get("/projects/create", function() {
 
 $app->post("/projects/create", function() {
 
+    $project = new Project();
+
+    $project->setData($_POST);
+
+    $project->save();
+
     header("Location: /projects");
 
     exit;
@@ -118,13 +95,34 @@ $app->post("/projects/create", function() {
 
 $app->get("/projects/:idproject", function($idproject) {
 
+    $project = new Project();
+
+    $project->get((int)$idproject);
+
+    $project->setdtstart(date_format(date_create($project->getdtstart()), 'Y-m-d'));
+
+    $project->setdtfinish(date_format(date_create($project->getdtfinish()), 'Y-m-d'));
+
     $page = new Page();
 
-    $page->setTpl("projects-update");
+    $page->setTpl("projects-update", [
+        "project" => $project->getValues()
+    ]);
 
 });
 
 $app->post("/projects/:idproject", function($idproject) {
+
+    $project = new Project();
+
+    $project->get((int)$idproject);
+
+    $_POST['rtprojetc'] = $project->getrtproject();
+    $_POST['stprojetc'] = $project->getstproject();
+
+    $project->setData($_POST);
+
+    $project->save();
 
     header("Location: /projects");
 
@@ -134,13 +132,34 @@ $app->post("/projects/:idproject", function($idproject) {
 
 $app->get("/projects/:idproject/details", function($idproject) {
 
+    $project = new Project();
+
+    $project->get((int)$idproject);
+
+    $project->setdtstart(date_format(date_create($project->getdtstart()), 'Y-m-d'));
+
+    $project->setdtfinish(date_format(date_create($project->getdtfinish()), 'Y-m-d'));
+
+    ($project->getstproject() == 0) ? $status = "Não" : $status = "Sim" ;
+
     $page = new Page();
 
-    $page->setTpl("/projects-details");
+    $page->setTpl("/projects-details", [
+        "project" => $project->getValues(),
+        "status" => $status
+    ]);
 
 });
 
 $app->get("/projects/:idproject/delete", function($idproject) {
+
+    $project = new Project();
+
+    $project->get((int)$idproject);
+
+    $project->setData($_POST);
+
+    $project->delete();
 
     header("Location: /projects");
 
@@ -151,31 +170,135 @@ $app->get("/projects/:idproject/delete", function($idproject) {
 
 
   //////////////////////////////////////////////////////
- ///                    PRINCIPAL                   ///
+ ///                    TAREFAS                     ///
 //////////////////////////////////////////////////////
 
-$app->get("/newsletter", function() {
+$app->get("/tasks", function() {
+
+    $tasks = Task::listAll();
 
     $page = new Page();
 
-    $page->setTpl("index");
+    $page->setTpl("tasks", [
+        "tasks" => $tasks
+    ]);
 
 });
 
-$app->get("/45-98413-6611", function() {
+$app->get("/tasks/create", function() {
 
     $page = new Page();
 
-    $page->setTpl("index");
+    $page->setTpl("tasks-create", [
+        "projects" => Project::listAll()
+    ]);
 
 });
 
-$app->get("/", function() {
+$app->post("/tasks/create", function() {
+
+    $tasks= new Task();
+
+    $tasks->setData($_POST);
+
+    $tasks->save();
+
+    header("Location: /tasks");
+
+    exit;
+
+});
+
+$app->get("/tasks/:idtask", function($idtask) {
+
+    $tasks = new Task();
+
+    $tasks->get((int)$idtask);
+
+    $tasks->setdtstart(date_format(date_create($tasks->getdtstart()), 'Y-m-d'));
+
+    $tasks->setdtfinish(date_format(date_create($tasks->getdtfinish()), 'Y-m-d'));
 
     $page = new Page();
 
-    $page->setTpl("index");
+    $page->setTpl("tasks-update", [
+        "task" => $tasks->getValues(),
+        "projects" => Project::listAll()
+    ]);
 
 });
+
+$app->post("/tasks/:idtask", function($idtask) {
+
+    $tasks = new Task();
+
+    $tasks->get((int)$idtask);
+
+    $_POST['sttask'] = $tasks->getsttask();
+
+    $tasks->setData($_POST);
+
+    $tasks->save();
+
+    header("Location: /tasks");
+
+    exit;
+
+});
+
+$app->get("/tasks/:idtask/situation", function($idtask) {
+
+    $tasks = new Task();
+
+    $tasks->get((int)$idtask);
+
+    ($tasks->getsttask() == 0) ? $situation = 1 : $situation = 0 ;
+
+    $tasks->situation($idtask, $situation);
+
+    header("Location: /tasks");
+
+    exit;
+
+});
+
+$app->get("/tasks/:idtask/delete", function($idtask) {
+
+    $tasks = new Task();
+
+    $tasks->get((int)$idtask);
+
+    $tasks->setData($_POST);
+
+    $tasks->delete();
+
+    header("Location: /tasks");
+
+    exit;
+
+});
+
+
+
+  //////////////////////////////////////////////////////
+ ///                    STATUS                      ///
+//////////////////////////////////////////////////////
+
+$app->get("/status", function() {
+
+    $projectslate = Project::listAllLate();
+
+    $projectsnotlate = Project::listAllNotLate();
+
+    $page = new Page();
+
+    $page->setTpl("status", [
+        "projectslate" => $projectslate,
+        "projectsnotlate" => $projectsnotlate
+    ]);
+
+});
+
+
 
 ?>

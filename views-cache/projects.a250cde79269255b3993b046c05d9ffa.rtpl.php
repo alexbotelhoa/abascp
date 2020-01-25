@@ -6,13 +6,16 @@
 
 <!-- Content Header (Page header) -->
 <section class="content-header">
-    <h1>
-        Lista de Projetos
-    </h1>
     <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active"><a href="/projects">Projetos</a></li>
     </ol>
+</section> <!-- /.content-header -->
+
+<section class="content-header">
+    <h1>
+        Lista de Projetos
+    </h1>
 </section> <!-- /.content-header -->
 
 <!-- Main content -->
@@ -33,9 +36,9 @@
                                 <th>Nome Projeto</th>
                                 <th>Data Incício</th>
                                 <th>Data Fim</th>
-                                <th>Andamento</th>
-                                <th>Status</th>
-                                <th style="width: 140px">&nbsp;</th>
+                                <th>Rate</th>
+                                <th>Atrasado</th>
+                                <th style="width: 140px">Opções</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,10 +46,10 @@
                                 <tr>
                                     <td><?php echo htmlspecialchars( $value1["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                                     <td><?php echo htmlspecialchars( $value1["desproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                                    <td><?php echo htmlspecialchars( $value1["dtstart"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                                    <td><?php echo htmlspecialchars( $value1["dtfinish"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                                    <td><?php echo formatDate($value1["dtstart"]); ?></td>
+                                    <td><?php echo formatDate($value1["dtfinish"]); ?></td>
                                     <td><?php echo htmlspecialchars( $value1["rtproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>%</td>
-                                    <td><?php echo htmlspecialchars( $value1["stproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                                    <td><?php if( $value1["stproject"] == 0 ){ ?>Não<?php }else{ ?>Sim<?php } ?></td>
                                     <td>
                                         <a href="/projects/<?php echo htmlspecialchars( $value1["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
                                         <a href="/projects/<?php echo htmlspecialchars( $value1["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>

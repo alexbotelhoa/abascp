@@ -14,7 +14,7 @@
 
 <section class="content-header">
     <h1>
-        Status dos Projetos Atrasados
+        Projetos Atrasados
     </h1>
 </section> <!-- /.content-header -->
 
@@ -22,7 +22,7 @@
 <section class="content">
     <div class="row">
         <div class="col-md-12">
-            <div class="box box-primary">
+            <div class="box box-danger">
 
                 <div class="box-body no-padding">
                     <table class="table table-striped">
@@ -32,8 +32,7 @@
                                 <th>Nome Projeto</th>
                                 <th>Data Incício</th>
                                 <th>Data Fim</th>
-                                <th>Andamento</th>
-                                <th>Status</th>
+                                <th>Rate</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -41,10 +40,9 @@
                                 <tr>
                                     <td><?php echo htmlspecialchars( $value1["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                                     <td><?php echo htmlspecialchars( $value1["desproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                                    <td><?php echo htmlspecialchars( $value1["dtstart"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                                    <td><?php echo htmlspecialchars( $value1["dtfinish"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                                    <td><?php echo formatDate($value1["dtstart"]); ?></td>
+                                    <td><?php echo formatDate($value1["dtfinish"]); ?></td>
                                     <td><?php echo htmlspecialchars( $value1["rtproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>%</td>
-                                    <td><?php echo htmlspecialchars( $value1["stproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
@@ -58,7 +56,7 @@
 
 <section class="content-header">
     <h1>
-        Status dos Projetos Não Atrasados
+        Projetos Não Atrasados
     </h1>
 </section> <!-- /.content-header -->
 
@@ -66,7 +64,7 @@
 <section class="content">
     <div class="row">
         <div class="col-md-12">
-            <div class="box box-primary">
+            <div class="box box-success">
 
                 <div class="box-body no-padding">
                     <table class="table table-striped">
@@ -76,19 +74,17 @@
                             <th>Nome Projeto</th>
                             <th>Data Incício</th>
                             <th>Data Fim</th>
-                            <th>Andamento</th>
-                            <th>Status</th>
+                            <th>Rate</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <?php $counter1=-1;  if( isset($projectslate) && ( is_array($projectslate) || $projectslate instanceof Traversable ) && sizeof($projectslate) ) foreach( $projectslate as $key1 => $value1 ){ $counter1++; ?>
+                        <?php $counter1=-1;  if( isset($projectsnotlate) && ( is_array($projectsnotlate) || $projectsnotlate instanceof Traversable ) && sizeof($projectsnotlate) ) foreach( $projectsnotlate as $key1 => $value1 ){ $counter1++; ?>
                         <tr>
                             <td><?php echo htmlspecialchars( $value1["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                             <td><?php echo htmlspecialchars( $value1["desproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                            <td><?php echo htmlspecialchars( $value1["dtstart"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                            <td><?php echo htmlspecialchars( $value1["dtfinish"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                            <td><?php echo formatDate($value1["dtstart"]); ?></td>
+                            <td><?php echo formatDate($value1["dtfinish"]); ?></td>
                             <td><?php echo htmlspecialchars( $value1["rtproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>%</td>
-                            <td><?php echo htmlspecialchars( $value1["stproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                         </tr>
                         <?php } ?>
                         </tbody>

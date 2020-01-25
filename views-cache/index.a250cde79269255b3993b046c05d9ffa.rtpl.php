@@ -13,7 +13,6 @@
                     <div class="box box-info">
                         <div class="box-header with-border">
                             <h3 class="box-title">Status dos Projetos</h3>
-
                             <div class="box-tools pull-right">
                                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                                 </button>
@@ -39,125 +38,23 @@
                     <div class="brand-wrapper">
                         <div class="brand-list">
 
-                            <div class="small-box bg-green">
-                                <div class="inner">
-                                    <h3>50<sup style="font-size: 20px">%</sup></h3>
+                            <?php $counter1=-1;  if( isset($projects) && ( is_array($projects) || $projects instanceof Traversable ) && sizeof($projects) ) foreach( $projects as $key1 => $value1 ){ $counter1++; ?>
+                                <?php if( $value1["stproject"] == 0 ){ ?>
+                                    <div class="small-box bg-green">
+                                <?php }else{ ?>
+                                    <div class="small-box bg-red">
+                                <?php } ?>
+                                    <div class="inner">
+                                        <h3><?php echo htmlspecialchars( $value1["rtproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?><sup style="font-size: 20px">%</sup></h3>
 
-                                    <p>Projeto 1</p>
+                                        <p><?php echo htmlspecialchars( $value1["desproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?></p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="ion ion-stats-bars"></i>
+                                    </div>
+                                        <a href="/projects/<?php echo htmlspecialchars( $value1["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/details" class="small-box-footer">Mais detalhes <i class="fa fa-arrow-circle-right"></i></a>
                                 </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
-                                    <a href="/projects/details" class="small-box-footer">Mais detalhes <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-
-                            <div class="small-box bg-red">
-                                <div class="inner">
-                                    <h3>51<sup style="font-size: 20px">%</sup></h3>
-
-                                    <p>Projeto 2</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
-                                <a href="/projects/details" class="small-box-footer">Mais detalhes <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-
-                            <div class="small-box bg-green">
-                                <div class="inner">
-                                    <h3>52<sup style="font-size: 20px">%</sup></h3>
-
-                                    <p>Projeto 3</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
-                                <a href="/projects/details" class="small-box-footer">Mais detalhes <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-
-                            <div class="small-box bg-green">
-                                <div class="inner">
-                                    <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-                                    <p>Projeto 4</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
-                                <a href="/projects/details" class="small-box-footer">Mais detalhes <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-
-                            <div class="small-box bg-red">
-                                <div class="inner">
-                                    <h3>54<sup style="font-size: 20px">%</sup></h3>
-
-                                    <p>Projeto 5</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
-                                <a href="/projects/details" class="small-box-footer">Mais detalhes <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-
-                            <div class="small-box bg-green">
-                                <div class="inner">
-                                    <h3>55<sup style="font-size: 20px">%</sup></h3>
-
-                                    <p>Projeto 6</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
-                                <a href="/projects/details" class="small-box-footer">Mais detalhes <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-
-                            <div class="small-box bg-green">
-                                <div class="inner">
-                                    <h3>56<sup style="font-size: 20px">%</sup></h3>
-
-                                    <p>Projeto 7</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
-                                <a href="/projects/details" class="small-box-footer">Mais detalhes <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-
-                            <div class="small-box bg-green">
-                                <div class="inner">
-                                    <h3>57<sup style="font-size: 20px">%</sup></h3>
-
-                                    <p>Projeto 8</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
-                                <a href="/projects/details" class="small-box-footer">Mais detalhes <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-
-                            <div class="small-box bg-red">
-                                <div class="inner">
-                                    <h3>58<sup style="font-size: 20px">%</sup></h3>
-
-                                    <p>Projeto 9</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
-                                <a href="/projects/details" class="small-box-footer">Mais detalhes <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-
-                            <div class="small-box bg-green">
-                                <div class="inner">
-                                    <h3>59<sup style="font-size: 20px">%</sup></h3>
-
-                                    <p>Projeto 10</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
-                                <a href="/projects/details" class="small-box-footer">Mais detalhes <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
+                            <?php } ?>
 
                         </div>
                     </div>
@@ -180,6 +77,9 @@
              * Here we will create a few charts using ChartJS
              */
 
+            var $projectnotlate = <?php echo htmlspecialchars( $nrnotlates, ENT_COMPAT, 'UTF-8', FALSE ); ?>;
+            var $projectlate = <?php echo htmlspecialchars( $nrlates, ENT_COMPAT, 'UTF-8', FALSE ); ?>;
+
             //-------------
             //- PIE CHART -
             //-------------
@@ -188,13 +88,13 @@
             var pieChart = new Chart(pieChartCanvas);
             var PieData = [
                 {
-                    value: 7,
+                    value: $projectnotlate,
                     color: "#00a65a",
                     highlight: "#00a65a",
                     label: "Não Atrasado"
                 },
                 {
-                    value: 3,
+                    value: $projectlate,
                     color: "#f56954",
                     highlight: "#f56954",
                     label: "Atrasado"
