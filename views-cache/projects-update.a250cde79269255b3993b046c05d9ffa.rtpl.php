@@ -1,4 +1,4 @@
-<!--
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!--
 ####################################################################################################################
                                         ABOVE IS THE HEADER
 ####################################################################################################################
@@ -12,7 +12,7 @@
     <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="/projects">Projetos</a></li>
-        <li class="active"><a href="/projects/{$project.idproject}">Editar</a></li>
+        <li class="active"><a href="/projects/<?php echo htmlspecialchars( $project["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">Editar</a></li>
     </ol>
 </section> <!-- /.content-header -->
 
@@ -27,19 +27,19 @@
                 </div> <!-- /.box-header -->
 
                 <!-- form start -->
-                <form role="form" action="/projects/{$project.idproject}" method="post" enctype="multipart/form-data">
+                <form role="form" action="/projects/<?php echo htmlspecialchars( $project["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" method="post" enctype="multipart/form-data">
                     <div class="box-body">
                       <div class="form-group">
-                        <label for="desproject">Nome Projeto</label>
-                        <input type="text" class="form-control" id="desproject" name="desproject" placeholder="Digite o nome do produto" value="{$project.desproject}">
+                        <label for="desproject">Nome do Projeto</label>
+                        <input type="text" class="form-control" id="desproject" name="desproject" placeholder="Digite o nome do produto" value="<?php echo htmlspecialchars( $project["desproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                       </div>
                       <div class="form-group">
-                        <label for="dtstart">Data Início</label>
-                        <input type="date" class="form-control" id="dtstart" name="dtstart" step="0.01" placeholder="dd/mm/yyy" value="{$project.dtstart}">
+                        <label for="dtstart">Data de Início</label>
+                        <input type="date" class="form-control" id="dtstart" name="dtstart" step="0.01" placeholder="dd/mm/yyy" value="<?php echo htmlspecialchars( $project["dtstart"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                       </div>
                       <div class="form-group">
-                        <label for="dtfinish">Data Fim</label>
-                        <input type="date" class="form-control" id="dtfinish" name="dtfinish" step="0.01" placeholder="dd/mm/yyy" value="{$project.dtfinish}">
+                        <label for="dtfinish">Data de Finalização</label>
+                        <input type="date" class="form-control" id="dtfinish" name="dtfinish" step="0.01" placeholder="dd/mm/yyy" value="<?php echo htmlspecialchars( $project["dtfinish"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                       </div>
                     </div> <!-- /.box-body -->
 

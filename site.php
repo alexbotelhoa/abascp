@@ -8,19 +8,11 @@ use Hallyz\Page;
  */
 
 
-  //////////////////////////////////////////////////
- ///                    NIVEIS                  ///
-//////////////////////////////////////////////////
+  //////////////////////////////////////////////////////
+ ///                    STATUS                      ///
+//////////////////////////////////////////////////////
 
-$app->get("/levels/urgent", function() {
-
-    header("Location: /");
-
-    exit;
-
-});
-
-$app->get("/levels/attention", function() {
+$app->get("/status/notlate", function() {
 
     header("Location: /");
 
@@ -28,19 +20,11 @@ $app->get("/levels/attention", function() {
 
 });
 
-$app->get("/levels/normal", function() {
+$app->get("/status/late", function() {
 
     header("Location: /");
 
     exit;
-
-});
-
-$app->get("/levels", function() {
-
-    $page = new Page();
-
-    $page->setTpl("index");
 
 });
 
@@ -49,54 +33,6 @@ $app->get("/levels", function() {
   //////////////////////////////////////////////////////
  ///                    TAREFAS                     ///
 //////////////////////////////////////////////////////
-
-$app->get("/projects/:idproject/delete", function($idproject) {
-
-    header("Location: /projects");
-
-    exit;
-
-});
-
-$app->get("/projects/:idproject/details", function($idproject) {
-
-    $page = new Page();
-
-    $page->setTpl("/projects-details");
-
-});
-
-$app->post("/projects/:idproject", function($idproject) {
-
-    header("Location: /projects");
-
-    exit;
-
-});
-
-$app->get("/tasks/:idproject", function($idproject) {
-
-    $page = new Page();
-
-    $page->setTpl("tasks-update");
-
-});
-
-$app->post("/tasks/create", function() {
-
-    header("Location: /tasks");
-
-    exit;
-
-});
-
-$app->get("/tasks/create", function() {
-
-    $page = new Page();
-
-    $page->setTpl("tasks-create");
-
-});
 
 $app->get("/tasks", function() {
 
@@ -108,21 +44,39 @@ $app->get("/tasks", function() {
 
 });
 
+$app->get("/tasks/create", function() {
 
+    $page = new Page();
 
-  //////////////////////////////////////////////////////
- ///                    PROJETOS                    ///
-//////////////////////////////////////////////////////
+    $page->setTpl("tasks-create");
 
-$app->get("/projects/:idproject/delete", function($idproject) {
+});
 
-    header("Location: /projects");
+$app->post("/tasks/create", function() {
+
+    header("Location: /tasks");
 
     exit;
 
 });
 
-$app->get("/projects/:idproject/details", function($idproject) {
+$app->get("/tasks/:idtask", function($idtask) {
+
+    $page = new Page();
+
+    $page->setTpl("tasks-update");
+
+});
+
+$app->post("/tasks/:idtask", function($idtask) {
+
+    header("Location: /tasks");
+
+    exit;
+
+});
+
+$app->get("/tasks/:idtask/details", function($idtask) {
 
     $page = new Page();
 
@@ -130,7 +84,39 @@ $app->get("/projects/:idproject/details", function($idproject) {
 
 });
 
-$app->post("/projects/:idproject", function($idproject) {
+$app->get("/tasks/:idtask/delete", function($idtask) {
+
+    header("Location: /tasks");
+
+    exit;
+
+});
+
+
+
+  //////////////////////////////////////////////////////
+ ///                    PROJETOS                    ///
+//////////////////////////////////////////////////////
+
+$app->get("/projects", function() {
+
+    $page = new Page();
+
+    $page->setTpl("projects", [
+        "projects" => []
+    ]);
+
+});
+
+$app->get("/projects/create", function() {
+
+    $page = new Page();
+
+    $page->setTpl("projects-create");
+
+});
+
+$app->post("/projects/create", function() {
 
     header("Location: /projects");
 
@@ -146,7 +132,7 @@ $app->get("/projects/:idproject", function($idproject) {
 
 });
 
-$app->post("/projects/create", function() {
+$app->post("/projects/:idproject", function($idproject) {
 
     header("Location: /projects");
 
@@ -154,21 +140,19 @@ $app->post("/projects/create", function() {
 
 });
 
-$app->get("/projects/create", function() {
+$app->get("/projects/:idproject/details", function($idproject) {
 
     $page = new Page();
 
-    $page->setTpl("projects-create");
+    $page->setTpl("/projects-details");
 
 });
 
-$app->get("/projects", function() {
+$app->get("/projects/:idproject/delete", function($idproject) {
 
-    $page = new Page();
+    header("Location: /projects");
 
-    $page->setTpl("projects", [
-        "projects" => []
-    ]);
+    exit;
 
 });
 

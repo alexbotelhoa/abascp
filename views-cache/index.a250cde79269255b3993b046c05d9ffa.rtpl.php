@@ -10,7 +10,7 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
                     <!-- DONUT CHART -->
-                    <div class="box box-danger">
+                    <div class="box box-info">
                         <div class="box-header with-border">
                             <h3 class="box-title">Status dos Projetos</h3>
 
@@ -20,9 +20,11 @@
                                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                             </div>
                         </div>
+
                         <div class="box-body">
                             <canvas id="pieChart" style="height:250px"></canvas>
                         </div> <!-- /.box-body -->
+
                     </div> <!-- /.box -->
                 </div>
                 <div class="col-md-2"></div>
@@ -49,7 +51,7 @@
                                     <a href="/projects/details" class="small-box-footer">Mais detalhes <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
 
-                            <div class="small-box bg-yellow">
+                            <div class="small-box bg-red">
                                 <div class="inner">
                                     <h3>51<sup style="font-size: 20px">%</sup></h3>
 
@@ -73,7 +75,7 @@
                                 <a href="/projects/details" class="small-box-footer">Mais detalhes <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
 
-                            <div class="small-box bg-red">
+                            <div class="small-box bg-green">
                                 <div class="inner">
                                     <h3>53<sup style="font-size: 20px">%</sup></h3>
 
@@ -109,7 +111,7 @@
                                 <a href="/projects/details" class="small-box-footer">Mais detalhes <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
 
-                            <div class="small-box bg-yellow">
+                            <div class="small-box bg-green">
                                 <div class="inner">
                                     <h3>56<sup style="font-size: 20px">%</sup></h3>
 
@@ -121,7 +123,7 @@
                                 <a href="/projects/details" class="small-box-footer">Mais detalhes <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
 
-                            <div class="small-box bg-yellow">
+                            <div class="small-box bg-green">
                                 <div class="inner">
                                     <h3>57<sup style="font-size: 20px">%</sup></h3>
 
@@ -186,22 +188,16 @@
             var pieChart = new Chart(pieChartCanvas);
             var PieData = [
                 {
-                    value: 700,
-                    color: "#f56954",
-                    highlight: "#f56954",
-                    label: "Chrome"
-                },
-                {
-                    value: 500,
+                    value: 7,
                     color: "#00a65a",
                     highlight: "#00a65a",
-                    label: "IE"
+                    label: "Não Atrasado"
                 },
                 {
-                    value: 400,
-                    color: "#f39c12",
-                    highlight: "#f39c12",
-                    label: "FireFox"
+                    value: 3,
+                    color: "#f56954",
+                    highlight: "#f56954",
+                    label: "Atrasado"
                 }
             ];
             var pieOptions = {

@@ -7,7 +7,7 @@
     <div class="footer-top-area">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-4">
                     <div class="footer-about-us">
                         <h2>Hallyz Cia & Ltda</h2>
                         <p>Nos orgulhamos em possuir um time de consultores de alta maturidade, mentalidade e atitude necessárias para garantir resultados de forma ágil e assertiva.</p>
@@ -24,7 +24,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-4">
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">Navegação </h2>
                         <ul>
@@ -35,18 +35,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-menu">
-                        <h2 class="footer-wid-title">Classificação</h2>
-                        <ul>
-                            <li><a href="/levels/normal">Nível Normal</a></li>
-                            <li><a href="/levels/attention">Nível Atenção</a></li>
-                            <li><a href="/levels/urgent">Nível Urgente</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-4">
                     <div class="footer-newsletter">
                         <h2 class="footer-wid-title">Newsletter</h2>
                         <p>Cadastre-se para receber os nosso conteúdos por email e seja um membro da nossa comunidade!</p>
@@ -65,13 +54,13 @@
     <div class="footer-bottom-area">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-8 col-xs-6">
                     <div class="copyright">
                         <p>&copy; 2019 Alex Botelho Cia & Ltda. <a href="https://www.alexbotelhoa.com/" target="_blank">alexbotelhoa.com</a></p>
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-4 col-xs-6">
                     <div class="footer-card-icon">
                         <i class="fa fa-cc-discover"></i>
                         <i class="fa fa-cc-mastercard"></i>

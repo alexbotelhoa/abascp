@@ -7,12 +7,12 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Cadastrar Projeto
+        Cadastrar Tarefas
     </h1>
     <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="/projects">Projetos</a></li>
-        <li class="active"><a href="/projects/create">Cadastrar</a></li>
+        <li><a href="/tasks">Tarefas</a></li>
+        <li class="active"><a href="/tasks/create">Cadastrar</a></li>
     </ol>
 </section> <!-- /.content-header -->
 
@@ -23,15 +23,15 @@
             <div class="box box-success">
 
                 <div class="box-header with-border">
-                    <h3 class="box-title">Novo Projeto</h3>
+                    <h3 class="box-title">Nova Tarefa</h3>
                 </div> <!-- /.box-header -->
 
                 <!-- form start -->
-                <form role="form" action="/projects/create" method="post">
+                <form role="form" action="/tasks/create" method="post">
                     <div class="box-body">
                         <div class="form-group">
-                            <label for="desproject">Nome Projeto</label>
-                            <input type="text" class="form-control" id="desproject" name="desproject" placeholder="Digite o nome do projeto">
+                            <label for="destask">Nome Tarefa</label>
+                            <input type="text" class="form-control" id="destask" name="destask" placeholder="Digite o nome da tarefa">
                         </div>
                         <div class="form-group">
                             <label for="dtstart">Data Início</label>
@@ -42,7 +42,6 @@
                             <input type="date" class="form-control" id="dtfinish" name="dtfinish" step="0.01" placeholder="dd/mm/yyyy">
                         </div>
                     </div> <!-- /.box-body -->
-
                     <div class="box-footer">
                         <button type="submit" class="btn btn-success">Cadastrar</button>
                     </div>

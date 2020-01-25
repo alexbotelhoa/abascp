@@ -4,64 +4,63 @@
 ####################################################################################################################
 -->
 
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Lista de Projetos
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active"><a href="/projects">Projetos</a></li>
+    </ol>
+</section> <!-- /.content-header -->
 
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>
-            Lista de Projetos
-        </h1>
-        <ol class="breadcrumb">
-            <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active"><a href="/projects">Projetos</a></li>
-        </ol>
-    </section> <!-- /.content-header -->
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
 
-    <!-- Main content -->
-    <section class="content">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="box box-primary">
+                <div class="box-header">
+                    <a href="/projects/create" class="btn btn-success">Cadastrar Projeto</a>
+                </div> <!-- /.box-header -->
 
-                    <div class="box-header">
-                        <a href="/projects/create" class="btn btn-success">Cadastrar Projeto</a>
-                    </div> <!-- /.box-header -->
-
-                    <div class="box-body no-padding">
-                        <table class="table table-striped">
-                            <thead>
+                <div class="box-body no-padding">
+                    <table class="table table-striped">
+                        <thead>
                             <tr>
                                 <th style="width: 10px">#</th>
-                                <th>Nome do Projeto</th>
-                                <th>Data de Incício</th>
-                                <th>Data de Finalização</th>
+                                <th>Nome Projeto</th>
+                                <th>Data Incício</th>
+                                <th>Data Fim</th>
+                                <th>Completo</th>
+                                <th>Status</th>
                                 <th style="width: 140px">&nbsp;</th>
                             </tr>
-                            </thead>
-                            <tbody>
+                        </thead>
+                        <tbody>
                             <?php $counter1=-1;  if( isset($projects) && ( is_array($projects) || $projects instanceof Traversable ) && sizeof($projects) ) foreach( $projects as $key1 => $value1 ){ $counter1++; ?>
-                            <tr>
-                                <td><?php echo htmlspecialchars( $value1["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                                <td><?php echo htmlspecialchars( $value1["desproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                                <td><?php echo htmlspecialchars( $value1["dtstart"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                                <td><?php echo htmlspecialchars( $value1["dtfinish"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                                <td>
-                                    <a href="/projects/<?php echo htmlspecialchars( $value1["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
-                                    <a href="/projects/<?php echo htmlspecialchars( $value1["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td><?php echo htmlspecialchars( $value1["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                                    <td><?php echo htmlspecialchars( $value1["desproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                                    <td><?php echo htmlspecialchars( $value1["dtstart"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                                    <td><?php echo htmlspecialchars( $value1["dtfinish"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                                    <td><?php echo htmlspecialchars( $value1["rtproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                                    <td><?php echo htmlspecialchars( $value1["stproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                                    <td>
+                                        <a href="/projects/<?php echo htmlspecialchars( $value1["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
+                                        <a href="/projects/<?php echo htmlspecialchars( $value1["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
+                                    </td>
+                                </tr>
                             <?php } ?>
-                            </tbody>
-                        </table>
-                    </div> <!-- /.box-body -->
+                        </tbody>
+                    </table>
+                </div> <!-- /.box-body -->
 
-                </div>
             </div>
         </div>
-    </section> <!-- /.content -->
-
-</div> <!-- /.content-wrapper -->
+    </div>
+</section> <!-- /.content -->
 
 <!--
 ####################################################################################################################
