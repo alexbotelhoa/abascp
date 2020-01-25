@@ -28,11 +28,11 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th style="width: 10px">#</th>
-                                <th>Nome Projeto</th>
-                                <th>Data Incício</th>
-                                <th>Data Fim</th>
-                                <th>Rate</th>
+                                <th style="width: 10px"><a href="/status/sordid">#</a></th>
+                                <th><a href="/status/sordproj">Nome Projeto</a></th>
+                                <th><a href="/status/sordini">Data Incício</a></th>
+                                <th><a href="/status/sordfim">Data Fim</a></th>
+                                <th><a href="/status/sordrate">Rate</a></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -70,11 +70,11 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th style="width: 10px">#</th>
-                            <th>Nome Projeto</th>
-                            <th>Data Incício</th>
-                            <th>Data Fim</th>
-                            <th>Rate</th>
+                            <th style="width: 10px"><a href="/status/nordid">#</a></th>
+                            <th><a href="/status/nordproj">Nome Projeto</a></th>
+                            <th><a href="/status/nordini">Data Incício</a></th>
+                            <th><a href="/status/nordfim">Data Fim</a></th>
+                            <th><a href="/status/nordrate">Rate</a></th>
                         </tr>
                         </thead>
                         <tbody>

@@ -49,14 +49,14 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th style="width: 10px">#</th>
-                                <th>Nome Projeto</th>
-                                <th>Data Incício</th>
-                                <th>Data Fim</th>
+                                <th style="width: 10px"><a href="/projects/ordid">#</a></th>
+                                <th><a href="/projects/ordproj">Nome Projeto</a></th>
+                                <th><a href="/projects/ordini">Data Incício</a></th>
+                                <th><a href="/projects/ordfim">Data Fim</a></th>
+                                <th><a href="/projects/ordrate">Rate</a></th>
+                                <th><a href="/projects/ordlate">Late</a></th>
                                 <th>Task</th>
-                                <th>Rate</th>
-                                <th>Late</th>
-                                <th style="width: 140px">Opções</th>
+                                <th style="width: 140px">&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -66,15 +66,15 @@
                                     <td><?php echo htmlspecialchars( $value1["desproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                                     <td><?php echo formatDate($value1["dtstart"]); ?></td>
                                     <td><?php echo formatDate($value1["dtfinish"]); ?></td>
-                                    <td><?php echo qtdTask($value1["idproject"]); ?></td>
                                     <td><?php echo htmlspecialchars( $value1["rtproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>%</td>
                                     <?php if( $value1["stproject"] == 0 ){ ?>
                                         <td class="bg-green" align="center">Não</td>
                                     <?php }else{ ?>
                                         <td class="bg-red" align="center">Sim</td>
                                     <?php } ?>
+                                    <td align="center"><?php echo qtdTask($value1["idproject"]); ?></td>
                                     <td>
-                                        <a href="/projects/<?php echo htmlspecialchars( $value1["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
+                                        <a href="/projects/<?php echo htmlspecialchars( $value1["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/update" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
                                         <a href="/projects/<?php echo htmlspecialchars( $value1["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
                                     </td>
                                 </tr>

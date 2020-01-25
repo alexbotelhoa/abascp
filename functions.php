@@ -14,4 +14,11 @@ function qtdTask($idproject)
 
 }
 
+function rateTask($idproject)
+{
+
+    return Project::rateTask($idproject);
+
+}
+
 ?>

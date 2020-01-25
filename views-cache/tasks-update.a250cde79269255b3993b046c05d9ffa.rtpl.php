@@ -9,7 +9,7 @@
     <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="/tasks">Tarefas</a></li>
-        <li class="active"><a href="/tasks/<?php echo htmlspecialchars( $task["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">Editar</a></li>
+        <li class="active"><a href="/tasks/<?php echo htmlspecialchars( $task["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/update">Editar</a></li>
     </ol>
 </section> <!-- /.content-header -->
 
@@ -30,7 +30,7 @@
                 </div> <!-- /.box-header -->
 
                 <!-- form start -->
-                <form role="form" action="/tasks/<?php echo htmlspecialchars( $task["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" method="post" enctype="multipart/form-data">
+                <form role="form" action="/tasks/<?php echo htmlspecialchars( $task["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/update" method="post" enctype="multipart/form-data">
                     <div class="box-body">
                         <div class="form-group">
                             <label for="destask">Nome Tarefa</label>

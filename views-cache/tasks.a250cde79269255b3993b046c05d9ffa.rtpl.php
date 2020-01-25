@@ -49,13 +49,13 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th style="width: 10px">#</th>
-                            <th>Nome Tarefa</th>
-                            <th>Nome Projeto</th>
-                            <th>Data Incício</th>
-                            <th>Data Fim</th>
-                            <th>Situação</th>
-                            <th style="width: 140px">Opções</th>
+                            <th style="width: 10px"><a href="/tasks/ordid">#</a></th>
+                            <th><a href="/tasks/ordtask">Nome Tarefa</a></th>
+                            <th><a href="/tasks/ordproj">Nome Projeto</a></th>
+                            <th><a href="/tasks/ordini">Data Incício</a></th>
+                            <th><a href="/tasks/ordfim">Data Fim</a></th>
+                            <th><a href="/tasks/ordsit">Situação</a></th>
+                            <th style="width: 140px">&nbsp;</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -68,13 +68,13 @@
                             <td><?php echo formatDate($value1["dtfinish"]); ?></td>
                             <td>
                                 <?php if( $value1["sttask"] == 0 ){ ?>
-                                    <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation" class="btn btn-danger btn-xs"><i class="fa fa-folder"></i> Fechado</a>
-                                <?php }else{ ?>
                                     <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation" class="btn btn-success btn-xs"><i class="fa fa-folder-open"></i> Aberto </a>
+                                <?php }else{ ?>
+                                    <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation" class="btn btn-danger btn-xs"><i class="fa fa-folder"></i> Fechado</a>
                                 <?php } ?>
                             </td>
                             <td>
-                                <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
+                                <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/update" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
                                 <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
                             </td>
                         </tr>

@@ -64,7 +64,19 @@ $app->get("/projects", function() {
 
     $projects = Project::listAll();
 
-    //$checkTaks = Project::checkTask((int)$projects->getidproject());
+    $page = new Page();
+
+    $page->setTpl("projects", [
+        "projects" => $projects,
+        "error" => Message::getError(),
+        "success" => Message::getSuccess()
+    ]);
+
+});
+
+$app->get("/projects/:ordem", function($ordem) {
+
+    $projects = Project::listAll($ordem);
 
     $page = new Page();
 
@@ -100,7 +112,7 @@ $app->post("/projects/create", function() {
 
 });
 
-$app->get("/projects/:idproject", function($idproject) {
+$app->get("/projects/:idproject/update", function($idproject) {
 
     $project = new Project();
 
@@ -118,7 +130,7 @@ $app->get("/projects/:idproject", function($idproject) {
 
 });
 
-$app->post("/projects/:idproject", function($idproject) {
+$app->post("/projects/:idproject/update", function($idproject) {
 
     $project = new Project();
 
@@ -130,6 +142,8 @@ $app->post("/projects/:idproject", function($idproject) {
     $project->setData($_POST);
 
     $project->save();
+
+    Project::updateRate($idproject);
 
     Message::setSuccess("Dados alterados com sucesso!");
 
@@ -184,7 +198,7 @@ $app->get("/projects/:idproject/delete", function($idproject) {
 
     header("Location: /projects");
 
-        exit;
+    exit;
 
 });
 
@@ -197,6 +211,20 @@ $app->get("/projects/:idproject/delete", function($idproject) {
 $app->get("/tasks", function() {
 
     $tasks = Task::listAll();
+
+    $page = new Page();
+
+    $page->setTpl("tasks", [
+        "tasks" => $tasks,
+        "error" => Message::getError(),
+        "success" => Message::getSuccess()
+    ]);
+
+});
+
+$app->get("/tasks/:ordem", function($ordem) {
+
+    $tasks = Task::listAll($ordem);
 
     $page = new Page();
 
@@ -226,6 +254,8 @@ $app->post("/tasks/create", function() {
 
     $tasks->save();
 
+    Project::updateRate($_POST['idproject']);
+
     Message::setSuccess("Dados incluídos com sucesso!");
 
     header("Location: /tasks");
@@ -234,7 +264,7 @@ $app->post("/tasks/create", function() {
 
 });
 
-$app->get("/tasks/:idtask", function($idtask) {
+$app->get("/tasks/:idtask/update", function($idtask) {
 
     $tasks = new Task();
 
@@ -253,7 +283,7 @@ $app->get("/tasks/:idtask", function($idtask) {
 
 });
 
-$app->post("/tasks/:idtask", function($idtask) {
+$app->post("/tasks/:idtask/update", function($idtask) {
 
     $tasks = new Task();
 
@@ -264,6 +294,8 @@ $app->post("/tasks/:idtask", function($idtask) {
     $tasks->setData($_POST);
 
     $tasks->save();
+
+    Project::updateRate($tasks->getidproject());
 
     Message::setSuccess("Dados alterados com sucesso!");
 
@@ -282,6 +314,8 @@ $app->get("/tasks/:idtask/situation", function($idtask) {
     ($tasks->getsttask() == 0) ? $situation = 1 : $situation = 0 ;
 
     $tasks->situation($idtask, $situation);
+
+    Project::updateRate($tasks->getidproject());
 
     Message::setSuccess("Dados alterados com sucesso!");
 
@@ -315,9 +349,14 @@ $app->get("/tasks/:idtask/delete", function($idtask) {
 
 $app->get("/status", function() {
 
-    $projectslate = Project::listAllLate();
 
-    $projectsnotlate = Project::listAllNotLate();
+    (isset($_SESSION['ordemlate'])) ? $ordemlate = $_SESSION['ordemlate'] : $ordemlate = "desproject";
+
+    (isset($_SESSION['ordemnotlate'])) ? $ordemnotlate = $_SESSION['ordemnotlate'] : $ordemnotlate = "desproject";
+
+    $projectslate = Project::listAllLate($ordemlate);
+
+    $projectsnotlate = Project::listAllNotLate($ordemnotlate);
 
     $page = new Page();
 
@@ -325,6 +364,49 @@ $app->get("/status", function() {
         "projectslate" => $projectslate,
         "projectsnotlate" => $projectsnotlate
     ]);
+
+});
+
+$app->get("/status/:ordem", function($ordem) {
+
+    switch ($ordem) {
+
+        case "sordid":
+            $_SESSION['ordemlate'] = "idproject";
+            break;
+        case "sordproj":
+            $_SESSION['ordemlate'] = "desproject";
+            break;
+        case "sordini":
+            $_SESSION['ordemlate'] = "dtstart";
+            break;
+        case "sordfim":
+            $_SESSION['ordemlate'] = "dtfinish";
+            break;
+        case "sordrate":
+            $_SESSION['ordemlate'] = "rtproject";
+            break;
+        case "nordid":
+            $_SESSION['ordemnotlate'] = "idproject";
+            break;
+        case "nordproj":
+            $_SESSION['ordemnotlate'] = "desproject";
+            break;
+        case "nordini":
+            $_SESSION['ordemnotlate'] = "dtstart";
+            break;
+        case "nordfim":
+            $_SESSION['ordemnotlate'] = "dtfinish";
+            break;
+        case "nordrate":
+            $_SESSION['ordemnotlate'] = "rtproject";
+            break;
+
+    }
+
+    header("Location: /status");
+
+    exit;
 
 });
 

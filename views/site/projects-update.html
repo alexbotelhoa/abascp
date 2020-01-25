@@ -9,7 +9,7 @@
     <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="/projects">Projetos</a></li>
-        <li class="active"><a href="/projects/{$project.idproject}">Editar</a></li>
+        <li class="active"><a href="/projects/{$project.idproject}/update">Editar</a></li>
     </ol>
 </section> <!-- /.content-header -->
 
@@ -30,7 +30,7 @@
                 </div> <!-- /.box-header -->
 
                 <!-- form start -->
-                <form role="form" action="/projects/{$project.idproject}" method="post" enctype="multipart/form-data">
+                <form role="form" action="/projects/{$project.idproject}/update" method="post" enctype="multipart/form-data">
                     <div class="box-body">
                       <div class="form-group">
                         <label for="desproject">Nome Projeto</label>
