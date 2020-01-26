@@ -178,6 +178,8 @@ $app->post("/projects/:idproject/update", function($idproject) {
 
     Project::updateRate($idproject);
 
+    Project::updateLate($idproject);
+
     Message::setSuccess("Dados alterados com sucesso!");
 
     header("Location: /projects");
@@ -322,6 +324,8 @@ $app->post("/tasks/create", function() {
 
     Project::updateRate($_POST['idproject']);
 
+    Project::updateLate($_POST['idproject']);
+
     Message::setSuccess("Dados incluídos com sucesso!");
 
     header("Location: /tasks");
@@ -362,6 +366,8 @@ $app->post("/tasks/:idtask/update", function($idtask) {
     $tasks->save();
 
     Project::updateRate($tasks->getidproject());
+
+    Project::updateLate($tasks->getidproject());
 
     Message::setSuccess("Dados alterados com sucesso!");
 

@@ -100,6 +100,17 @@ class Project extends Model
 
     }
 
+    public static function updateLate($idproject)
+    {
+
+        $sql = new Sql();
+
+        $sql->select("CALL sp_late_update(:idproject)", [
+            ":idproject" => $idproject
+        ]);
+
+    }
+
 
 
   //************************************************************************************//
