@@ -19,7 +19,7 @@
 </section> <!-- /.content-header -->
 
 <!-- Main content -->
-<section class="content">
+<section class="content-header">
     <div class="row">
         <div class="col-md-12">
             <div class="box box-primary">
@@ -49,12 +49,12 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th style="width: 10px"><a href="/tasks/ordid/ordem">#</a></th>
-                            <th><a href="/tasks/ordtask/ordem">Nome Tarefa</a></th>
-                            <th><a href="/tasks/ordproj/ordem">Nome Projeto</a></th>
-                            <th><a href="/tasks/ordini/ordem">Data Incício</a></th>
-                            <th><a href="/tasks/ordfim/ordem">Data Fim</a></th>
-                            <th><a href="/tasks/ordsit/ordem">Situação</a></th>
+                            <th style="width: 10px"><a href="/order/tasks/ordid">#</a></th>
+                            <th><a href="/order/tasks/ordtask">Nome Tarefa</a></th>
+                            <th><a href="/order/tasks/ordproj">Nome Projeto</a></th>
+                            <th><a href="/order/tasks/ordini">Data Incício</a></th>
+                            <th><a href="/order/tasks/ordfim">Data Fim</a></th>
+                            <th><a href="/order/tasks/ordsit">Situação</a></th>
                             <th style="width: 140px">&nbsp;</th>
                         </tr>
                         </thead>
@@ -92,7 +92,7 @@
                     <ul class="pagination">
 
                         {loop="$pages"}
-                        <li><a href="{$value.link}">{$value.page}</a></li>
+                            <li><a href="{$value.link}">{$value.page}</a></li>
                         {/loop}
 
                     </ul>

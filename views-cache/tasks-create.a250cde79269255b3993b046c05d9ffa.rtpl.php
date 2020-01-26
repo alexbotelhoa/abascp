@@ -7,7 +7,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <ol class="breadcrumb">
-        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="/"><i class="fas fa-tachometer-alt"></i> Home</a></li>
         <li><a href="/tasks">Tarefas</a></li>
         <li class="active"><a href="/tasks/create">Cadastrar</a></li>
     </ol>

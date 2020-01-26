@@ -8,12 +8,12 @@ use Hallyz\Model;
 class Task extends Model
 {
 
-    public static function listAll($ordem)
+    public static function listAll()
     {
 
         $sql = new Sql();
 
-        return $sql->select("SELECT *, a.dtstart, a.dtfinish FROM tb_tasks a INNER JOIN tb_projects b USING(idproject) ORDER BY " . $ordem . " ASC");
+        return $sql->select("SELECT *, a.dtstart, a.dtfinish FROM tb_tasks a INNER JOIN tb_projects b USING(idproject) ORDER BY destask ASC");
 
     }
 

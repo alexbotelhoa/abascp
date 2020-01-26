@@ -19,7 +19,7 @@
 </section> <!-- /.content-header -->
 
 <!-- Main content -->
-<section class="content">
+<section class="content-header">
     <div class="row">
         <div class="col-md-12">
             <div class="box box-danger">
@@ -28,11 +28,11 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th style="width: 10px"><a href="/status/sordid/ordem">#</a></th>
-                                <th><a href="/status/sordproj/ordem">Nome Projeto</a></th>
-                                <th><a href="/status/sordini/ordem">Data Incício</a></th>
-                                <th><a href="/status/sordfim/ordem">Data Fim</a></th>
-                                <th><a href="/status/sordrate/ordem">Rate</a></th>
+                                <th style="width: 10px"><a href="/order/status/sordid">#</a></th>
+                                <th><a href="/order/status/sordproj">Nome Projeto</a></th>
+                                <th><a href="/order/status/sordini">Data Incício</a></th>
+                                <th><a href="/order/status/sordfim">Data Fim</a></th>
+                                <th><a href="/order/status/sordrate">Rate</a></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -61,7 +61,7 @@
 </section> <!-- /.content-header -->
 
 <!-- Main content -->
-<section class="content">
+<section class="content-header">
     <div class="row">
         <div class="col-md-12">
             <div class="box box-success">
@@ -70,23 +70,23 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th style="width: 10px"><a href="/status/nordid/ordem">#</a></th>
-                            <th><a href="/status/nordproj/ordem">Nome Projeto</a></th>
-                            <th><a href="/status/nordini/ordem">Data Incício</a></th>
-                            <th><a href="/status/nordfim/ordem">Data Fim</a></th>
-                            <th><a href="/status/nordrate/ordem">Rate</a></th>
+                            <th style="width: 10px"><a href="/order/status/nordid">#</a></th>
+                            <th><a href="/order/status/nordproj">Nome Projeto</a></th>
+                            <th><a href="/order/status/nordini">Data Incício</a></th>
+                            <th><a href="/order/status/nordfim">Data Fim</a></th>
+                            <th><a href="/order/status/nordrate">Rate</a></th>
                         </tr>
                         </thead>
                         <tbody>
-                        {loop="$projectsnotlate"}
-                        <tr>
-                            <td>{$value.idproject}</td>
-                            <td>{$value.desproject}</td>
-                            <td>{function="formatDate($value.dtstart)"}</td>
-                            <td>{function="formatDate($value.dtfinish)"}</td>
-                            <td>{$value.rtproject}%</td>
-                        </tr>
-                        {/loop}
+                            {loop="$projectsnotlate"}
+                                <tr>
+                                    <td>{$value.idproject}</td>
+                                    <td>{$value.desproject}</td>
+                                    <td>{function="formatDate($value.dtstart)"}</td>
+                                    <td>{function="formatDate($value.dtfinish)"}</td>
+                                    <td>{$value.rtproject}%</td>
+                                </tr>
+                            {/loop}
                         </tbody>
                     </table>
                 </div> <!-- /.box-body -->

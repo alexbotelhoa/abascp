@@ -19,7 +19,7 @@
 </section> <!-- /.content-header -->
 
 <!-- Main content -->
-<section class="content">
+<section class="content-header">
     <div class="row">
         <div class="col-md-12">
             <div class="box box-primary">
@@ -49,12 +49,12 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th style="width: 10px"><a href="/tasks/ordid">#</a></th>
-                            <th><a href="/tasks/ordtask">Nome Tarefa</a></th>
-                            <th><a href="/tasks/ordproj">Nome Projeto</a></th>
-                            <th><a href="/tasks/ordini">Data Incício</a></th>
-                            <th><a href="/tasks/ordfim">Data Fim</a></th>
-                            <th><a href="/tasks/ordsit">Situação</a></th>
+                            <th style="width: 10px"><a href="/order/tasks/ordid">#</a></th>
+                            <th><a href="/order/tasks/ordtask">Nome Tarefa</a></th>
+                            <th><a href="/order/tasks/ordproj">Nome Projeto</a></th>
+                            <th><a href="/order/tasks/ordini">Data Incício</a></th>
+                            <th><a href="/order/tasks/ordfim">Data Fim</a></th>
+                            <th><a href="/order/tasks/ordsit">Situação</a></th>
                             <th style="width: 140px">&nbsp;</th>
                         </tr>
                         </thead>
@@ -92,7 +92,7 @@
                     <ul class="pagination">
 
                         <?php $counter1=-1;  if( isset($pages) && ( is_array($pages) || $pages instanceof Traversable ) && sizeof($pages) ) foreach( $pages as $key1 => $value1 ){ $counter1++; ?>
-                        <li><a href="<?php echo htmlspecialchars( $value1["link"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["page"], ENT_COMPAT, 'UTF-8', FALSE ); ?></a></li>
+                            <li><a href="<?php echo htmlspecialchars( $value1["link"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["page"], ENT_COMPAT, 'UTF-8', FALSE ); ?></a></li>
                         <?php } ?>
 
                     </ul>

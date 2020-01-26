@@ -19,7 +19,7 @@
 </section> <!-- /.content-header -->
 
 <!-- Main content -->
-<section class="content">
+<section class="content-header">
     <div class="row">
         <div class="col-md-12">
             <div class="box box-primary">
@@ -49,12 +49,12 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th style="width: 10px"><a href="/projects/ordem/ordid">#</a></th>
-                                <th><a href="/projects/ordem/ordproj">Nome Projeto</a></th>
-                                <th><a href="/projects/ordem/ordini">Data Incício</a></th>
-                                <th><a href="/projects/ordem/ordfim">Data Fim</a></th>
-                                <th><a href="/projects/ordem/ordrate">Rate</a></th>
-                                <th><a href="/projects/ordem/ordlate">Late</a></th>
+                                <th style="width: 10px"><a href="/order/projects/ordid">#</a></th>
+                                <th><a href="/order/projects/ordproj">Nome Projeto</a></th>
+                                <th><a href="/order/projects/ordini">Data Incício</a></th>
+                                <th><a href="/order/projects/ordfim">Data Fim</a></th>
+                                <th><a href="/order/projects/ordrate">Rate</a></th>
+                                <th><a href="/order/projects/ordlate">Late</a></th>
                                 <th>Task</th>
                                 <th style="width: 140px">&nbsp;</th>
                             </tr>
@@ -82,11 +82,7 @@
                     </table>
                 </div> <!-- /.box-body -->
             </div>
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-12">
             <div class="product-pagination text-center">
                 <nav>
                     <ul class="pagination">

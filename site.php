@@ -2,6 +2,7 @@
 
 use Hallyz\Page;
 use Hallyz\Model\Message;
+use Hallyz\Model\Order;
 use Hallyz\Model\Project;
 use Hallyz\Model\Task;
 
@@ -38,6 +39,16 @@ $app->get("/", function() {
         "nrnotlates" => (int)$nrnotlates,
         "nrlates" => $nrlates
     ]);
+
+});
+
+$app->get("/order/:page/:order", function($page, $order) {
+
+    Order::getOrder($page, $order);
+
+    header("Location: /$page");
+
+    exit;
 
 });
 
@@ -98,37 +109,6 @@ $app->get("/projects", function() {
         "success" => Message::getSuccess(),
         "pages" => $pages
     ]);
-
-});
-
-$app->get("/projects/:ordem/ordem", function($ordem) {
-
-    switch ($ordem) {
-
-        case "ordid":
-            $_SESSION['ordemproject'] = "idproject";
-            break;
-        case "ordproj":
-            $_SESSION['ordemproject'] = "desproject";
-            break;
-        case "ordini":
-            $_SESSION['ordemproject'] = "dtstart";
-            break;
-        case "ordfim":
-            $_SESSION['ordemproject'] = "dtfinish";
-            break;
-        case "ordrate":
-            $_SESSION['ordemproject'] = "rtproject";
-            break;
-        case "ordlate":
-            $_SESSION['ordemproject'] = "stproject";
-            break;
-
-    }
-
-    header("Location: /projects");
-
-    exit;
 
 });
 
@@ -284,37 +264,6 @@ $app->get("/tasks", function() {
 
 });
 
-$app->get("/tasks/:ordem/ordem", function($ordem) {
-
-    switch ($ordem) {
-
-        case "ordid":
-            $_SESSION['ordemtask'] = "idtask";
-            break;
-        case "ordtask":
-            $_SESSION['ordemtask'] = "destask";
-            break;
-        case "ordproj":
-            $_SESSION['ordemtask'] = "desproject";
-            break;
-        case "ordini":
-            $_SESSION['ordemtask'] = "a.dtstart";
-            break;
-        case "ordfim":
-            $_SESSION['ordemtask'] = "a.dtfinish";
-            break;
-        case "ordsit":
-            $_SESSION['ordemtask'] = "sttask";
-            break;
-
-    }
-
-    header("Location: /tasks");
-
-    exit;
-
-});
-
 $app->get("/tasks/create", function() {
 
     $page = new Page();
@@ -446,49 +395,6 @@ $app->get("/status", function() {
         "projectslate" => $projectslate,
         "projectsnotlate" => $projectsnotlate
     ]);
-
-});
-
-$app->get("/status/:ordem", function($ordem) {
-
-    switch ($ordem) {
-
-        case "sordid":
-            $_SESSION['ordemlate'] = "idproject";
-            break;
-        case "sordproj":
-            $_SESSION['ordemlate'] = "desproject";
-            break;
-        case "sordini":
-            $_SESSION['ordemlate'] = "dtstart";
-            break;
-        case "sordfim":
-            $_SESSION['ordemlate'] = "dtfinish";
-            break;
-        case "sordrate":
-            $_SESSION['ordemlate'] = "rtproject";
-            break;
-        case "nordid":
-            $_SESSION['ordemnotlate'] = "idproject";
-            break;
-        case "nordproj":
-            $_SESSION['ordemnotlate'] = "desproject";
-            break;
-        case "nordini":
-            $_SESSION['ordemnotlate'] = "dtstart";
-            break;
-        case "nordfim":
-            $_SESSION['ordemnotlate'] = "dtfinish";
-            break;
-        case "nordrate":
-            $_SESSION['ordemnotlate'] = "rtproject";
-            break;
-
-    }
-
-    header("Location: /status");
-
-    exit;
 
 });
 
