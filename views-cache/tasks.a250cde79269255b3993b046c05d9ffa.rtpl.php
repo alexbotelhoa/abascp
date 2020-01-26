@@ -7,7 +7,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <ol class="breadcrumb">
-        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="/"><i class="fas fa-tachometer-alt"></i> Home</a></li>
         <li class="active"><a href="/tasks">Tarefas</a></li>
     </ol>
 </section> <!-- /.content-header -->
@@ -59,26 +59,25 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <?php $counter1=-1;  if( isset($tasks) && ( is_array($tasks) || $tasks instanceof Traversable ) && sizeof($tasks) ) foreach( $tasks as $key1 => $value1 ){ $counter1++; ?>
-                        <tr>
-                            <td><?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                            <td><?php echo htmlspecialchars( $value1["destask"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                            <td><?php echo htmlspecialchars( $value1["desproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                            <td><?php echo formatDate($value1["dtstart"]); ?></td>
-                            <td><?php echo formatDate($value1["dtfinish"]); ?></td>
-                            <td>
-                                <?php if( $value1["sttask"] == 0 ){ ?>
-                                    <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation" class="btn btn-success btn-xs"><i class="fa fa-folder-open"></i> Aberto </a>
-                                <?php }else{ ?>
-                                    <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation" class="btn btn-danger btn-xs"><i class="fa fa-folder"></i> Fechado</a>
-                                <?php } ?>
-                            </td>
-                            <td>
-                                <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/update" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
-                                <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
-                            </td>
-                        </tr>
-                        <?php } ?>
+                            <?php $counter1=-1;  if( isset($tasks) && ( is_array($tasks) || $tasks instanceof Traversable ) && sizeof($tasks) ) foreach( $tasks as $key1 => $value1 ){ $counter1++; ?>
+                                <tr>
+                                    <td><?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                                    <td><?php echo htmlspecialchars( $value1["destask"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                                    <td><?php echo htmlspecialchars( $value1["desproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                                    <td><?php echo formatDate($value1["dtstart"]); ?></td>
+                                    <td><?php echo formatDate($value1["dtfinish"]); ?></td>
+                                    <td>
+                                        <?php if( $value1["sttask"] == 0 ){ ?>
+                                            <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation" class="btn btn-success btn-xs"><i class="far fa-folder-open"></i> Aberto </a>
+                                        <?php }else{ ?>
+                                            <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation" class="btn btn-danger btn-xs"><i class="far fa-folder"></i> Fechado</a>
+                                        <?php } ?>
+                                    </td>
+                                    <td>
+                                        <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/update" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a><a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div> <!-- /.box-body -->

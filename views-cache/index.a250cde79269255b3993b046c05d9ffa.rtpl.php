@@ -7,9 +7,9 @@
     <div class="promo-area">
         <section class="container">
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <!-- DONUT CHART -->
+
+                <!-- STATUS DOS PROJETOS -->
+                <div class="col-md-6">
                     <div class="box box-info">
                         <div class="box-header with-border">
                             <h3 class="box-title">Status dos Projetos</h3>
@@ -22,20 +22,76 @@
 
                         <div class="box-body">
                             <canvas id="pieChart" style="height:250px"></canvas>
-                        </div> <!-- /.box-body -->
-
+                        </div>
                     </div> <!-- /.box -->
                 </div>
-                <div class="col-md-2"></div>
+
+                <!-- TAREFAS VENCENDO -->
+                <div class="col-md-6">
+                    <div class="box box-info">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Tarefas Antigas</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+
+                            <div class="box-body">
+                                <div class="table-responsive">
+                                    <table class="table no-margin">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nome Tarefa</th>
+                                                <th>Data Fim</th>
+                                                <th>Situação</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php $counter1=-1;  if( isset($tasks) && ( is_array($tasks) || $tasks instanceof Traversable ) && sizeof($tasks) ) foreach( $tasks as $key1 => $value1 ){ $counter1++; ?>
+                                                <tr>
+                                                    <td><?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                                                    <td><?php echo htmlspecialchars( $value1["destask"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                                                    <td><div class="sparkbar" data-color="#00a65a" data-height="20"><?php echo formatDate($value1["dtfinish"]); ?></div></td>
+                                                    <td>
+                                                        <?php if( $value1["sttask"] == 0 ){ ?>
+                                                        <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation" class="btn btn-success btn-xs"><i class="fa fa-folder-open"></i> Aberto </a>
+                                                        <?php }else{ ?>
+                                                        <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation" class="btn btn-danger btn-xs"><i class="fa fa-folder"></i> Fechado</a>
+                                                        <?php } ?>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- /.box -->
+                </div>
             </div>
         </section>
-    </div> <!-- End promo area -->
+    </div> <!-- /.promo area -->
+
+
+
+
+
+
+
+
+
 
     <div class="brands-area">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
                     <div class="brand-wrapper">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Últimos 6 Projetos</h3>
+                        </div>
+
                         <div class="brand-list">
 
                             <?php $counter1=-1;  if( isset($projects) && ( is_array($projects) || $projects instanceof Traversable ) && sizeof($projects) ) foreach( $projects as $key1 => $value1 ){ $counter1++; ?>
@@ -91,13 +147,13 @@
                     value: $projectnotlate,
                     color: "#00a65a",
                     highlight: "#00a65a",
-                    label: "Não Atrasado"
+                    label: "Não Atrasado(s)"
                 },
                 {
                     value: $projectlate,
                     color: "#f56954",
                     highlight: "#f56954",
-                    label: "Atrasado"
+                    label: "Atrasado(s)"
                 }
             ];
             var pieOptions = {

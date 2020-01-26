@@ -36,7 +36,7 @@ class Project extends Model
 
     }
 
-    public static function listSlide()
+    public static function listProjectIndex()
     {
 
         $sql = new Sql();

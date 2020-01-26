@@ -18,9 +18,11 @@ use Hallyz\Model\Task;
 
 $app->get("/", function() {
 
-    $projects = Project::listSlide();
+    $projects = Project::listProjectIndex();
 
     $projectslate = Project::listAllLate();
+
+    $task = Task::listTaskIndex();
 
     $nrlates = count($projectslate);
 
@@ -32,25 +34,34 @@ $app->get("/", function() {
 
     $page->setTpl("index", [
         "projects" => $projects,
+        "tasks" => $task,
         "nrnotlates" => (int)$nrnotlates,
         "nrlates" => $nrlates
     ]);
 
 });
 
-$app->get("/45-98413-6611", function() {
+$app->get("/about", function() {
 
     $page = new Page();
 
-    $page->setTpl("index");
+    $page->setTpl("about");
+
+});
+
+$app->get("/45-98413-6611", function() {
+
+    header("Location: /");
+
+    exit;
 
 });
 
 $app->get("/newsletter", function() {
 
-    $page = new Page();
+    header("Location: /");
 
-    $page->setTpl("index");
+    exit;
 
 });
 
@@ -90,7 +101,7 @@ $app->get("/projects", function() {
 
 });
 
-$app->get("/projects/:ordem", function($ordem) {
+$app->get("/projects/:ordem/ordem", function($ordem) {
 
     switch ($ordem) {
 
@@ -273,7 +284,7 @@ $app->get("/tasks", function() {
 
 });
 
-$app->get("/tasks/:ordem", function($ordem) {
+$app->get("/tasks/:ordem/ordem", function($ordem) {
 
     switch ($ordem) {
 

@@ -7,7 +7,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <ol class="breadcrumb">
-        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="/"><i class="fas fa-tachometer-alt"></i> Home</a></li>
         <li class="active"><a href="/projects">Projetos</a></li>
     </ol>
 </section> <!-- /.content-header -->
@@ -49,12 +49,12 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th style="width: 10px"><a href="/projects/ordid">#</a></th>
-                                <th><a href="/projects/ordproj">Nome Projeto</a></th>
-                                <th><a href="/projects/ordini">Data Incício</a></th>
-                                <th><a href="/projects/ordfim">Data Fim</a></th>
-                                <th><a href="/projects/ordrate">Rate</a></th>
-                                <th><a href="/projects/ordlate">Late</a></th>
+                                <th style="width: 10px"><a href="/projects/ordem/ordid">#</a></th>
+                                <th><a href="/projects/ordem/ordproj">Nome Projeto</a></th>
+                                <th><a href="/projects/ordem/ordini">Data Incício</a></th>
+                                <th><a href="/projects/ordem/ordfim">Data Fim</a></th>
+                                <th><a href="/projects/ordem/ordrate">Rate</a></th>
+                                <th><a href="/projects/ordem/ordlate">Late</a></th>
                                 <th>Task</th>
                                 <th style="width: 140px">&nbsp;</th>
                             </tr>
@@ -74,8 +74,7 @@
                                     <?php } ?>
                                     <td align="center"><?php echo qtdTask($value1["idproject"]); ?></td>
                                     <td>
-                                        <a href="/projects/<?php echo htmlspecialchars( $value1["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/update" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
-                                        <a href="/projects/<?php echo htmlspecialchars( $value1["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
+                                        <a href="/projects/<?php echo htmlspecialchars( $value1["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/update" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a><a href="/projects/<?php echo htmlspecialchars( $value1["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
                                     </td>
                                 </tr>
                             <?php } ?>

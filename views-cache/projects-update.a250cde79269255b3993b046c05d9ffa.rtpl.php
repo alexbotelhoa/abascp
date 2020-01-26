@@ -7,7 +7,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <ol class="breadcrumb">
-        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="/"><i class="fas fa-tachometer-alt"></i> Home</a></li>
         <li><a href="/projects">Projetos</a></li>
         <li class="active"><a href="/projects/<?php echo htmlspecialchars( $project["idproject"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/update">Editar</a></li>
     </ol>

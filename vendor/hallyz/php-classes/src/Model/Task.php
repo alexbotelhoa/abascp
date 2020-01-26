@@ -17,6 +17,31 @@ class Task extends Model
 
     }
 
+    public static function listTaskIndex()
+    {
+
+        $sql = new Sql();
+
+        return $sql->select("SELECT * FROM tb_tasks WHERE sttask = 0 ORDER BY dtfinish ASC LIMIT 6");
+
+    }
+
+    public static function checkList($list)
+    {
+
+        foreach ($list as &$row) {
+
+            $p = new Task();
+
+            $p->setData($row);
+
+            $row = $p->getValues();
+
+        }
+
+        return $list;
+
+    }
 
 
   //************************************************************************************//
@@ -89,23 +114,6 @@ class Task extends Model
     {
 
         return parent::getValues();
-
-    }
-
-    public static function checkList($list)
-    {
-
-        foreach ($list as &$row) {
-
-            $p = new Task();
-
-            $p->setData($row);
-
-            $row = $p->getValues();
-
-        }
-
-        return $list;
 
     }
 

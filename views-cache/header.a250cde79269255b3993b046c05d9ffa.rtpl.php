@@ -18,7 +18,7 @@
 	<script src="/res/site/bootstrap/js/bootstrap.min.js"></script>
 
 	<!-- Font Awesome -->
-	<link rel="stylesheet" href="/res/site/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/res/site/css/all.min.css">
 
 	<!-- Theme style -->
 	<link rel="stylesheet" href="/res/site/dist/css/AdminLTE.min.css">
@@ -82,7 +82,7 @@
 			<div class="row">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="sr-only">Toggle navigation</span>
+						<span class="sr-only">Alternar Navegação</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
@@ -95,6 +95,7 @@
 						<li><a href="/projects">Projetos</a></li>
 						<li><a href="/tasks">Tarefas</a></li>
 						<li><a href="/status">Status</a></li>
+						<li><a href="/about">Sobre</a></li>
 					</ul>
 				</div>
 			</div>

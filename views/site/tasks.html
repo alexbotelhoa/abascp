@@ -7,7 +7,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <ol class="breadcrumb">
-        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="/"><i class="fas fa-tachometer-alt"></i> Home</a></li>
         <li class="active"><a href="/tasks">Tarefas</a></li>
     </ol>
 </section> <!-- /.content-header -->
@@ -49,36 +49,35 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th style="width: 10px"><a href="/tasks/ordid">#</a></th>
-                            <th><a href="/tasks/ordtask">Nome Tarefa</a></th>
-                            <th><a href="/tasks/ordproj">Nome Projeto</a></th>
-                            <th><a href="/tasks/ordini">Data Incício</a></th>
-                            <th><a href="/tasks/ordfim">Data Fim</a></th>
-                            <th><a href="/tasks/ordsit">Situação</a></th>
+                            <th style="width: 10px"><a href="/tasks/ordid/ordem">#</a></th>
+                            <th><a href="/tasks/ordtask/ordem">Nome Tarefa</a></th>
+                            <th><a href="/tasks/ordproj/ordem">Nome Projeto</a></th>
+                            <th><a href="/tasks/ordini/ordem">Data Incício</a></th>
+                            <th><a href="/tasks/ordfim/ordem">Data Fim</a></th>
+                            <th><a href="/tasks/ordsit/ordem">Situação</a></th>
                             <th style="width: 140px">&nbsp;</th>
                         </tr>
                         </thead>
                         <tbody>
-                        {loop="$tasks"}
-                        <tr>
-                            <td>{$value.idtask}</td>
-                            <td>{$value.destask}</td>
-                            <td>{$value.desproject}</td>
-                            <td>{function="formatDate($value.dtstart)"}</td>
-                            <td>{function="formatDate($value.dtfinish)"}</td>
-                            <td>
-                                {if="$value.sttask == 0"}
-                                    <a href="/tasks/{$value.idtask}/situation" class="btn btn-success btn-xs"><i class="fa fa-folder-open"></i> Aberto </a>
-                                {else}
-                                    <a href="/tasks/{$value.idtask}/situation" class="btn btn-danger btn-xs"><i class="fa fa-folder"></i> Fechado</a>
-                                {/if}
-                            </td>
-                            <td>
-                                <a href="/tasks/{$value.idtask}/update" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a>
-                                <a href="/tasks/{$value.idtask}/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
-                            </td>
-                        </tr>
-                        {/loop}
+                            {loop="$tasks"}
+                                <tr>
+                                    <td>{$value.idtask}</td>
+                                    <td>{$value.destask}</td>
+                                    <td>{$value.desproject}</td>
+                                    <td>{function="formatDate($value.dtstart)"}</td>
+                                    <td>{function="formatDate($value.dtfinish)"}</td>
+                                    <td>
+                                        {if="$value.sttask == 0"}
+                                            <a href="/tasks/{$value.idtask}/situation" class="btn btn-success btn-xs"><i class="far fa-folder-open"></i> Aberto </a>
+                                        {else}
+                                            <a href="/tasks/{$value.idtask}/situation" class="btn btn-danger btn-xs"><i class="far fa-folder"></i> Fechado</a>
+                                        {/if}
+                                    </td>
+                                    <td>
+                                        <a href="/tasks/{$value.idtask}/update" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a><a href="/tasks/{$value.idtask}/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
+                                    </td>
+                                </tr>
+                            {/loop}
                         </tbody>
                     </table>
                 </div> <!-- /.box-body -->
