@@ -4,75 +4,74 @@
 ####################################################################################################################
 -->
 
-    <div class="promo-area">
-        <section class="container">
-            <div class="row">
+    <section class="content-header">
+        <div class="row">
 
-                <!-- STATUS DOS PROJETOS -->
-                <div class="col-md-6">
-                    <div class="box box-info">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Status dos Projetos</h3>
-                            <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                            </div>
+            <!-- STATUS DOS PROJETOS -->
+            <div class="col-sm-6">
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Status dos Projetos</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                         </div>
+                    </div>
 
-                        <div class="box-body">
-                            <canvas id="pieChart" style="height:250px"></canvas>
-                        </div>
-                    </div> <!-- /.box -->
-                </div>
-
-                <!-- TAREFAS VENCENDO -->
-                <div class="col-md-6">
-                    <div class="box box-info">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Tarefas Antigas</h3>
-                            <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                            </div>
-
-                            <div class="box-body">
-                                <div class="table-responsive">
-                                    <table class="table no-margin">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Nome Tarefa</th>
-                                                <th>Data Fim</th>
-                                                <th>Situação</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php $counter1=-1;  if( isset($tasks) && ( is_array($tasks) || $tasks instanceof Traversable ) && sizeof($tasks) ) foreach( $tasks as $key1 => $value1 ){ $counter1++; ?>
-                                                <tr>
-                                                    <td><?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                                                    <td><?php echo htmlspecialchars( $value1["destask"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                                                    <td><div class="sparkbar" data-color="#00a65a" data-height="20"><?php echo formatDate($value1["dtfinish"]); ?></div></td>
-                                                    <td>
-                                                        <?php if( $value1["sttask"] == 0 ){ ?>
-                                                        <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation" class="btn btn-success btn-xs"><i class="fa fa-folder-open"></i> Aberto </a>
-                                                        <?php }else{ ?>
-                                                        <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation" class="btn btn-danger btn-xs"><i class="fa fa-folder"></i> Fechado</a>
-                                                        <?php } ?>
-                                                    </td>
-                                                </tr>
-                                            <?php } ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- /.box -->
-                </div>
+                    <div class="box-body">
+                        <canvas id="pieChart" style="height:250px"></canvas>
+                    </div>
+                </div> <!-- /.box -->
             </div>
-        </section>
-    </div> <!-- /.promo area -->
+
+            <!-- TAREFAS ANTIGAS -->
+            <div class="col-sm-6">
+                <div class="box box-info">
+
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Tarefas Antigas</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div> <!-- /.box-header -->
+
+                    <div class="box-body">
+                        <div class="table-responsive">
+                            <table class="table no-margin">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nome Tarefa</th>
+                                    <th>Data Fim</th>
+                                    <th>Situação</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <?php $counter1=-1;  if( isset($tasks) && ( is_array($tasks) || $tasks instanceof Traversable ) && sizeof($tasks) ) foreach( $tasks as $key1 => $value1 ){ $counter1++; ?>
+                                        <tr>
+                                            <td><?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                                            <td><?php echo htmlspecialchars( $value1["destask"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                                            <td><div class="sparkbar" data-color="#00a65a" data-height="20"><?php echo formatDate($value1["dtfinish"]); ?></div></td>
+                                            <td>
+                                                <?php if( $value1["sttask"] == 0 ){ ?>
+                                                <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation" class="btn btn-success btn-xs"><i class="fa fa-folder-open"></i> Aberto </a>
+                                                <?php }else{ ?>
+                                                <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation" class="btn btn-danger btn-xs"><i class="fa fa-folder"></i> Fechado</a>
+                                                <?php } ?>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> <!-- /.box-body -->
+
+                </div> <!-- /.box -->
+            </div> <!-- /.col -->
+
+        </div>
+    </section>
 
 
 

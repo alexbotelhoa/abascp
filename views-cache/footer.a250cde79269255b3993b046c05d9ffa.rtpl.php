@@ -31,6 +31,7 @@
                             <li><a href="/">Home</a></li>
                             <li><a href="/projects">Projetos</a></li>
                             <li><a href="/tasks">Tarefas</a></li>
+                            <li><a href="/status">Status</a></li>
                             <li><a href="/about">Sobre</a></li>
                         </ul>
                     </div>
@@ -75,6 +76,9 @@
 
         <!-- Latest jQuery form server -->
         <script src="https://code.jquery.com/jquery.min.js"></script>
+
+        <!-- Bootstrap 3.3.6 -->
+        <script src="/res/site/bootstrap/js/bootstrap.min.js"></script>
 
         <!-- Bootstrap JS form CDN -->
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>

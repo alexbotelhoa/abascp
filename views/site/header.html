@@ -14,21 +14,11 @@
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="/res/site/css/bootstrap.min.css">
 
-	<!-- Bootstrap 3.3.6 -->
-	<script src="/res/site/bootstrap/js/bootstrap.min.js"></script>
-
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="/res/site/css/all.min.css">
 
 	<!-- Theme style -->
 	<link rel="stylesheet" href="/res/site/dist/css/AdminLTE.min.css">
-
-	<!-- AdminLTE Skins. Choose a skin from the css/skins
-		 folder instead of downloading all of them to reduce the load. -->
-	<link rel="stylesheet" href="/res/site/dist/css/skins/_all-skins.min.css">
-
-	<!-- Ionicons -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="/res/site/css/owl.carousel.css">
@@ -68,7 +58,7 @@
 	<div class="site-branding-area">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-6">
+				<div class="col-md-12">
 					<div class="logo">
 						<h1><a href="/"><img src="/res/site/img/logo.png"></a></h1>
 					</div>
