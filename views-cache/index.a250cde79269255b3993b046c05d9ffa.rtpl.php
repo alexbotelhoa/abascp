@@ -4,11 +4,11 @@
 ####################################################################################################################
 -->
 
-    <section class="content-header">
+    <section class="container">
         <div class="row">
 
             <!-- STATUS DOS PROJETOS -->
-            <div class="col-sm-6">
+            <div class="col-md-6 col-xs-12">
                 <div class="box box-info">
                     <div class="box-header with-border">
                         <h3 class="box-title">Status dos Projetos</h3>
@@ -25,7 +25,7 @@
             </div>
 
             <!-- TAREFAS ANTIGAS -->
-            <div class="col-sm-6">
+            <div class="col-md-6 col-xs-12">
                 <div class="box box-info">
 
                     <div class="box-header with-border">
