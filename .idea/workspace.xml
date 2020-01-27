@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="341db028-ffb8-4d86-ad7b-3eba2c2441d7" name="Default" comment="Melhorias no Index">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res/site/dist/js/demo.js" afterPath="" />
+    <list default="true" id="341db028-ffb8-4d86-ad7b-3eba2c2441d7" name="Default" comment="Algumas pequenas melhorias&#10;Finalização da documentação">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/site/css/responsive.css" afterPath="$PROJECT_DIR$/res/site/css/responsive.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views-cache/about.a250cde79269255b3993b046c05d9ffa.rtpl.php" afterPath="$PROJECT_DIR$/views-cache/about.a250cde79269255b3993b046c05d9ffa.rtpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views-cache/footer.a250cde79269255b3993b046c05d9ffa.rtpl.php" afterPath="$PROJECT_DIR$/views-cache/footer.a250cde79269255b3993b046c05d9ffa.rtpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views-cache/header.a250cde79269255b3993b046c05d9ffa.rtpl.php" afterPath="$PROJECT_DIR$/views-cache/header.a250cde79269255b3993b046c05d9ffa.rtpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views-cache/projects-details.a250cde79269255b3993b046c05d9ffa.rtpl.php" afterPath="$PROJECT_DIR$/views-cache/projects-details.a250cde79269255b3993b046c05d9ffa.rtpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/site/about.html" afterPath="$PROJECT_DIR$/views/site/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/site/footer.html" afterPath="$PROJECT_DIR$/views/site/footer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/site/header.html" afterPath="$PROJECT_DIR$/views/site/header.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -70,7 +60,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="site.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="site.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/site.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
@@ -78,6 +68,19 @@
               <folding>
                 <element signature="e#7#23#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="595">
+                <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -182,7 +185,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/res/admin/index.html" />
         <option value="$PROJECT_DIR$/res/admin/build/less/control-sidebar.less" />
         <option value="$PROJECT_DIR$/../ecommerce/res/admin/pages/charts/chartjs.html" />
         <option value="$PROJECT_DIR$/res/admin/build/less/sidebar.less" />
@@ -233,6 +235,7 @@
         <option value="$PROJECT_DIR$/views/site/footer.html" />
         <option value="$PROJECT_DIR$/views/site/about.html" />
         <option value="$PROJECT_DIR$/site.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -322,7 +325,7 @@
       <workItem from="1579792689889" duration="24585000" />
       <workItem from="1579822715345" duration="19779000" />
       <workItem from="1579894301239" duration="76659000" />
-      <workItem from="1580042006440" duration="39514000" />
+      <workItem from="1580042006440" duration="39631000" />
     </task>
     <task id="LOCAL-00001" summary="Logo">
       <created>1579822745710</created>
@@ -401,11 +404,18 @@
       <option name="project" value="LOCAL" />
       <updated>1580062967817</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Algumas pequenas melhorias&#10;Finalização da documentação">
+      <created>1580132803606</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1580132803606</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167505000" />
+    <option name="totallyTimeSpent" value="167622000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1913" y="0" width="1432" height="1047" extended-state="0" />
@@ -471,20 +481,14 @@
     <MESSAGE value="Correção no nos links de CRIAÇÃO&#10;Correção nos links para ordenação&#10;Upgrade no Font Awesome" />
     <MESSAGE value="Correção na Classe Project allList()" />
     <MESSAGE value="Melhorias no Index" />
-    <option name="LAST_COMMIT_MESSAGE" value="Melhorias no Index" />
+    <MESSAGE value="Algumas pequenas melhorias&#10;Finalização da documentação" />
+    <option name="LAST_COMMIT_MESSAGE" value="Algumas pequenas melhorias&#10;Finalização da documentação" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../ecommerce/views/site/category.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="50" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../ecommerce/vendor/hcodebr/php-classes/src/Model/Product.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
@@ -931,6 +935,17 @@
           <folding>
             <element signature="e#7#23#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="595">
+            <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

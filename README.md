@@ -1,8 +1,5 @@
-# SCP
-Sistema de Controle de Projetos
-
-
-Sistema de Controle de Projetos Versão 1.0.0 - Documentação
+# Sistema de Controle de Projetos - SCP
+Versão 1.0.0 - Documentação
 
 Geral - O sistema foi batizado geréricamente de Sistema de Controle de Projetos. Todo o sistema foi trabalhado para ser responsivo à todas as plataformas de visualização, como Desktop, Tablets e Celulares. O sistema está publicado na web utilizando o recurso Lightsail da Amazon, para haver visualização do sistema em funcionamento. O código fonte do sistema encontra-se publicado no meu GitHub (https://github.com/alexbotelhoa) para visualizações.
 
