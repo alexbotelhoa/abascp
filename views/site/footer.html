@@ -58,7 +58,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="copyright">
-                        <p>&copy; 2019 - By Alex Botelho - <a href="https://www.linkedin.com/in/alex-botelho-almeida/" target="_blank">alex-botelho-almeida</a> <i class="fab fa-linkedin-in"></i></p>
+                        <p>&copy; 2020 - By Alex Botelho - <a href="https://www.linkedin.com/in/alex-botelho-almeida/" target="_blank">alex-botelho-almeida</a> <i class="fab fa-linkedin-in"></i></p>
                     </div>
                 </div>
             </div>
