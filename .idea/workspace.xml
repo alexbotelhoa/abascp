@@ -5,8 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site.php" afterPath="$PROJECT_DIR$/site.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Order.php" afterPath="$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Order.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Project.php" afterPath="$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Project.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Task.php" afterPath="$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Task.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,8 +48,8 @@
       <file leaf-file-name="site.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/site.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="591">
-              <caret line="63" column="4" lean-forward="false" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
+            <state relative-caret-position="254">
+              <caret line="392" column="54" lean-forward="true" selection-start-line="392" selection-start-column="54" selection-end-line="392" selection-end-column="54" />
               <folding>
                 <element signature="e#7#23#0#PHP" expanded="true" />
               </folding>
@@ -62,8 +60,8 @@
       <file leaf-file-name="Order.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Order.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="49" lean-forward="false" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+            <state relative-caret-position="969">
+              <caret line="57" column="42" lean-forward="false" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -72,32 +70,32 @@
       <file leaf-file-name="Project.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Project.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="34" column="102" lean-forward="true" selection-start-line="34" selection-start-column="102" selection-end-line="34" selection-end-column="102" />
+            <state relative-caret-position="370">
+              <caret line="25" column="102" lean-forward="true" selection-start-line="25" selection-start-column="102" selection-end-line="25" selection-end-column="102" />
               <folding>
                 <element signature="e#32#50#0#PHP" expanded="true" />
-                <marker date="1580139534812" expanded="true" signature="201:235" ph="SELECT * FRO... tb_projects" />
-                <marker date="1580139534812" expanded="true" signature="201:236" ph="SELECT * FRO... tb_projects" />
-                <marker date="1580139534812" expanded="true" signature="201:250" ph="SELECT * FRO... tb_projects" />
-                <marker date="1580139534812" expanded="true" signature="387:441" ph="SELECT * FRO... tb_projects" />
-                <marker date="1580139534812" expanded="true" signature="387:442" ph="SELECT * FRO... tb_projects" />
-                <marker date="1580139534812" expanded="true" signature="387:451" ph="SELECT * FRO... tb_projects" />
-                <marker date="1580139534812" expanded="true" signature="387:458" ph="SELECT * FRO... tb_projects" />
-                <marker date="1580139534812" expanded="true" signature="387:459" ph="SELECT * FRO... tb_projects" />
-                <marker date="1580139534812" expanded="true" signature="596:650" ph="SELECT * FRO... tb_projects" />
-                <marker date="1580139534812" expanded="true" signature="596:651" ph="SELECT * FRO... tb_projects" />
-                <marker date="1580139534812" expanded="true" signature="596:661" ph="SELECT * FRO... tb_projects" />
-                <marker date="1580139534812" expanded="true" signature="787:836" ph="SELECT * FRO... tb_projects" />
-                <marker date="1580139534812" expanded="true" signature="787:844" ph="SELECT * FRO... tb_projects" />
-                <marker date="1580139534812" expanded="true" signature="968:1019" ph="SELECT * FRO... tb_tasks" />
-                <marker date="1580139534812" expanded="true" signature="1212:1735" ph="SELECT ( SEL... tb_projects" />
-                <marker date="1580139534812" expanded="true" signature="1258:1407" ph="SELECT count... tb_tasks" />
-                <marker date="1580139534812" expanded="true" signature="1473:1622" ph="SELECT count... tb_tasks" />
-                <marker date="1580139534812" expanded="true" signature="3448:3502" ph="SELECT * FRO... tb_projects" />
-                <marker date="1580139534812" expanded="true" signature="3737:3789" ph="DELETE FROM " />
-                <marker date="1580139534812" expanded="true" signature="4383:4441" ph="SELECT * FRO... tb_projects" />
-                <marker date="1580139534812" expanded="true" signature="4383:4478" ph="SELECT * FRO... tb_projects" />
-                <marker date="1580139534812" expanded="true" signature="4383:4505" ph="SELECT SQL_C... tb_projects" />
+                <marker date="1580144651167" expanded="true" signature="201:235" ph="SELECT * FRO... tb_projects" />
+                <marker date="1580144651167" expanded="true" signature="201:236" ph="SELECT * FRO... tb_projects" />
+                <marker date="1580144651167" expanded="true" signature="201:250" ph="SELECT * FRO... tb_projects" />
+                <marker date="1580144651167" expanded="true" signature="387:441" ph="SELECT * FRO... tb_projects" />
+                <marker date="1580144651167" expanded="true" signature="387:442" ph="SELECT * FRO... tb_projects" />
+                <marker date="1580144651167" expanded="true" signature="387:451" ph="SELECT * FRO... tb_projects" />
+                <marker date="1580144651167" expanded="true" signature="387:458" ph="SELECT * FRO... tb_projects" />
+                <marker date="1580144651167" expanded="true" signature="387:459" ph="SELECT * FRO... tb_projects" />
+                <marker date="1580144651167" expanded="true" signature="596:650" ph="SELECT * FRO... tb_projects" />
+                <marker date="1580144651167" expanded="true" signature="596:651" ph="SELECT * FRO... tb_projects" />
+                <marker date="1580144651167" expanded="true" signature="596:661" ph="SELECT * FRO... tb_projects" />
+                <marker date="1580144651167" expanded="true" signature="787:836" ph="SELECT * FRO... tb_projects" />
+                <marker date="1580144651167" expanded="true" signature="787:844" ph="SELECT * FRO... tb_projects" />
+                <marker date="1580144651167" expanded="true" signature="968:1019" ph="SELECT * FRO... tb_tasks" />
+                <marker date="1580144651167" expanded="true" signature="1212:1735" ph="SELECT ( SEL... tb_projects" />
+                <marker date="1580144651167" expanded="true" signature="1258:1407" ph="SELECT count... tb_tasks" />
+                <marker date="1580144651167" expanded="true" signature="1473:1622" ph="SELECT count... tb_tasks" />
+                <marker date="1580144651167" expanded="true" signature="3448:3502" ph="SELECT * FRO... tb_projects" />
+                <marker date="1580144651167" expanded="true" signature="3737:3789" ph="DELETE FROM " />
+                <marker date="1580144651167" expanded="true" signature="4383:4441" ph="SELECT * FRO... tb_projects" />
+                <marker date="1580144651167" expanded="true" signature="4383:4478" ph="SELECT * FRO... tb_projects" />
+                <marker date="1580144651167" expanded="true" signature="4383:4505" ph="SELECT SQL_C... tb_projects" />
               </folding>
             </state>
           </provider>
@@ -150,7 +148,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.alert</find>
       <find>left</find>
       <find>alert</find>
       <find>border-top</find>
@@ -180,6 +177,7 @@
       <find>orderproject</find>
       <find>ordem</find>
       <find>order</find>
+      <find>SortLateByOrder</find>
     </findStrings>
     <replaceStrings>
       <replace>Mais informações</replace>
@@ -243,10 +241,10 @@
         <option value="$PROJECT_DIR$/views/site/about.html" />
         <option value="$PROJECT_DIR$/views/site/index.html" />
         <option value="$PROJECT_DIR$/views/site/tasks.html" />
-        <option value="$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Order.php" />
         <option value="$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Task.php" />
         <option value="$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Project.php" />
         <option value="$PROJECT_DIR$/site.php" />
+        <option value="$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Order.php" />
       </list>
     </option>
   </component>
@@ -336,7 +334,7 @@
       <workItem from="1579792689889" duration="24585000" />
       <workItem from="1579822715345" duration="19779000" />
       <workItem from="1579894301239" duration="76659000" />
-      <workItem from="1580042006440" duration="49380000" />
+      <workItem from="1580042006440" duration="52432000" />
     </task>
     <task id="LOCAL-00001" summary="Logo">
       <created>1579822745710</created>
@@ -457,11 +455,18 @@
       <option name="project" value="LOCAL" />
       <updated>1580135534664</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Finalizado a Versão 1.0.0">
+      <created>1580143254734</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1580143254734</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177371000" />
+    <option name="totallyTimeSpent" value="180423000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1913" y="0" width="1432" height="1047" extended-state="0" />
@@ -533,7 +538,8 @@
     <MESSAGE value="Ajustes no Index" />
     <MESSAGE value="Refino" />
     <MESSAGE value="Ajustes na função de mudanaça de 'Situação' da tarefa" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajustes na função de mudanaça de 'Situação' da tarefa" />
+    <MESSAGE value="Finalizado a Versão 1.0.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalizado a Versão 1.0.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -956,48 +962,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Project.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="34" column="102" lean-forward="true" selection-start-line="34" selection-start-column="102" selection-end-line="34" selection-end-column="102" />
+        <state relative-caret-position="370">
+          <caret line="25" column="102" lean-forward="true" selection-start-line="25" selection-start-column="102" selection-end-line="25" selection-end-column="102" />
           <folding>
             <element signature="e#32#50#0#PHP" expanded="true" />
-            <marker date="1580139534812" expanded="true" signature="201:235" ph="SELECT * FRO... tb_projects" />
-            <marker date="1580139534812" expanded="true" signature="201:236" ph="SELECT * FRO... tb_projects" />
-            <marker date="1580139534812" expanded="true" signature="201:250" ph="SELECT * FRO... tb_projects" />
-            <marker date="1580139534812" expanded="true" signature="387:441" ph="SELECT * FRO... tb_projects" />
-            <marker date="1580139534812" expanded="true" signature="387:442" ph="SELECT * FRO... tb_projects" />
-            <marker date="1580139534812" expanded="true" signature="387:451" ph="SELECT * FRO... tb_projects" />
-            <marker date="1580139534812" expanded="true" signature="387:458" ph="SELECT * FRO... tb_projects" />
-            <marker date="1580139534812" expanded="true" signature="387:459" ph="SELECT * FRO... tb_projects" />
-            <marker date="1580139534812" expanded="true" signature="596:650" ph="SELECT * FRO... tb_projects" />
-            <marker date="1580139534812" expanded="true" signature="596:651" ph="SELECT * FRO... tb_projects" />
-            <marker date="1580139534812" expanded="true" signature="596:661" ph="SELECT * FRO... tb_projects" />
-            <marker date="1580139534812" expanded="true" signature="787:836" ph="SELECT * FRO... tb_projects" />
-            <marker date="1580139534812" expanded="true" signature="787:844" ph="SELECT * FRO... tb_projects" />
-            <marker date="1580139534812" expanded="true" signature="968:1019" ph="SELECT * FRO... tb_tasks" />
-            <marker date="1580139534812" expanded="true" signature="1212:1735" ph="SELECT ( SEL... tb_projects" />
-            <marker date="1580139534812" expanded="true" signature="1258:1407" ph="SELECT count... tb_tasks" />
-            <marker date="1580139534812" expanded="true" signature="1473:1622" ph="SELECT count... tb_tasks" />
-            <marker date="1580139534812" expanded="true" signature="3448:3502" ph="SELECT * FRO... tb_projects" />
-            <marker date="1580139534812" expanded="true" signature="3737:3789" ph="DELETE FROM " />
-            <marker date="1580139534812" expanded="true" signature="4383:4441" ph="SELECT * FRO... tb_projects" />
-            <marker date="1580139534812" expanded="true" signature="4383:4478" ph="SELECT * FRO... tb_projects" />
-            <marker date="1580139534812" expanded="true" signature="4383:4505" ph="SELECT SQL_C... tb_projects" />
+            <marker date="1580144651167" expanded="true" signature="201:235" ph="SELECT * FRO... tb_projects" />
+            <marker date="1580144651167" expanded="true" signature="201:236" ph="SELECT * FRO... tb_projects" />
+            <marker date="1580144651167" expanded="true" signature="201:250" ph="SELECT * FRO... tb_projects" />
+            <marker date="1580144651167" expanded="true" signature="387:441" ph="SELECT * FRO... tb_projects" />
+            <marker date="1580144651167" expanded="true" signature="387:442" ph="SELECT * FRO... tb_projects" />
+            <marker date="1580144651167" expanded="true" signature="387:451" ph="SELECT * FRO... tb_projects" />
+            <marker date="1580144651167" expanded="true" signature="387:458" ph="SELECT * FRO... tb_projects" />
+            <marker date="1580144651167" expanded="true" signature="387:459" ph="SELECT * FRO... tb_projects" />
+            <marker date="1580144651167" expanded="true" signature="596:650" ph="SELECT * FRO... tb_projects" />
+            <marker date="1580144651167" expanded="true" signature="596:651" ph="SELECT * FRO... tb_projects" />
+            <marker date="1580144651167" expanded="true" signature="596:661" ph="SELECT * FRO... tb_projects" />
+            <marker date="1580144651167" expanded="true" signature="787:836" ph="SELECT * FRO... tb_projects" />
+            <marker date="1580144651167" expanded="true" signature="787:844" ph="SELECT * FRO... tb_projects" />
+            <marker date="1580144651167" expanded="true" signature="968:1019" ph="SELECT * FRO... tb_tasks" />
+            <marker date="1580144651167" expanded="true" signature="1212:1735" ph="SELECT ( SEL... tb_projects" />
+            <marker date="1580144651167" expanded="true" signature="1258:1407" ph="SELECT count... tb_tasks" />
+            <marker date="1580144651167" expanded="true" signature="1473:1622" ph="SELECT count... tb_tasks" />
+            <marker date="1580144651167" expanded="true" signature="3448:3502" ph="SELECT * FRO... tb_projects" />
+            <marker date="1580144651167" expanded="true" signature="3737:3789" ph="DELETE FROM " />
+            <marker date="1580144651167" expanded="true" signature="4383:4441" ph="SELECT * FRO... tb_projects" />
+            <marker date="1580144651167" expanded="true" signature="4383:4478" ph="SELECT * FRO... tb_projects" />
+            <marker date="1580144651167" expanded="true" signature="4383:4505" ph="SELECT SQL_C... tb_projects" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Order.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="49" lean-forward="false" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+        <state relative-caret-position="969">
+          <caret line="57" column="42" lean-forward="false" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/site.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="63" column="4" lean-forward="false" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
+        <state relative-caret-position="254">
+          <caret line="392" column="54" lean-forward="true" selection-start-line="392" selection-start-column="54" selection-end-line="392" selection-end-column="54" />
           <folding>
             <element signature="e#7#23#0#PHP" expanded="true" />
           </folding>

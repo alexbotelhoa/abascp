@@ -12,6 +12,16 @@ class Order extends Model
 
         if ($local == "projects") {
 
+            if ($_SESSION['LastField'] == $sort && $_SESSION['SortProjectByOrder'] == "ASC") {
+
+                $_SESSION['SortProjectByOrder'] = "DESC";
+
+            } else {
+
+                $_SESSION['SortProjectByOrder'] = "ASC";
+
+            }
+
             switch ($sort) {
 
                 case "ordid":
@@ -39,6 +49,16 @@ class Order extends Model
 
         if ($local == "tasks") {
 
+            if ($_SESSION['LastField'] == $sort && $_SESSION['SortTaskByOrder'] == "ASC") {
+
+                $_SESSION['SortTaskByOrder'] = "DESC";
+
+            } else {
+
+                $_SESSION['SortTaskByOrder'] = "ASC";
+
+            }
+
             switch ($sort) {
 
                 case "ordid":
@@ -65,6 +85,20 @@ class Order extends Model
         }
 
         if ($local == "status") {
+
+            if ($_SESSION['LastField'] == $sort) {
+
+                if ($_SESSION['LastField'][0] == 's') {
+
+                    ($_SESSION['SortLateByOrder'] == "ASC") ? $_SESSION['SortLateByOrder'] = "DESC" : $_SESSION['SortLateByOrder'] = "ASC";
+
+                } else if ($_SESSION['LastField'][0] == 'n') {
+
+                    ($_SESSION['SortNotLateByOrder'] == "ASC") ? $_SESSION['SortNotLateByOrder'] = "DESC" : $_SESSION['SortNotLateByOrder'] = "ASC";
+
+                };
+
+            };
 
             switch ($sort) {
 
@@ -102,6 +136,8 @@ class Order extends Model
             }
 
         }
+
+        $_SESSION['LastField'] = $sort;
 
         return true;
 
