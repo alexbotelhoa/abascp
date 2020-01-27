@@ -5,7 +5,7 @@
 -->
 
 <!-- Content Header (Page header) -->
-<section class="content-header">
+<section class="container">
     <ol class="breadcrumb">
         <li><a href="/"><i class="fas fa-tachometer-alt"></i> Home</a></li>
         <li><a href="/projects">Projetos</a></li>
@@ -13,21 +13,20 @@
     </ol>
 </section> <!-- /.content-header -->
 
-<section class="content-header">
+<section class="container">
     <h1>
         Detalhar Projeto
     </h1>
 </section> <!-- /.content-header -->
 
 <!-- Main content -->
-<section class="content">
+<section class="container">
     <div class="row">
         <div class="col-md-12">
 
-
             <?php if( $project["stproject"] == 0 ){ ?>
                 <div class="box box-success">
-                    <?php }else{ ?>
+                <?php }else{ ?>
                 <div class="box box-danger">
             <?php } ?>
                 <div class="box-header with-border">
@@ -55,7 +54,6 @@
                         <label for="stproject">Atrasado</label>
                         <input type="text" class="form-control" id="stproject" name="stproject" step="0.01" readonly value="<?php echo htmlspecialchars( $status, ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                     </div>
-
                 </div> <!-- /.box-body -->
 
             </div>
