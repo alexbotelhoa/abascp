@@ -5,21 +5,21 @@
 -->
 
 <!-- Content Header (Page header) -->
-<section class="content-header">
+<section class="container">
     <ol class="breadcrumb">
         <li><a href="/"><i class="fas fa-tachometer-alt"></i> Home</a></li>
         <li class="active"><a href="/status">Status</a></li>
     </ol>
 </section> <!-- /.content-header -->
 
-<section class="content-header">
+<section class="container">
     <h1>
         Projetos Atrasados
     </h1>
 </section> <!-- /.content-header -->
 
 <!-- Main content -->
-<section class="content-header">
+<section class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="box box-danger">
@@ -54,14 +54,14 @@
     </div>
 </section> <!-- /.content -->
 
-<section class="content-header">
+<section class="container">
     <h1>
         Projetos Não Atrasados
     </h1>
 </section> <!-- /.content-header -->
 
 <!-- Main content -->
-<section class="content-header">
+<section class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="box box-success">

@@ -5,21 +5,21 @@
 -->
 
 <!-- Content Header (Page header) -->
-<section class="content-header">
+<section class="container">
     <ol class="breadcrumb">
         <li><a href="/"><i class="fas fa-tachometer-alt"></i> Home</a></li>
         <li class="active"><a href="/projects">Projetos</a></li>
     </ol>
 </section> <!-- /.content-header -->
 
-<section class="content-header">
+<section class="container">
     <h1>
         Lista de Projetos
     </h1>
 </section> <!-- /.content-header -->
 
 <!-- Main content -->
-<section class="content-header">
+<section class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="box box-primary">

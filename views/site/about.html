@@ -4,25 +4,22 @@
 ####################################################################################################################
 -->
 
-<!-- Font Awesome -->
-
-
 <!-- Content Header (Page header) -->
-<section class="content-header">
+<section class="container">
     <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-tachometer-alt"></i> Home</a></li>
         <li class="active"><a href="/about">Sobre</a></li>
     </ol>
 </section> <!-- /.content-header -->
 
-<section class="content-header">
+<section class="container">
     <h1>
         Sobre
     </h1>
 </section> <!-- /.content-header -->
 
 <!-- Main content -->
-<section class="content-header">
+<section class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="box box-primary">
@@ -30,7 +27,8 @@
                 <div class="col-md-12 col-sm-12">
                     <div class="box-header">
                         <div class="callout callout-info">
-                            <p>Sistema de Controle de Projetos Versão 1.0.0 - Documentação</p>
+                            <h2>Sistema de Controle de Projetos</h2>
+                            <p><b>Versão 1.0.0 - Documentação</b></p>
                             <p><b>Geral</b> - O sistema foi batizado geréricamente de Sistema de Controle de Projetos.
                                 Todo o sistema foi trabalhado para ser responsivo à todas as plataformas de visualização, como Desktop, Tablets e Celulares.
                                 O sistema está publicado na web utilizando o recurso Lightsail da Amazon, para haver visualização do sistema em funcionamento.
