@@ -11,16 +11,19 @@
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
 
-	<!-- Bootstrap -->
+	<!-- Bootstrap v3.2.0 -->
 	<link rel="stylesheet" href="/res/site/css/bootstrap.min.css">
 
-	<!-- Font Awesome -->
+	<!-- Font Awesome Free v5.12.0 -->
 	<link rel="stylesheet" href="/res/site/css/all.min.css">
 
-	<!-- Theme style -->
+	<!-- AdminLTE v2.3.8 -->
 	<link rel="stylesheet" href="/res/site/dist/css/AdminLTE.min.css">
 
-	<!-- Custom CSS -->
+	<!-- Ionicons v2.0.0 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+	<!-- CSS v3.0.0 -->
 	<link rel="stylesheet" href="/res/site/css/owl.carousel.css">
 	<link rel="stylesheet" href="/res/site/css/style.css">
 	<link rel="stylesheet" href="/res/site/css/responsive.css">
@@ -58,7 +61,7 @@
 	<div class="site-branding-area">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-sm-6">
 					<div class="logo">
 						<h1><a href="/"><img src="/res/site/img/logo.png"></a></h1>
 					</div>

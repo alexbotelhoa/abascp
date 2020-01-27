@@ -56,18 +56,9 @@
     <div class="footer-bottom-area">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-xs-6">
+                <div class="col-xs-12">
                     <div class="copyright">
-                        <p>&copy; 2019 Alex Botelho Cia & Ltda. <a href="#" target="_blank">alexbotelhoa.com</a></p>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-xs-6">
-                    <div class="footer-card-icon">
-                        <i class="fab fa-cc-discover"></i>
-                        <i class="fab fa-cc-mastercard"></i>
-                        <i class="fab fa-cc-paypal"></i>
-                        <i class="fab fa-cc-visa"></i>
+                        <p>&copy; 2019 - By Alex Botelho - <a href="https://www.linkedin.com/in/alex-botelho-almeida/" target="_blank">alex-botelho-almeida</a> <i class="fab fa-linkedin-in"></i></p>
                     </div>
                 </div>
             </div>
@@ -76,9 +67,6 @@
 
         <!-- Latest jQuery form server -->
         <script src="https://code.jquery.com/jquery.min.js"></script>
-
-        <!-- Bootstrap 3.3.6 -->
-        <script src="/res/site/bootstrap/js/bootstrap.min.js"></script>
 
         <!-- Bootstrap JS form CDN -->
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -92,13 +80,6 @@
 
         <!-- Main Script -->
         <script src="/res/site/js/main.js"></script>
-
-        <!-- Slider -->
-        <script type="text/javascript" src="/res/site/js/bxslider.min.js"></script>
-        <script type="text/javascript" src="/res/site/js/script.slider.js"></script>
-
-        <!-- FastClick -->
-        <script src="/res/site/plugins/fastclick/fastclick.js"></script>
 
         <!-- AdminLTE App -->
         <script src="/res/site/dist/js/app.min.js"></script>
