@@ -18,21 +18,21 @@ class Project extends Model
     }
 
 
-    public static function listAllLate($ordem = "idproject")
+    public static function listAllLate($order = "idproject")
     {
 
         $sql = new Sql();
 
-        return $sql->select("SELECT * FROM tb_projects WHERE stproject = 1 ORDER BY " . $ordem . " ASC");
+        return $sql->select("SELECT * FROM tb_projects WHERE stproject = 1 ORDER BY " . $order . " ");
 
     }
 
-    public static function listAllNotLate($ordem = "idproject")
+    public static function listAllNotLate($order = "idproject")
     {
 
         $sql = new Sql();
 
-        return $sql->select("SELECT * FROM tb_projects WHERE stproject = 0 ORDER BY " . $ordem . " ASC");
+        return $sql->select("SELECT * FROM tb_projects WHERE stproject = 0 ORDER BY " . $order . " ");
 
     }
 
@@ -191,14 +191,18 @@ class Project extends Model
 
     }
 
-    public function getProjectPage($ordem, $page = 1, $itemsPerPage = 6)
+    public function getProjectPage($sort, $page = 1, $itemsPerPage = 6)
     {
 
         $start = ($page - 1) * $itemsPerPage;
 
         $sql = new Sql();
 
-        $resultProjects = $sql->select("SELECT SQL_CALC_FOUND_ROWS * FROM tb_projects ORDER BY " . $ordem . " ASC LIMIT $start, $itemsPerPage");
+        $resultProjects = $sql->select("
+            SELECT SQL_CALC_FOUND_ROWS * 
+            FROM tb_projects 
+            ORDER BY " . $sort . " 
+            LIMIT $start, $itemsPerPage");
 
         $resultTotal = $sql->select("SELECT FOUND_ROWS() AS nrtotal");
 

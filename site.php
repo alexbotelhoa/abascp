@@ -42,9 +42,25 @@ $app->get("/", function() {
 
 });
 
-$app->get("/order/:page/:order", function($page, $order) {
+$app->get("/order/:page/:sort", function($page, $sort) {
 
-    Order::getOrder($page, $order);
+    Order::getOrder($page, $sort);
+
+    $_SESSION['LastField'] = $sort;
+
+    if ($sort == $_SESSION['LastField']) {
+
+        if ($sort[0] == 's') {
+
+            ($_SESSION['SortLateByOrder'] == "ASC") ? $_SESSION['SortLateByOrder'] = "DESC" : $_SESSION['SortLateByOrder'] = "ASC";
+
+        } else {
+
+            ($_SESSION['SortNotLateByOrder'] == "ASC") ? $_SESSION['SortNotLateByOrder'] = "DESC" : $_SESSION['SortNotLateByOrder'] = "ASC";
+
+        };
+
+    };
 
     header("Location: /$page");
 
@@ -84,13 +100,17 @@ $app->get("/newsletter", function() {
 
 $app->get("/projects", function() {
 
-    (isset($_SESSION['ordemproject'])) ? $ordem = $_SESSION['ordemproject'] : $ordem = "desproject";
+    (isset($_SESSION['SortProjectByField'])) ? $sort_field = $_SESSION['SortProjectByField'] : $sort_field = "desproject";
+
+    (isset($_SESSION['SortProjectByOrder']) && $_SESSION['SortProjectByOrder'] == "ASC") ? $sort_order = $_SESSION['SortProjectByOrder'] = "DESC" : $sort_order = $_SESSION['SortProjectByOrder'] = "ASC";
+
+    $sort = $sort_field . " " . $sort_order;
 
     $page = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
 
     $projects = new Project();
 
-    $pagination = $projects->getProjectPage($ordem, $page);
+    $pagination = $projects->getProjectPage($sort, $page);
 
     $pages = [];
 
@@ -236,7 +256,11 @@ $app->get("/projects/:idproject/delete", function($idproject) {
 
 $app->get("/tasks", function() {
 
-    (isset($_SESSION['ordemtask'])) ? $ordem = $_SESSION['ordemtask'] : $ordem = "destask";
+    (isset($_SESSION['SortTaskByField'])) ? $sort_field = $_SESSION['SortTaskByField'] : $sort_field = "destask";
+
+    (isset($_SESSION['SortTaskByOrder']) && $_SESSION['SortTaskByOrder'] == "ASC") ? $sort_order = $_SESSION['SortTaskByOrder'] = "DESC" : $sort_order = $_SESSION['SortTaskByOrder'] = "ASC";
+
+    $sort = $sort_field . " " . $sort_order;
 
     $page = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
 
@@ -244,7 +268,7 @@ $app->get("/tasks", function() {
 
     $tasks = new Task();
 
-    $pagination = $tasks->getTaskPage($ordem, $page);
+    $pagination = $tasks->getTaskPage($sort, $page);
 
     $pages = [];
 
@@ -386,13 +410,21 @@ $app->get("/tasks/:idtask/delete", function($idtask) {
 
 $app->get("/status", function() {
 
-    (isset($_SESSION['ordemlate'])) ? $ordemlate = $_SESSION['ordemlate'] : $ordemlate = "desproject";
+    (isset($_SESSION['SortLateByField'])) ? $sort_late_field = $_SESSION['SortLateByField'] : $sort_late_field = "desproject";
 
-    (isset($_SESSION['ordemnotlate'])) ? $ordemnotlate = $_SESSION['ordemnotlate'] : $ordemnotlate = "desproject";
+    (isset($_SESSION['SortLateByOrder'])) ? $sort_late_order = $_SESSION['SortLateByOrder'] : $sort_late_order = "ASC";
 
-    $projectslate = Project::listAllLate($ordemlate);
+    $SortLate = $sort_late_field . " " . $sort_late_order;
 
-    $projectsnotlate = Project::listAllNotLate($ordemnotlate);
+    $projectslate = Project::listAllLate($SortLate);
+
+    (isset($_SESSION['SortNotLateByField'])) ? $sort_notlate_field = $_SESSION['SortNotLateByField'] : $sort_notlate_field = "desproject";
+
+    (isset($_SESSION['SortNotLateByOrder'])) ? $sort_notlate_order = $_SESSION['SortNotLateByOrder'] : $sort_notlate_order = "ASC";
+
+    $SortNotLate = $sort_notlate_field . " " . $sort_notlate_order;
+
+    $projectsnotlate = Project::listAllNotLate($SortNotLate);
 
     $page = new Page();
 

@@ -7,30 +7,30 @@ use Hallyz\Model;
 class Order extends Model
 {
 
-    public static function getOrder($local, $order)
+    public static function getOrder($local, $sort)
     {
 
         if ($local == "projects") {
 
-            switch ($order) {
+            switch ($sort) {
 
                 case "ordid":
-                    $_SESSION['ordemproject'] = "idproject";
+                    $_SESSION['SortProjectByField'] = "idproject";
                     break;
                 case "ordproj":
-                    $_SESSION['ordemproject'] = "desproject";
+                    $_SESSION['SortProjectByField'] = "desproject";
                     break;
                 case "ordini":
-                    $_SESSION['ordemproject'] = "dtstart";
+                    $_SESSION['SortProjectByField'] = "dtstart";
                     break;
                 case "ordfim":
-                    $_SESSION['ordemproject'] = "dtfinish";
+                    $_SESSION['SortProjectByField'] = "dtfinish";
                     break;
                 case "ordrate":
-                    $_SESSION['ordemproject'] = "rtproject";
+                    $_SESSION['SortProjectByField'] = "rtproject";
                     break;
                 case "ordlate":
-                    $_SESSION['ordemproject'] = "stproject";
+                    $_SESSION['SortProjectByField'] = "stproject";
                     break;
 
             }
@@ -39,25 +39,25 @@ class Order extends Model
 
         if ($local == "tasks") {
 
-            switch ($order) {
+            switch ($sort) {
 
                 case "ordid":
-                    $_SESSION['ordemtask'] = "idtask";
+                    $_SESSION['SortTaskByField'] = "idtask";
                     break;
                 case "ordtask":
-                    $_SESSION['ordemtask'] = "destask";
+                    $_SESSION['SortTaskByField'] = "destask";
                     break;
                 case "ordproj":
-                    $_SESSION['ordemtask'] = "desproject";
+                    $_SESSION['SortTaskByField'] = "desproject";
                     break;
                 case "ordini":
-                    $_SESSION['ordemtask'] = "a.dtstart";
+                    $_SESSION['SortTaskByField'] = "a.dtstart";
                     break;
                 case "ordfim":
-                    $_SESSION['ordemtask'] = "a.dtfinish";
+                    $_SESSION['SortTaskByField'] = "a.dtfinish";
                     break;
                 case "ordsit":
-                    $_SESSION['ordemtask'] = "sttask";
+                    $_SESSION['SortTaskByField'] = "sttask";
                     break;
 
             }
@@ -66,37 +66,37 @@ class Order extends Model
 
         if ($local == "status") {
 
-            switch ($order) {
+            switch ($sort) {
 
                 case "sordid":
-                    $_SESSION['ordemlate'] = "idproject";
+                    $_SESSION['SortLateByField'] = "idproject";
                     break;
                 case "sordproj":
-                    $_SESSION['ordemlate'] = "desproject";
+                    $_SESSION['SortLateByField'] = "desproject";
                     break;
                 case "sordini":
-                    $_SESSION['ordemlate'] = "dtstart";
+                    $_SESSION['SortLateByField'] = "dtstart";
                     break;
                 case "sordfim":
-                    $_SESSION['ordemlate'] = "dtfinish";
+                    $_SESSION['SortLateByField'] = "dtfinish";
                     break;
                 case "sordrate":
-                    $_SESSION['ordemlate'] = "rtproject";
+                    $_SESSION['SortLateByField'] = "rtproject";
                     break;
                 case "nordid":
-                    $_SESSION['ordemnotlate'] = "idproject";
+                    $_SESSION['SortNotLateByField'] = "idproject";
                     break;
                 case "nordproj":
-                    $_SESSION['ordemnotlate'] = "desproject";
+                    $_SESSION['SortNotLateByField'] = "desproject";
                     break;
                 case "nordini":
-                    $_SESSION['ordemnotlate'] = "dtstart";
+                    $_SESSION['SortNotLateByField'] = "dtstart";
                     break;
                 case "nordfim":
-                    $_SESSION['ordemnotlate'] = "dtfinish";
+                    $_SESSION['SortNotLateByField'] = "dtfinish";
                     break;
                 case "nordrate":
-                    $_SESSION['ordemnotlate'] = "rtproject";
+                    $_SESSION['SortNotLateByField'] = "rtproject";
                     break;
 
             }
