@@ -68,9 +68,9 @@
                                     <td>{function="formatDate($value.dtfinish)"}</td>
                                     <td>
                                         {if="$value.sttask == 0"}
-                                            <a href="/tasks/{$value.idtask}/situation" class="btn btn-success btn-xs"><i class="far fa-folder-open"></i> Aberto </a>
+                                            <a href="/tasks/{$value.idtask}/situation/tasks{$link}" class="btn btn-success btn-xs"><i class="far fa-folder-open"></i> Aberto </a>
                                         {else}
-                                            <a href="/tasks/{$value.idtask}/situation" class="btn btn-danger btn-xs"><i class="far fa-folder"></i> Fechado</a>
+                                            <a href="/tasks/{$value.idtask}/situation/tasks{$link}" class="btn btn-danger btn-xs"><i class="far fa-folder"></i> Fechado</a>
                                         {/if}
                                     </td>
                                     <td>

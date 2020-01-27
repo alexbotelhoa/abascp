@@ -55,9 +55,9 @@
                                             <td><div class="sparkbar" data-color="#00a65a" data-height="20"><?php echo formatDate($value1["dtfinish"]); ?></div></td>
                                             <td>
                                                 <?php if( $value1["sttask"] == 0 ){ ?>
-                                                <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation" class="btn btn-success btn-xs"><i class="fa fa-folder-open"></i> Aberto </a>
+                                                <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation/index" class="btn btn-success btn-xs"><i class="fa fa-folder-open"></i> Aberto </a>
                                                 <?php }else{ ?>
-                                                <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation" class="btn btn-danger btn-xs"><i class="fa fa-folder"></i> Fechado</a>
+                                                <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation/index" class="btn btn-danger btn-xs"><i class="fa fa-folder"></i> Fechado</a>
                                                 <?php } ?>
                                             </td>
                                         </tr>

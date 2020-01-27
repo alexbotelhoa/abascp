@@ -240,6 +240,8 @@ $app->get("/tasks", function() {
 
     $page = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
 
+    $link = "?page=" . $page;
+
     $tasks = new Task();
 
     $pagination = $tasks->getTaskPage($ordem, $page);
@@ -257,6 +259,7 @@ $app->get("/tasks", function() {
 
     $page->setTpl("tasks", [
         "tasks" => $pagination['data'],
+        "link" => $link,
         "error" => Message::getError(),
         "success" => Message::getSuccess(),
         "pages" => $pages
@@ -337,7 +340,9 @@ $app->post("/tasks/:idtask/update", function($idtask) {
 
 });
 
-$app->get("/tasks/:idtask/situation", function($idtask) {
+$app->get("/tasks/:idtask/situation/:page", function($idtask, $page) {
+
+    $pagination = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
 
     $tasks = new Task();
 
@@ -351,7 +356,7 @@ $app->get("/tasks/:idtask/situation", function($idtask) {
 
     Message::setSuccess("Dados alterados com sucesso!");
 
-    header("Location: /tasks");
+    ($page == "index") ? header("Location: /") : header("Location: /tasks?page=$pagination");
 
     exit;
 

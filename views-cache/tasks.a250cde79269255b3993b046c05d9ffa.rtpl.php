@@ -68,9 +68,9 @@
                                     <td><?php echo formatDate($value1["dtfinish"]); ?></td>
                                     <td>
                                         <?php if( $value1["sttask"] == 0 ){ ?>
-                                            <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation" class="btn btn-success btn-xs"><i class="far fa-folder-open"></i> Aberto </a>
+                                            <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation/tasks<?php echo htmlspecialchars( $link, ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-success btn-xs"><i class="far fa-folder-open"></i> Aberto </a>
                                         <?php }else{ ?>
-                                            <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation" class="btn btn-danger btn-xs"><i class="far fa-folder"></i> Fechado</a>
+                                            <a href="/tasks/<?php echo htmlspecialchars( $value1["idtask"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/situation/tasks<?php echo htmlspecialchars( $link, ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-danger btn-xs"><i class="far fa-folder"></i> Fechado</a>
                                         <?php } ?>
                                     </td>
                                     <td>
