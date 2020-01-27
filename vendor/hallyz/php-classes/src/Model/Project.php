@@ -83,7 +83,7 @@ class Project extends Model
 
         if (isset($result[0])) {$qtdopen = $result[0]['open']; $qtdclose = $result[0]['close'];} else {$qtdopen = 0; $qtdclose = 0;}
 
-        if (($qtdopen + $qtdclose) === 0) {
+        if (($qtdopen + $qtdclose) == 0 || $qtdclose == 0) {
 
             $rate = 0;
 
