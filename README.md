@@ -33,8 +33,11 @@
 <p></p>
 <b>Recursos utilizados no Back-End:</b>
 <ul>
-    <li>PHP 7.3.12 - Linguagem com foco em POO</li>
+    <li>MariaDB v10.4.10 - Utlizado como SGBD</li>
+    <li>Apache v2.4.41 - Como Web Services</li>
+    <li>PHP v7.3.12 - Linguagem com foco em POO</li>
     <li>PDO - Utilizado para conexão com o BD</li>
-    <li>MariaDB 10.4.10 - Utlizado como SGBD</li>
-    <li>Apache 2.4.41 - Como Web Services</li>
+    <li>Composer - Para gerenciar as dependências do projeto</li>
+    <li>RainTLP v3.0.0 - Para separas as camadas de desenvolvimento</li>
+    <li>Slim v2.6.3 - Para melhoras a navegação e chamadas de recursos</li>
 </ul>
