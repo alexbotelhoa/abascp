@@ -41,3 +41,5 @@
     <li>RainTLP v3.0.0 - Para separas as camadas de desenvolvimento</li>
     <li>Slim v2.6.3 - Para melhoras a navegação e chamadas de recursos</li>
 </ul>
+
+<p>&copy; 2020 - By Alex Botelho - <a href="https://www.linkedin.com/in/alex-botelho-almeida/" target="_blank">alex-botelho-almeida</a> <i class="fab fa-linkedin-in"></i></p>
