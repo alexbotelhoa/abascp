@@ -1,6 +1,6 @@
 <?php 
 
-namespace Hallyz\DB;
+namespace ABA\DB;
 
 class Sql
 {

@@ -1,10 +1,10 @@
 <?php
 
-use Hallyz\Page;
-use Hallyz\Model\Message;
-use Hallyz\Model\Order;
-use Hallyz\Model\Project;
-use Hallyz\Model\Task;
+use ABA\Page;
+use ABA\Model\Message;
+use ABA\Model\Order;
+use ABA\Model\Project;
+use ABA\Model\Task;
 
 /*
  * ##########################################################################################
@@ -197,7 +197,7 @@ $app->get("/projects/:idproject/details", function($idproject) {
 
     $page = new Page();
 
-    $page->setTpl("/projects-details", [
+    $page->setTpl("projects-details", [
         "project" => $project->getValues(),
         "status" => $status
     ]);

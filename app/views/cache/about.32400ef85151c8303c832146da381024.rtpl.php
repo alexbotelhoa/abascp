@@ -35,8 +35,8 @@
                                 O código fonte do sistema encontra-se publicado no meu GitHub (https://github.com/alexbotelhoa) para visualizações.
                             </p>
                             <p>
-                                <b>Cabeçalho</b> - No foi colocado um recurso à ser implementado de tradução da página. Foi criado um logotippo para melhor aparência do sistema.
-                                Logo a baixo encontra-se o menu com cinco opções: Home, Projetos, Tarefas, Satus e Sobre.
+                                <b>Cabeçalho</b> - Não foi colocado um recurso à ser implementado de tradução da página. Foi criado um logotipo para melhor aparência do sistema.
+                                Logo a baixo encontra-se o menu com cinco opções: Home, Projetos, Tarefas, Status e Sobre.
                             </p>
                             <p>
                                 <b>Rodapé</b> - Existe três quadros informativos, um da 'Empresa Hallyz Cia & Ltda' (fake), um de 'Navegação' servido apenas como atalhos do sistema e
@@ -102,10 +102,13 @@
                             <p>Recursos utilizados no Back-End:</p>
                             <p>
                                 <ul>
-                                    <li><i class="fab fa-php"></i> PHP 7.3.12 - Linguagem com foco em POO </li>
-                                    <li><i class="fas fa-link"></i> PDO - Utilizado para conexão com o BD</li>
-                                    <li><i class="fas fa-database"></i> MariaDB 10.4.10 - Utlizado como SGBD</li>
-                                    <li><i class="fas fa-feather-alt"></i> Apache 2.4.41 - Como Web Services</li>
+                                    <li><i class="fas fa-database"></i> MariaDB v10.4.10 - Utlizado como SGBD</li>
+                                    <li><i class="fas fa-feather-alt"></i> Apache v2.4.41 - Como Web Services</li>
+                                    <li><i class="fab fa-php"></i> PHP v7.3.12 - Linguagem com foco em POO</li>
+                                    <li><i class="fas fa-link"></i>  PDO - Utilizado para conexão com o BD</li>
+                                    <li><i class="far fa-music"></i> Composer - Para gerenciar as dependências do projeto</li>
+                                    <li><i class="far fa-rainbow"></i> RainTLP v3.0.0 - Para separas as camadas de desenvolvimento</li>
+                                    <li><i class="far fa-file-code"></i> Slim v2.6.3 - Para melhoras a navegação e chamadas de recursos</li>
                                 </ul>
                             </p>
                         </div>

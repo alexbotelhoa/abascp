@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f39c3c78-f88d-4d89-8007-088af45d2c5c" name="AWS" url="http://18.215.128.144">
+        <fileTransfer host="18.215.128.144" port="22" privateKey="D:\luciana-phpstorm.ppk" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

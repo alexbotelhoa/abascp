@@ -1,6 +1,6 @@
 <?php
 
-use Hallyz\Model\Project;
+use ABA\Model\Project;
 
 function formatDate($date)
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Hallyz\Model;
+namespace ABA\Model;
 
-use Hallyz\Model;
+use ABA\Model;
 
 class Message extends Model
 {

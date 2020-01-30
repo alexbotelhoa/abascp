@@ -1,9 +1,9 @@
 <?php
 
-namespace Hallyz\Model;
+namespace ABA\Model;
 
-use Hallyz\DB\Sql;
-use Hallyz\Model;
+use ABA\DB\Sql;
+use ABA\Model;
 
 class Task extends Model
 {

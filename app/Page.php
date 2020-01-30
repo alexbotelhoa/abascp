@@ -1,6 +1,6 @@
 <?php
 
-namespace Hallyz;
+namespace ABA;
 
 use Rain\Tpl;
 
@@ -21,14 +21,14 @@ class Page
         }
     }
 
-    public function __construct($opts = array(), $tlp_dir = "/views/site/")
+    public function __construct($opts = array(), $tlp_dir = "/app/views/site/")
     {
         $this->options = array_merge($this->default, $opts);
 
         //Array copiado do exemple-semplie.php e modificado para localizar minhas templates nesse projeto
         $config = array(
             "tpl_dir" => $_SERVER["DOCUMENT_ROOT"] . $tlp_dir,
-            "cache_dir" => $_SERVER["DOCUMENT_ROOT"] . "/views-cache/",
+            "cache_dir" => $_SERVER["DOCUMENT_ROOT"] . "/app/views/cache/",
             "debug" => false
         );
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Hallyz;
+namespace ABA;
 
 class Model
 {

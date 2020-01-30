@@ -1,5 +1,5 @@
 {
-    "name": "alexbotelhoa/scp",
+    "name": "alexbotelhoa/abascp",
     "authors": [
         {
             "name": "Alex Botelho",
@@ -12,7 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Hallyz\\": "vendor\\hallyz\\php-classes\\src"
+            "ABA\\": "app"
         }
     }
 }
