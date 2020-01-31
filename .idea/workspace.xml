@@ -1,56 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="341db028-ffb8-4d86-ad7b-3eba2c2441d7" name="Default" comment="Versão 1.2.0&#10;&#10;Modificações:&#10; - Adquação ao Framework MVC">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/hallyz/php-classes/src/DB/Sql.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Message.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Order.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Project.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/hallyz/php-classes/src/Model/Task.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/hallyz/php-classes/src/Page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/hallyz/php-classes/src/PageAdmin.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views-cache/about.a250cde79269255b3993b046c05d9ffa.rtpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views-cache/footer.a250cde79269255b3993b046c05d9ffa.rtpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views-cache/header.a250cde79269255b3993b046c05d9ffa.rtpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views-cache/index.a250cde79269255b3993b046c05d9ffa.rtpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views-cache/projects-create.a250cde79269255b3993b046c05d9ffa.rtpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views-cache/projects-details.a250cde79269255b3993b046c05d9ffa.rtpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views-cache/projects-update.a250cde79269255b3993b046c05d9ffa.rtpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views-cache/projects.a250cde79269255b3993b046c05d9ffa.rtpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views-cache/status.a250cde79269255b3993b046c05d9ffa.rtpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views-cache/tasks-create.a250cde79269255b3993b046c05d9ffa.rtpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views-cache/tasks-update.a250cde79269255b3993b046c05d9ffa.rtpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views-cache/tasks.a250cde79269255b3993b046c05d9ffa.rtpl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/site/about.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/site/footer.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/site/header.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/site/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/site/projects-create.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/site/projects-details.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/site/projects-update.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/site/projects.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/site/status.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/site/tasks-create.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/site/tasks-update.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/site/tasks.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/0b045be7-005a-4b54-bd07-ddf69b69824a/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/0b045be7-005a-4b54-bd07-ddf69b69824a/_metadata_/metadata" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/0b045be7-005a-4b54-bd07-ddf69b69824a/_metadata_/metadata.keystream" afterPath="$PROJECT_DIR$/.idea/dataSources/0b045be7-005a-4b54-bd07-ddf69b69824a/_metadata_/metadata.keystream" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/0b045be7-005a-4b54-bd07-ddf69b69824a/_metadata_/metadata.keystream.len" afterPath="$PROJECT_DIR$/.idea/dataSources/0b045be7-005a-4b54-bd07-ddf69b69824a/_metadata_/metadata.keystream.len" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/0b045be7-005a-4b54-bd07-ddf69b69824a/_metadata_/metadata.len" afterPath="$PROJECT_DIR$/.idea/dataSources/0b045be7-005a-4b54-bd07-ddf69b69824a/_metadata_/metadata.len" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/0b045be7-005a-4b54-bd07-ddf69b69824a/_metadata_/metadata.values.at" afterPath="$PROJECT_DIR$/.idea/dataSources/0b045be7-005a-4b54-bd07-ddf69b69824a/_metadata_/metadata.values.at" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/0b045be7-005a-4b54-bd07-ddf69b69824a/_metadata_/metadata_i" afterPath="$PROJECT_DIR$/.idea/dataSources/0b045be7-005a-4b54-bd07-ddf69b69824a/_metadata_/metadata_i" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/0b045be7-005a-4b54-bd07-ddf69b69824a/_src_/schema/db_abascp.zip" afterPath="$PROJECT_DIR$/.idea/dataSources/0b045be7-005a-4b54-bd07-ddf69b69824a/_src_/schema/db_abascp.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/0b045be7-005a-4b54-bd07-ddf69b69824a.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/0b045be7-005a-4b54-bd07-ddf69b69824a.xml" />
+    <list default="true" id="341db028-ffb8-4d86-ad7b-3eba2c2441d7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions.php" afterPath="$PROJECT_DIR$/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site.php" afterPath="$PROJECT_DIR$/site.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -119,6 +71,7 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -288,7 +241,7 @@
       <workItem from="1580216623938" duration="3791000" />
       <workItem from="1580296577075" duration="14000" />
       <workItem from="1580315248206" duration="55000" />
-      <workItem from="1580387511641" duration="4036000" />
+      <workItem from="1580387511641" duration="4231000" />
     </task>
     <task id="LOCAL-00001" summary="Logo">
       <created>1579822745710</created>
@@ -458,11 +411,18 @@
       <option name="project" value="LOCAL" />
       <updated>1580217769890</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Versão 1.2.0&#10;&#10;Modificações:&#10; - Adquação ao Framework MVC">
+      <created>1580391639979</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1580391639979</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191852000" />
+    <option name="totallyTimeSpent" value="192047000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -543,7 +503,8 @@
     <MESSAGE value="- Corrigido o cálculo do rate&#10;Finalizado a Versão 1.1.10" />
     <MESSAGE value="- Correções gramaticais&#10;Finalizado a Versão 1.1.11" />
     <MESSAGE value="- Correções gramaticais&#10;Finalizado a Versão 1.1.12" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Correções gramaticais&#10;Finalizado a Versão 1.1.12" />
+    <MESSAGE value="Versão 1.2.0&#10;&#10;Modificações:&#10; - Adquação ao Framework MVC" />
+    <option name="LAST_COMMIT_MESSAGE" value="Versão 1.2.0&#10;&#10;Modificações:&#10; - Adquação ao Framework MVC" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
