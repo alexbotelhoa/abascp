@@ -10,6 +10,8 @@ class Order extends Model
     public static function getOrder($local, $sort)
     {
 
+        (!isset($_SESSION['LastField'])) ? $_SESSION['LastField'] = "ASC" : '';
+
         if ($local == "projects") {
 
             if ($_SESSION['LastField'] == $sort && $_SESSION['SortProjectByOrder'] == "ASC") {
