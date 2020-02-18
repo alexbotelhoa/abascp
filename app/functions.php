@@ -2,7 +2,7 @@
 
 use SCP\Model\Project;
 
-function formatDate($date)
+function formatDateS($date)
 {
     return date('d/m/Y', strtotime($date));
 }

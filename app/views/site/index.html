@@ -55,9 +55,9 @@
                                             <td><div class="sparkbar" data-color="#00a65a" data-height="20">{function="formatDateS($value.dtfinish)"}</div></td>
                                             <td>
                                                 {if="$value.sttask == 0"}
-                                                <a href="/tasks/{$value.idtask}/situation/index" class="btn btn-success btn-xs"><i class="fa fa-folder-open"></i> Aberto </a>
+                                                <a href="/sitescp/tasks/{$value.idtask}/situation/index" class="btn btn-success btn-xs"><i class="fa fa-folder-open"></i> Aberto </a>
                                                 {else}
-                                                <a href="/tasks/{$value.idtask}/situation/index" class="btn btn-danger btn-xs"><i class="fa fa-folder"></i> Fechado</a>
+                                                <a href="/sitescp/tasks/{$value.idtask}/situation/index" class="btn btn-danger btn-xs"><i class="fa fa-folder"></i> Fechado</a>
                                                 {/if}
                                             </td>
                                         </tr>
@@ -98,7 +98,7 @@
                                     <div class="icon">
                                         <i class="ion ion-stats-bars"></i>
                                     </div>
-                                        <a href="/projects/{$value.idproject}/details" class="small-box-footer">Mais detalhes <i class="fa fa-arrow-circle-right"></i></a>
+                                        <a href="/sitescp/projects/{$value.idproject}/details" class="small-box-footer">Mais detalhes <i class="fa fa-arrow-circle-right"></i></a>
                                 </div>
                             {/loop}
 
@@ -110,10 +110,10 @@
     </div> <!-- End brands area -->
 
     <!-- jQuery 2.2.3 -->
-    <script src="/abascp/res/site/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="/scp/res/site/plugins/jQuery/jquery-2.2.3.min.js"></script>
 
     <!-- ChartJS 1.0.1 -->
-    <script src="/abascp/res/site/plugins/chartjs/Chart.min.js"></script>
+    <script src="/scp/res/site/plugins/chartjs/Chart.min.js"></script>
 
     <!-- page script -->
     <script>
