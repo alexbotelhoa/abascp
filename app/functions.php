@@ -1,6 +1,6 @@
 <?php
 
-use ABA\Model\Project;
+use SCP\Model\Project;
 
 function formatDate($date)
 {
@@ -14,11 +14,13 @@ function qtdTask($idproject)
 
 }
 
+/*
 function rateTask($idproject)
 {
 
     return Project::rateTask($idproject);
 
 }
+*/
 
 ?>

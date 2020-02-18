@@ -64,8 +64,8 @@
                                     <td>{$value.idtask}</td>
                                     <td>{$value.destask}</td>
                                     <td>{$value.desproject}</td>
-                                    <td>{function="formatDate($value.dtstart)"}</td>
-                                    <td>{function="formatDate($value.dtfinish)"}</td>
+                                    <td>{function="formatDateS($value.dtstart)"}</td>
+                                    <td>{function="formatDateS($value.dtfinish)"}</td>
                                     <td>
                                         {if="$value.sttask == 0"}
                                             <a href="/tasks/{$value.idtask}/situation/tasks{$link}" class="btn btn-success btn-xs"><i class="far fa-folder-open"></i> Aberto </a>

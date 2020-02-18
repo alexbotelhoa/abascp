@@ -52,7 +52,7 @@
                                         <tr>
                                             <td>{$value.idtask}</td>
                                             <td>{$value.destask}</td>
-                                            <td><div class="sparkbar" data-color="#00a65a" data-height="20">{function="formatDate($value.dtfinish)"}</div></td>
+                                            <td><div class="sparkbar" data-color="#00a65a" data-height="20">{function="formatDateS($value.dtfinish)"}</div></td>
                                             <td>
                                                 {if="$value.sttask == 0"}
                                                 <a href="/tasks/{$value.idtask}/situation/index" class="btn btn-success btn-xs"><i class="fa fa-folder-open"></i> Aberto </a>
@@ -110,10 +110,10 @@
     </div> <!-- End brands area -->
 
     <!-- jQuery 2.2.3 -->
-    <script src="/res/site/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="/abascp/res/site/plugins/jQuery/jquery-2.2.3.min.js"></script>
 
     <!-- ChartJS 1.0.1 -->
-    <script src="/res/site/plugins/chartjs/Chart.min.js"></script>
+    <script src="/abascp/res/site/plugins/chartjs/Chart.min.js"></script>
 
     <!-- page script -->
     <script>

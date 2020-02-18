@@ -1,8 +1,8 @@
 <?php
 
-namespace ABA\Model;
+namespace SCP\Model;
 
-use ABA\Model;
+use SCP\Model;
 
 class Order extends Model
 {
@@ -10,7 +10,7 @@ class Order extends Model
     public static function getOrder($local, $sort)
     {
 
-        (!isset($_SESSION['LastField'])) ? $_SESSION['LastField'] = "ASC" : '';
+        if (!isset($_SESSION['LastField'])) $_SESSION['LastField'] = "ASC";
 
         if ($local == "projects") {
 

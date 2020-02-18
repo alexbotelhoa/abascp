@@ -1,8 +1,8 @@
 <?php
 
-namespace ABA\Model;
+namespace SCP\Model;
 
-use ABA\Model;
+use SCP\Model;
 
 class Message extends Model
 {

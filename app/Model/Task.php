@@ -1,9 +1,9 @@
 <?php
 
-namespace ABA\Model;
+namespace SCP\Model;
 
-use ABA\DB\Sql;
-use ABA\Model;
+use SCP\DB\Sql;
+use SCP\Model;
 
 class Task extends Model
 {

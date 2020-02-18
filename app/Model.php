@@ -1,6 +1,6 @@
 <?php
 
-namespace ABA;
+namespace SCP;
 
 class Model
 {
