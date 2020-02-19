@@ -9,18 +9,7 @@ function formatDateS($date)
 
 function qtdTask($idproject)
 {
-
     return count(Project::checkTask($idproject));
-
 }
-
-/*
-function rateTask($idproject)
-{
-
-    return Project::rateTask($idproject);
-
-}
-*/
 
 ?>

@@ -1,24 +1,14 @@
-<!--
-####################################################################################################################
-                                        ABOVE IS THE HEADER
-####################################################################################################################
--->
-
-<!-- Content Header (Page header) -->
 <section class="container">
     <ol class="breadcrumb">
         <li><a href="/sitescp"><i class="fas fa-tachometer-alt"></i> Home</a></li>
         <li class="active"><a href="/sitescp/projects">Projetos</a></li>
     </ol>
-</section> <!-- /.content-header -->
-
+</section>
 <section class="container">
     <h1>
         Lista de Projetos
     </h1>
-</section> <!-- /.content-header -->
-
-<!-- Main content -->
+</section>
 <section class="container">
     <div class="row">
         <div class="col-md-12">
@@ -27,7 +17,6 @@
                     <div class="col-xs-4">
                         <a href="/sitescp/projects/create" class="btn btn-success">Cadastrar Projeto</a>
                     </div>
-
                     {if="$error != ''"}
                     <div class="col-xs-8">
                         <div class="box-header bg-red">
@@ -35,7 +24,6 @@
                         </div>
                     </div>
                     {/if}
-
                     {if="$success != ''"}
                     <div class="col-xs-8">
                         <div class="box-header bg-green">
@@ -43,63 +31,55 @@
                         </div>
                     </div>
                     {/if}
-                </div> <!-- /.box-header -->
-
+                </div>
                 <div class="box-body no-padding">
                     <table class="table table-striped">
                         <thead>
-                            <tr>
-                                <th style="width: 10px"><a href="/sitescp/order/projects/ordid">#</a></th>
-                                <th><a href="/sitescp/order/projects/ordproj">Nome Projeto</a></th>
-                                <th><a href="/sitescp/order/projects/ordini">Data Incício</a></th>
-                                <th><a href="/sitescp/order/projects/ordfim">Data Fim</a></th>
-                                <th><a href="/sitescp/order/projects/ordrate">Rate</a></th>
-                                <th><a href="/sitescp/order/projects/ordlate">Late</a></th>
-                                <th>Task</th>
-                                <th style="width: 140px">&nbsp;</th>
-                            </tr>
+                        <tr>
+                            <th style="width: 10px"><a href="/sitescp/order/projects/ordid">#</a></th>
+                            <th><a href="/sitescp/order/projects/ordproj">Nome Projeto</a></th>
+                            <th><a href="/sitescp/order/projects/ordini">Data Incício</a></th>
+                            <th><a href="/sitescp/order/projects/ordfim">Data Fim</a></th>
+                            <th><a href="/sitescp/order/projects/ordrate">Rate</a></th>
+                            <th><a href="/sitescp/order/projects/ordlate">Late</a></th>
+                            <th>Task</th>
+                            <th style="width: 140px">&nbsp;</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            {loop="$projects"}
-                                <tr>
-                                    <td>{$value.idproject}</td>
-                                    <td>{$value.desproject}</td>
-                                    <td>{function="formatDateS($value.dtstart)"}</td>
-                                    <td>{function="formatDateS($value.dtfinish)"}</td>
-                                    <td>{$value.rtproject}%</td>
-                                    {if="$value.stproject == 0"}
-                                        <td class="bg-green" align="center">Não</td>
-                                    {else}
-                                        <td class="bg-red" align="center">Sim</td>
-                                    {/if}
-                                    <td align="center">{function="qtdTask($value.idproject)"}</td>
-                                    <td>
-                                        <a href="/sitescp/projects/{$value.idproject}/update" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a><a href="/sitescp/projects/{$value.idproject}/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
-                                    </td>
-                                </tr>
-                            {/loop}
+                        {loop="$projects"}
+                        <tr>
+                            <td>{$value.idproject}</td>
+                            <td>{$value.desproject}</td>
+                            <td>{function="formatDateS($value.dtstart)"}</td>
+                            <td>{function="formatDateS($value.dtfinish)"}</td>
+                            <td>{$value.rtproject}%</td>
+                            {if="$value.stproject == 0"}
+                            <td class="bg-green" align="center">Não</td>
+                            {else}
+                            <td class="bg-red" align="center">Sim</td>
+                            {/if}
+                            <td align="center">{function="qtdTask($value.idproject)"}</td>
+                            <td>
+                                <a href="/sitescp/projects/{$value.idproject}/update" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a><a
+                                    href="/sitescp/projects/{$value.idproject}/delete" onclick="return confirm('Deseja realmente excluir este registro?')"
+                                    class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
+                            </td>
+                        </tr>
+                        {/loop}
                         </tbody>
                     </table>
-                </div> <!-- /.box-body -->
+                </div>
             </div>
-
             <div class="product-pagination text-center">
                 <nav>
                     <ul class="pagination">
-
                         {loop="$pages"}
-                            <li><a href="/sitescp{$value.link}">{$value.page}</a></li>
+                        <li><a href="{$value.link}">{$value.page}</a></li>
                         {/loop}
-
                     </ul>
                 </nav>
             </div>
         </div>
     </div>
-</section> <!-- /.content -->
-
-<!--
-####################################################################################################################
-                                        BELOW IS THE FOOTER
-####################################################################################################################
--->
+</section>

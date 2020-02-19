@@ -1,24 +1,14 @@
-<!--
-####################################################################################################################
-                                        ABOVE IS THE HEADER
-####################################################################################################################
--->
-
-<!-- Content Header (Page header) -->
 <section class="container">
     <ol class="breadcrumb">
         <li><a href="/sitescp"><i class="fas fa-tachometer-alt"></i> Home</a></li>
         <li class="active"><a href="/sitescp/tasks">Tarefas</a></li>
     </ol>
-</section> <!-- /.content-header -->
-
+</section>
 <section class="container">
     <h1>
         Lista de Tarefas
     </h1>
-</section> <!-- /.content-header -->
-
-<!-- Main content -->
+</section>
 <section class="container">
     <div class="row">
         <div class="col-md-12">
@@ -27,7 +17,6 @@
                     <div class="col-xs-4">
                         <a href="/sitescp/tasks/create" class="btn btn-success">Cadastrar Tarefa</a>
                     </div>
-
                     {if="$error != ''"}
                     <div class="col-xs-8">
                         <div class="box-header bg-red">
@@ -35,7 +24,6 @@
                         </div>
                     </div>
                     {/if}
-
                     {if="$success != ''"}
                     <div class="col-xs-8">
                         <div class="box-header bg-green">
@@ -43,8 +31,7 @@
                         </div>
                     </div>
                     {/if}
-                </div> <!-- /.box-header -->
-
+                </div>
                 <div class="box-body no-padding">
                     <table class="table table-striped">
                         <thead>
@@ -59,47 +46,40 @@
                         </tr>
                         </thead>
                         <tbody>
-                            {loop="$tasks"}
-                                <tr>
-                                    <td>{$value.idtask}</td>
-                                    <td>{$value.destask}</td>
-                                    <td>{$value.desproject}</td>
-                                    <td>{function="formatDateS($value.dtstart)"}</td>
-                                    <td>{function="formatDateS($value.dtfinish)"}</td>
-                                    <td>
-                                        {if="$value.sttask == 0"}
-                                            <a href="/sitescp/tasks/{$value.idtask}/situation/tasks{$link}" class="btn btn-success btn-xs"><i class="far fa-folder-open"></i> Aberto </a>
-                                        {else}
-                                            <a href="/sitescp/tasks/{$value.idtask}/situation/tasks{$link}" class="btn btn-danger btn-xs"><i class="far fa-folder"></i> Fechado</a>
-                                        {/if}
-                                    </td>
-                                    <td>
-                                        <a href="/sitescp/tasks/{$value.idtask}/update" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a><a href="/sitescp/tasks/{$value.idtask}/delete" onclick="return confirm('Deseja realmente excluir este registro?')" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
-                                    </td>
-                                </tr>
-                            {/loop}
+                        {loop="$tasks"}
+                        <tr>
+                            <td>{$value.idtask}</td>
+                            <td>{$value.destask}</td>
+                            <td>{$value.desproject}</td>
+                            <td>{function="formatDateS($value.dtstart)"}</td>
+                            <td>{function="formatDateS($value.dtfinish)"}</td>
+                            <td>
+                                {if="$value.sttask == 0"}
+                                <a href="/sitescp/tasks/{$value.idtask}/situation/tasks{$link}" class="btn btn-success btn-xs"><i class="far fa-folder-open"></i> Aberto </a>
+                                {else}
+                                <a href="/sitescp/tasks/{$value.idtask}/situation/tasks{$link}" class="btn btn-danger btn-xs"><i class="far fa-folder"></i> Fechado</a>
+                                {/if}
+                            </td>
+                            <td>
+                                <a href="/sitescp/tasks/{$value.idtask}/update" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a><a
+                                    href="/sitescp/tasks/{$value.idtask}/delete" onclick="return confirm('Deseja realmente excluir este registro?')"
+                                    class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
+                            </td>
+                        </tr>
+                        {/loop}
                         </tbody>
                     </table>
-                </div> <!-- /.box-body -->
+                </div>
             </div>
-
             <div class="product-pagination text-center">
                 <nav>
                     <ul class="pagination">
-
                         {loop="$pages"}
-                            <li><a href="{$value.link}">{$value.page}</a></li>
+                        <li><a href="{$value.link}">{$value.page}</a></li>
                         {/loop}
-
                     </ul>
                 </nav>
             </div>
         </div>
     </div>
-</section> <!-- /.content -->
-
-<!--
-####################################################################################################################
-                                        BELOW IS THE FOOTER
-####################################################################################################################
--->
+</section>

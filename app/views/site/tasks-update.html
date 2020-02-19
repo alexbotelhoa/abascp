@@ -1,35 +1,22 @@
-<!--
-####################################################################################################################
-                                        ABOVE IS THE HEADER
-####################################################################################################################
--->
-
-<!-- Content Header (Page header) -->
 <section class="container">
     <ol class="breadcrumb">
         <li><a href="/sitescp"><i class="fa fa-tachometer-alt"></i> Home</a></li>
         <li><a href="/sitescp/tasks">Tarefas</a></li>
         <li class="active"><a href="/sitescp/tasks/{$task.idtask}/update">Editar</a></li>
     </ol>
-</section> <!-- /.content-header -->
-
+</section>
 <section class="container">
     <h1>
         Editar Tarefa
     </h1>
-</section> <!-- /.content-header -->
-
-<!-- Main content -->
+</section>
 <section class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="box box-primary">
-
                 <div class="box-header with-border">
                     <h3 class="box-title">Editar Tarefa</h3>
-                </div> <!-- /.box-header -->
-
-                <!-- form start -->
+                </div>
                 <form role="form" action="/tasks/{$task.idtask}/update" method="post" enctype="multipart/form-data">
                     <div class="box-body">
                         <div class="form-group">
@@ -40,7 +27,8 @@
                             <label for="idproject">Nome Projeto</label>
                             <select class="form-control" name="idproject">
                                 {loop="$projects"}
-                                <option {if="$value.idproject === $task.idproject"}selected="selected"{/if} value="{$value.idproject}">{$value.desproject}</option>
+                                <option {if="$value.idproject === $task.idproject" }selected="selected" {
+                                /if} value="{$value.idproject}">{$value.desproject}</option>
                                 {/loop}
                             </select>
                         </div>
@@ -52,19 +40,12 @@
                             <label for="dtfinish">Data Fim</label>
                             <input type="date" class="form-control" id="dtfinish" name="dtfinish" step="0.01" placeholder="dd/mm/yyy" value="{$task.dtfinish}">
                         </div>
-                    </div> <!-- /.box-body -->
+                    </div>
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary">Salvar</button>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>
-</section> <!-- /.content -->
-
-<!--
-####################################################################################################################
-                                        BELOW IS THE FOOTER
-####################################################################################################################
--->
+</section>

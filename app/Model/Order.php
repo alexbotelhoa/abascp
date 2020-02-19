@@ -9,23 +9,18 @@ class Order extends Model
 
     public static function getOrder($local, $sort)
     {
-
-        if (!isset($_SESSION['LastField'])) $_SESSION['LastField'] = "ASC";
+        if (!isset($_SESSION['LastField'])) {
+            $_SESSION['LastField'] = "ASC";
+        }
 
         if ($local == "projects") {
-
             if ($_SESSION['LastField'] == $sort && $_SESSION['SortProjectByOrder'] == "ASC") {
-
                 $_SESSION['SortProjectByOrder'] = "DESC";
-
             } else {
-
                 $_SESSION['SortProjectByOrder'] = "ASC";
-
             }
 
             switch ($sort) {
-
                 case "ordid":
                     $_SESSION['SortProjectByField'] = "idproject";
                     break;
@@ -44,25 +39,17 @@ class Order extends Model
                 case "ordlate":
                     $_SESSION['SortProjectByField'] = "stproject";
                     break;
-
             }
-
         }
 
         if ($local == "tasks") {
-
             if ($_SESSION['LastField'] == $sort && $_SESSION['SortTaskByOrder'] == "ASC") {
-
                 $_SESSION['SortTaskByOrder'] = "DESC";
-
             } else {
-
                 $_SESSION['SortTaskByOrder'] = "ASC";
-
             }
 
             switch ($sort) {
-
                 case "ordid":
                     $_SESSION['SortTaskByField'] = "idtask";
                     break;
@@ -81,29 +68,19 @@ class Order extends Model
                 case "ordsit":
                     $_SESSION['SortTaskByField'] = "sttask";
                     break;
-
             }
-
         }
 
         if ($local == "status") {
-
             if ($_SESSION['LastField'] == $sort) {
-
                 if ($_SESSION['LastField'][0] == 's') {
-
                     ($_SESSION['SortLateByOrder'] == "ASC") ? $_SESSION['SortLateByOrder'] = "DESC" : $_SESSION['SortLateByOrder'] = "ASC";
-
-                } else if ($_SESSION['LastField'][0] == 'n') {
-
+                } elseif ($_SESSION['LastField'][0] == 'n') {
                     ($_SESSION['SortNotLateByOrder'] == "ASC") ? $_SESSION['SortNotLateByOrder'] = "DESC" : $_SESSION['SortNotLateByOrder'] = "ASC";
-
                 };
-
             };
 
             switch ($sort) {
-
                 case "sordid":
                     $_SESSION['SortLateByField'] = "idproject";
                     break;
@@ -134,15 +111,12 @@ class Order extends Model
                 case "nordrate":
                     $_SESSION['SortNotLateByField'] = "rtproject";
                     break;
-
             }
-
         }
 
         $_SESSION['LastField'] = $sort;
 
         return true;
-
     }
 
 }

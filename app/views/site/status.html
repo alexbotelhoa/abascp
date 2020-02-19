@@ -1,71 +1,55 @@
-<!--
-####################################################################################################################
-                                        ABOVE IS THE HEADER
-####################################################################################################################
--->
-
-<!-- Content Header (Page header) -->
 <section class="container">
     <ol class="breadcrumb">
         <li><a href="/sitescp"><i class="fas fa-tachometer-alt"></i> Home</a></li>
         <li class="active"><a href="/sitescp/status">Status</a></li>
     </ol>
-</section> <!-- /.content-header -->
-
+</section>
 <section class="container">
     <h1>
         Projetos Atrasados
     </h1>
-</section> <!-- /.content-header -->
-
-<!-- Main content -->
+</section>
 <section class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="box box-danger">
-
                 <div class="box-body no-padding">
                     <table class="table table-striped">
                         <thead>
-                            <tr>
-                                <th style="width: 10px"><a href="/sitescp/order/status/sordid">#</a></th>
-                                <th><a href="/sitescp/order/status/sordproj">Nome Projeto</a></th>
-                                <th><a href="/sitescp/order/status/sordini">Data Incício</a></th>
-                                <th><a href="/sitescp/order/status/sordfim">Data Fim</a></th>
-                                <th><a href="/sitescp/order/status/sordrate">Rate</a></th>
-                            </tr>
+                        <tr>
+                            <th style="width: 10px"><a href="/sitescp/order/status/sordid">#</a></th>
+                            <th><a href="/sitescp/order/status/sordproj">Nome Projeto</a></th>
+                            <th><a href="/sitescp/order/status/sordini">Data Incício</a></th>
+                            <th><a href="/sitescp/order/status/sordfim">Data Fim</a></th>
+                            <th><a href="/sitescp/order/status/sordrate">Rate</a></th>
+                        </tr>
                         </thead>
                         <tbody>
-                            {loop="$projectslate"}
-                                <tr>
-                                    <td>{$value.idproject}</td>
-                                    <td>{$value.desproject}</td>
-                                    <td>{function="formatDateS($value.dtstart)"}</td>
-                                    <td>{function="formatDateS($value.dtfinish)"}</td>
-                                    <td>{$value.rtproject}%</td>
-                                </tr>
-                            {/loop}
+                        {loop="$projectslate"}
+                        <tr>
+                            <td>{$value.idproject}</td>
+                            <td>{$value.desproject}</td>
+                            <td>{function="formatDateS($value.dtstart)"}</td>
+                            <td>{function="formatDateS($value.dtfinish)"}</td>
+                            <td>{$value.rtproject}%</td>
+                        </tr>
+                        {/loop}
                         </tbody>
                     </table>
-                </div> <!-- /.box-body -->
-
+                </div>
             </div>
         </div>
     </div>
-</section> <!-- /.content -->
-
+</section>
 <section class="container">
     <h1>
         Projetos Não Atrasados
     </h1>
-</section> <!-- /.content-header -->
-
-<!-- Main content -->
+</section>
 <section class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="box box-success">
-
                 <div class="box-body no-padding">
                     <table class="table table-striped">
                         <thead>
@@ -78,26 +62,19 @@
                         </tr>
                         </thead>
                         <tbody>
-                            {loop="$projectsnotlate"}
-                                <tr>
-                                    <td>{$value.idproject}</td>
-                                    <td>{$value.desproject}</td>
-                                    <td>{function="formatDateS($value.dtstart)"}</td>
-                                    <td>{function="formatDateS($value.dtfinish)"}</td>
-                                    <td>{$value.rtproject}%</td>
-                                </tr>
-                            {/loop}
+                        {loop="$projectsnotlate"}
+                        <tr>
+                            <td>{$value.idproject}</td>
+                            <td>{$value.desproject}</td>
+                            <td>{function="formatDateS($value.dtstart)"}</td>
+                            <td>{function="formatDateS($value.dtfinish)"}</td>
+                            <td>{$value.rtproject}%</td>
+                        </tr>
+                        {/loop}
                         </tbody>
                     </table>
-                </div> <!-- /.box-body -->
-
+                </div>
             </div>
         </div>
     </div>
-</section> <!-- /.content -->
-
-<!--
-####################################################################################################################
-                                        BELOW IS THE FOOTER
-####################################################################################################################
--->
+</section>
