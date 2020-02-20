@@ -1,10 +1,8 @@
 <?php
 
-namespace SCP\Model;
+namespace SCP\Control;
 
-use SCP\Model;
-
-class Message extends Model
+class Message
 {
 
     const ERROR = "MsgError";

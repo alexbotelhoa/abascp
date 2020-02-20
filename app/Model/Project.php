@@ -2,8 +2,8 @@
 
 namespace SCP\Model;
 
-use SCP\DB\Sql;
 use SCP\Model;
+use SCP\Control\Sql;
 
 class Project extends Model
 {

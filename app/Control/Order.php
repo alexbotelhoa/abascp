@@ -1,10 +1,8 @@
 <?php
 
-namespace SCP\Model;
+namespace SCP\Control;
 
-use SCP\Model;
-
-class Order extends Model
+class Order
 {
 
     public static function getOrder($local, $sort)

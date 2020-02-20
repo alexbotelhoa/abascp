@@ -1,7 +1,7 @@
 <section class="container">
     <ol class="breadcrumb">
-        <li><a href="/sitescp"><i class="fas fa-tachometer-alt"></i> Home</a></li>
-        <li class="active"><a href="/sitescp/tasks">Tarefas</a></li>
+        <li><a href="/sitescp1"><i class="fas fa-tachometer-alt"></i> Home</a></li>
+        <li class="active"><a href="/sitescp1/tasks">Tarefas</a></li>
     </ol>
 </section>
 <section class="container">
@@ -15,7 +15,7 @@
             <div class="box box-primary">
                 <div class="box-header">
                     <div class="col-xs-4">
-                        <a href="/sitescp/tasks/create" class="btn btn-success">Cadastrar Tarefa</a>
+                        <a href="/sitescp1/tasks/create" class="btn btn-success">Cadastrar Tarefa</a>
                     </div>
                     {if="$error != ''"}
                     <div class="col-xs-8">
@@ -36,12 +36,12 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th style="width: 10px"><a href="/sitescp/order/tasks/ordid">#</a></th>
-                            <th><a href="/sitescp/order/tasks/ordtask">Nome Tarefa</a></th>
-                            <th><a href="/sitescp/order/tasks/ordproj">Nome Projeto</a></th>
-                            <th><a href="/sitescp/order/tasks/ordini">Data Incício</a></th>
-                            <th><a href="/sitescp/order/tasks/ordfim">Data Fim</a></th>
-                            <th><a href="/sitescp/order/tasks/ordsit">Situação</a></th>
+                            <th style="width: 10px"><a href="/sitescp1/order/tasks/ordid">#</a></th>
+                            <th><a href="/sitescp1/order/tasks/ordtask">Nome Tarefa</a></th>
+                            <th><a href="/sitescp1/order/tasks/ordproj">Nome Projeto</a></th>
+                            <th><a href="/sitescp1/order/tasks/ordini">Data Incício</a></th>
+                            <th><a href="/sitescp1/order/tasks/ordfim">Data Fim</a></th>
+                            <th><a href="/sitescp1/order/tasks/ordsit">Situação</a></th>
                             <th style="width: 140px">&nbsp;</th>
                         </tr>
                         </thead>
@@ -55,14 +55,14 @@
                             <td>{function="formatDateS($value.dtfinish)"}</td>
                             <td>
                                 {if="$value.sttask == 0"}
-                                <a href="/sitescp/tasks/{$value.idtask}/situation/tasks{$link}" class="btn btn-success btn-xs"><i class="far fa-folder-open"></i> Aberto </a>
+                                <a href="/sitescp1/tasks/{$value.idtask}/situation/tasks{$link}" class="btn btn-success btn-xs"><i class="far fa-folder-open"></i> Aberto </a>
                                 {else}
-                                <a href="/sitescp/tasks/{$value.idtask}/situation/tasks{$link}" class="btn btn-danger btn-xs"><i class="far fa-folder"></i> Fechado</a>
+                                <a href="/sitescp1/tasks/{$value.idtask}/situation/tasks{$link}" class="btn btn-danger btn-xs"><i class="far fa-folder"></i> Fechado</a>
                                 {/if}
                             </td>
                             <td>
-                                <a href="/sitescp/tasks/{$value.idtask}/update" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a><a
-                                    href="/sitescp/tasks/{$value.idtask}/delete" onclick="return confirm('Deseja realmente excluir este registro?')"
+                                <a href="/sitescp1/tasks/{$value.idtask}/update" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i> Editar</a><a
+                                    href="/sitescp1/tasks/{$value.idtask}/delete" onclick="return confirm('Deseja realmente excluir este registro?')"
                                     class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Excluir</a>
                             </td>
                         </tr>

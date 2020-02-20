@@ -2,8 +2,8 @@
 
 namespace SCP\Model;
 
-use SCP\DB\Sql;
 use SCP\Model;
+use SCP\Control\Sql;
 
 class Task extends Model
 {
@@ -27,7 +27,6 @@ class Task extends Model
             $p->setData($row);
             $row = $p->getValues();
         }
-
         return $list;
     }
 

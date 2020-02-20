@@ -1,6 +1,6 @@
 <?php
 
-namespace SCP\DB;
+namespace SCP\Control;
 
 class Sql
 {

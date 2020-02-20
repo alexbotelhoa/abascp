@@ -12,7 +12,7 @@
       <paths name="Portal ABA">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="Site SCP" />
+            <mapping local="$PROJECT_DIR$" web="Site SCP v1" />
           </mappings>
         </serverdata>
       </paths>
