@@ -113,7 +113,7 @@ $app->post("/sitescp1/projects/create", function () {
 
     $project = new Project();
     $project->setData($_POST);
-    if ($_SESSION['DEMOSCP1'] === true) $project->save();
+    if ($_SESSION['DEMOSCP1'] != true) $project->save();
 
     Message::setSuccess("Dados incluídos com sucesso!");
 
@@ -145,7 +145,7 @@ $app->post("/sitescp1/projects/:idproject/update", function ($idproject) {
     $_POST['stprojetc'] = $project->getstproject();
 
     $project->setData($_POST);
-    if ($_SESSION['DEMOSCP1'] === true) $project->save();
+    if ($_SESSION['DEMOSCP1'] != true) $project->save();
 
     Project::updateRate($idproject);
     Project::updateLate($idproject);
@@ -184,7 +184,7 @@ $app->get("/sitescp1/projects/:idproject/delete", function ($idproject) {
 
     $project = new Project();
     $project->get((int)$idproject);
-    if ($_SESSION['DEMOSCP1'] === true) $project->delete();
+    if ($_SESSION['DEMOSCP1'] != true) $project->delete();
 
     Message::setSuccess("Dados excluídos com sucesso!");
 
@@ -246,7 +246,7 @@ $app->post("/sitescp1/tasks/create", function () {
 
     $tasks = new Task();
     $tasks->setData($_POST);
-    if ($_SESSION['DEMOSCP1'] === true) $tasks->save();
+    if ($_SESSION['DEMOSCP1'] != true) $tasks->save();
 
     Project::updateRate($_POST['idproject']);
     Project::updateLate($_POST['idproject']);
@@ -279,7 +279,7 @@ $app->post("/sitescp1/tasks/:idtask/update", function ($idtask) {
     $tasks->get((int)$idtask);
     $_POST['sttask'] = $tasks->getsttask();
     $tasks->setData($_POST);
-    if ($_SESSION['DEMOSCP1'] === true) $tasks->save();
+    if ($_SESSION['DEMOSCP1'] != true) $tasks->save();
 
     Project::updateRate($tasks->getidproject());
     Project::updateLate($tasks->getidproject());
@@ -313,7 +313,7 @@ $app->get("/sitescp1/tasks/:idtask/delete", function ($idtask) {
 
     $tasks = new Task();
     $tasks->get((int)$idtask);
-    if ($_SESSION['DEMOSCP1'] === true) $tasks->delete();
+    if ($_SESSION['DEMOSCP1'] != true) $tasks->delete();
 
     Message::setSuccess("Dados excluídos com sucesso!");
 
