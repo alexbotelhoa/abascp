@@ -4,19 +4,27 @@ namespace SCP\Control;
 
 class Order
 {
-
     public static function getOrder($local, $sort)
     {
         if (!isset($_SESSION['LastField'])) {
             $_SESSION['LastField'] = "ASC";
         }
+        if (!isset($_SESSION['SortProjectByOrder'])) {
+            $_SESSION['SortProjectByOrder'] = "ASC";
+        }
+        if (!isset($_SESSION['SortTaskByOrder'])) {
+            $_SESSION['SortTaskByOrder'] = "ASC";
+        }
+        if (!isset($_SESSION['SortLateByOrder'])) {
+            $_SESSION['SortLateByOrder'] = "ASC";
+        }
+        if (!isset($_SESSION['SortNotLateByOrder'])) {
+            $_SESSION['SortNotLateByOrder'] = "ASC";
+        }
 
         if ($local == "projects") {
-            if ($_SESSION['LastField'] == $sort && $_SESSION['SortProjectByOrder'] == "ASC") {
-                $_SESSION['SortProjectByOrder'] = "DESC";
-            } else {
-                $_SESSION['SortProjectByOrder'] = "ASC";
-            }
+            ($_SESSION['LastField'] == $sort && $_SESSION['SortProjectByOrder'] == "ASC") ? $order = "DESC" : $order = "ASC";
+            $_SESSION['SortProjectByOrder'] = $order;
 
             switch ($sort) {
                 case "ordid":
@@ -37,15 +45,14 @@ class Order
                 case "ordlate":
                     $_SESSION['SortProjectByField'] = "stproject";
                     break;
+                default:
+                    $sort = false;
             }
         }
 
         if ($local == "tasks") {
-            if ($_SESSION['LastField'] == $sort && $_SESSION['SortTaskByOrder'] == "ASC") {
-                $_SESSION['SortTaskByOrder'] = "DESC";
-            } else {
-                $_SESSION['SortTaskByOrder'] = "ASC";
-            }
+            ($_SESSION['LastField'] == $sort && $_SESSION['SortTaskByOrder'] == "ASC") ? $order = "DESC" : $order = "ASC";
+            $_SESSION['SortTaskByOrder'] = $order;
 
             switch ($sort) {
                 case "ordid":
@@ -66,17 +73,17 @@ class Order
                 case "ordsit":
                     $_SESSION['SortTaskByField'] = "sttask";
                     break;
+                default:
+                    $sort = false;
             }
         }
 
         if ($local == "status") {
-            if ($_SESSION['LastField'] == $sort) {
-                if ($_SESSION['LastField'][0] == 's') {
-                    ($_SESSION['SortLateByOrder'] == "ASC") ? $_SESSION['SortLateByOrder'] = "DESC" : $_SESSION['SortLateByOrder'] = "ASC";
-                } elseif ($_SESSION['LastField'][0] == 'n') {
-                    ($_SESSION['SortNotLateByOrder'] == "ASC") ? $_SESSION['SortNotLateByOrder'] = "DESC" : $_SESSION['SortNotLateByOrder'] = "ASC";
-                };
-            };
+            ($_SESSION['LastField'] == $sort && $sort[0] == 's' && $_SESSION['SortLateByOrder'] == "ASC") ? $orderL = "DESC" : $orderL = "ASC";
+            $_SESSION['SortLateByOrder'] = $orderL;
+
+            ($_SESSION['LastField'] == $sort && $sort[0] == 'n' && $_SESSION['SortNotLateByOrder'] == "ASC") ? $orderNL = "DESC" : $orderNL = "ASC";
+            $_SESSION['SortNotLateByOrder'] = $orderNL;
 
             switch ($sort) {
                 case "sordid":
@@ -109,12 +116,15 @@ class Order
                 case "nordrate":
                     $_SESSION['SortNotLateByField'] = "rtproject";
                     break;
+                default:
+                    $sort = false;
             }
         }
 
-        $_SESSION['LastField'] = $sort;
+        if ($sort != false) $_SESSION['LastField'] = $sort;
 
-        return true;
+        (in_array($local, ['projects', 'tasks', 'status']) && $sort != false) ? $return = true : $return = false;
+
+        return $return;
     }
-
 }

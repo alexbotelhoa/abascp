@@ -4,13 +4,14 @@ namespace SCP\Control;
 
 class Message
 {
-
     const ERROR = "MsgError";
     const SUCCESS = "MsgSuccess";
 
     public static function setError($msg)
     {
         $_SESSION[Message::ERROR] = $msg;
+
+        return $msg;
     }
 
     public static function getError()
@@ -24,12 +25,14 @@ class Message
 
     public static function clearError()
     {
-        $_SESSION[Message::ERROR] = null;
+        return $_SESSION[Message::ERROR] = null;
     }
 
     public static function setSuccess($msg)
     {
         $_SESSION[Message::SUCCESS] = $msg;
+
+        return $msg;
     }
 
     public static function getSuccess()
@@ -43,7 +46,6 @@ class Message
 
     public static function clearSuccess()
     {
-        $_SESSION[Message::SUCCESS] = null;
+        return $_SESSION[Message::SUCCESS] = null;
     }
-
 }

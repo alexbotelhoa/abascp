@@ -14,21 +14,20 @@ class Page
         "data" => []
     ];
 
-    private function setData($data = array())
+    private function setData($data = [])
     {
         foreach ($data as $key => $value) {
             $this->tpl->assign($key, $value);
         }
     }
 
-    public function __construct($opts = array(), $tlp_dir = "/abascp1/app/Views/site/")
+    public function __construct($opts = [], $path = "/abascp1/app/Views")
     {
         $this->options = array_merge($this->default, $opts);
 
-        //Array copiado do exemple-semplie.php e modificado para localizar minhas templates nesse projeto
         $config = array(
-            "tpl_dir" => $_SERVER["DOCUMENT_ROOT"] . $tlp_dir,
-            "cache_dir" => $_SERVER["DOCUMENT_ROOT"] . "/abascp1/app/Views/cache/",
+            "tpl_dir" => $_SERVER["DOCUMENT_ROOT"] . $path . "/site/",
+            "cache_dir" => $_SERVER["DOCUMENT_ROOT"] . $path . "/cache/",
             "debug" => false
         );
 
@@ -39,15 +38,14 @@ class Page
         if ($this->options["header"] === true) $this->tpl->draw("header");
     }
 
-    public function setTpl($name, $data = array(), $returnHTML = false)
+    public function setTpl($name, $data = [], $returnHTML = false)
     {
         $this->setData($data);
-        return $this->tpl->draw($name, $returnHTML);
+        $this->tpl->draw($name, $returnHTML);
     }
 
     public function __destruct()
     {
         if ($this->options["footer"] === true) $this->tpl->draw("footer");
     }
-
 }

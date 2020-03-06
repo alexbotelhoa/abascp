@@ -27,6 +27,7 @@ class Task extends Model
             $p->setData($row);
             $row = $p->getValues();
         }
+
         return $list;
     }
 
@@ -35,11 +36,18 @@ class Task extends Model
     //                                  FIM DOS STATICOS                                  //
 //************************************************************************************//
 
-    public function save()
+    public function getValues()
     {
+        return parent::getValues();
+    }
+
+    public function save($idtask = '')
+    {
+        if ($idtask == '') $idtask = $this->getidtask();
+
         $sql = new Sql();
         $result = $sql->select("CALL sp_tasks_save(:idtask, :idproject, :destask, :dtstart, :dtfinish, :sttask)", [
-            ":idtask" => $this->getidtask(),
+            ":idtask" => $idtask,
             ":idproject" => $this->getidproject(),
             ":destask" => $this->getdestask(),
             ":dtstart" => $this->getdtstart(),
@@ -47,9 +55,9 @@ class Task extends Model
             ":sttask" => $this->getsttask()
         ]);
 
-        if (count($result) > 0) {
-            $this->setData($result[0]);
-        }
+        if (count($result) > 0) $this->setData($result[0]);
+
+        return $result;
     }
 
     public function get($idtask)
@@ -59,31 +67,30 @@ class Task extends Model
             ":IDTASK" => $idtask
         ]);
 
-        if (count($result) > 0) {
-            $this->setData($result[0]);
-        }
+        if (count($result) > 0) $this->setData($result[0]);
+
+        return $result;
     }
 
     public function situation($idtask, $situation)
     {
         $sql = new Sql();
-        $sql->query("UPDATE tb_tasks SET sttask = :STTASK WHERE idtask = :IDTASK", [
+        $result = $sql->query("UPDATE tb_tasks SET sttask = :STTASK WHERE idtask = :IDTASK", [
             ":STTASK" => $situation,
             ":IDTASK" => $idtask
         ]);
+
+        return $result;
     }
 
     public function delete()
     {
         $sql = new Sql();
-        $sql->query("DELETE FROM tb_tasks WHERE idtask = :IDTASK", [
+        $result = $sql->query("DELETE FROM tb_tasks WHERE idtask = :IDTASK", [
             ":IDTASK" => $this->getidtask()
         ]);
-    }
 
-    public function getValues()
-    {
-        return parent::getValues();
+        return $result;
     }
 
     public function getTaskPage($sort, $page = 1, $itemsPerPage = 6)

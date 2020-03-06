@@ -7,7 +7,6 @@ use SCP\Control\Sql;
 
 class Project extends Model
 {
-
     public static function listAll()
     {
         $sql = new Sql();
@@ -63,45 +62,57 @@ class Project extends Model
             ":IDPROJECT" => $idproject
         ]);
 
-        if (isset($result[0])) {
-            $qtdopen = $result[0]['open'];
-            $qtdclose = $result[0]['close'];
-        } else {
-            $qtdopen = 0;
-            $qtdclose = 0;
-        }
+        $qtdopen = 0;
+        $qtdclose = 0;
 
-        if (($qtdopen + $qtdclose) == 0 || $qtdclose == 0) {
-            $rate = 0;
-        } else {
-            $rate = round(($qtdclose * 100) / ($qtdopen + $qtdclose));
-        }
+        if (isset($result[0])) {$qtdopen = $result[0]['open']; $qtdclose = $result[0]['close'];}
 
-        $sql->select("CALL sp_rate_update(:idproject, :rtproject)", [
+        Project::callUpdateRate((int)$idproject, $qtdopen, $qtdclose);
+
+        return $result;
+    }
+
+    public static function callUpdateRate($idproject, $qtdopen, $qtdclose)
+    {
+        (($qtdopen + $qtdclose) == 0 || $qtdclose == 0) ? $rate = 0 : $rate = round(($qtdclose * 100) / ($qtdopen + $qtdclose));
+
+        $sql = new Sql();
+        $result = $sql->select("CALL sp_rate_update(:idproject, :rtproject)", [
             ":idproject" => $idproject,
             ":rtproject" => (int)$rate
         ]);
+
+        return $result;
     }
 
     public static function updateLate($idproject)
     {
         $sql = new Sql();
-        $sql->select("CALL sp_late_update(:idproject)", [
+        $result =$sql->select("CALL sp_late_update(:idproject)", [
             ":idproject" => $idproject
         ]);
+
+        return $result;
     }
 
 
 
-    //************************************************************************************//
-    //                                  FIM DOS STATICOS                                  //
+  //************************************************************************************//
+ //                                  FIM DOS STATICOS                                  //
 //************************************************************************************//
 
-    public function save()
+    public function getValues()
     {
+        return parent::getValues();
+    }
+
+    public function save($idproject = '')
+    {
+        if ($idproject == '') $idproject = $this->getidproject();
+
         $sql = new Sql();
         $result = $sql->select("CALL sp_projects_save(:idproject, :desproject, :dtstart, :dtfinish, :rtproject, :stproject)", [
-            ":idproject" => $this->getidproject(),
+            ":idproject" => $idproject,
             ":desproject" => $this->getdesproject(),
             ":dtstart" => $this->getdtstart(),
             ":dtfinish" => $this->getdtfinish(),
@@ -109,9 +120,9 @@ class Project extends Model
             ":stproject" => $this->getstproject()
         ]);
 
-        if (count($result) > 0) {
-            $this->setData($result[0]);
-        }
+        if (count($result) > 0) $this->setData($result[0]);
+
+        return $result;
     }
 
     public function get($idproject)
@@ -121,22 +132,19 @@ class Project extends Model
             ":IDPROJECT" => $idproject
         ]);
 
-        if (count($result) > 0) {
-            $this->setData($result[0]);
-        }
+        if (count($result) > 0) $this->setData($result[0]);
+
+        return $result;
     }
 
     public function delete()
     {
         $sql = new Sql();
-        $sql->query("DELETE FROM tb_projects WHERE idproject = :IDPROJECT", [
+        $result = $sql->query("DELETE FROM tb_projects WHERE idproject = :IDPROJECT", [
             ":IDPROJECT" => $this->getidproject()
         ]);
-    }
 
-    public function getValues()
-    {
-        return parent::getValues();
+        return $result;
     }
 
     public static function checkList($list)
@@ -169,5 +177,4 @@ class Project extends Model
             'pages' => ceil($resultTotal[0]['nrtotal'] / $itemsPerPage)
         ];
     }
-
 }
