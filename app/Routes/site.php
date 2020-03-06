@@ -11,7 +11,7 @@ use SCP\Control\Message;
 ///                    PRINCIPAL                   ///
 //////////////////////////////////////////////////////
 
-$app->get("/sitescp1", function () {
+$app->get("/", function () {
 
     $projects = Project::listProjectIndex();
 
@@ -35,32 +35,32 @@ $app->get("/sitescp1", function () {
 
 });
 
-$app->get("/sitescp1/order/:page/:sort", function ($page, $sort) {
+$app->get("/order/:page/:sort", function ($page, $sort) {
 
     Order::getOrder($page, $sort);
 
-    header("Location: /sitescp1/$page");
+    header("Location: " . project() . "/$page");
     exit;
 
 });
 
-$app->get("/sitescp1/about", function () {
+$app->get("/about", function () {
 
     $page = new Page();
     $page->setTpl("about");
 
 });
 
-$app->get("/sitescp1/45-98413-6611", function () {
+$app->get("/45-98413-6611", function () {
 
-    header("Location: /sitescp1");
+    header("Location: " . project() . "");
     exit;
 
 });
 
-$app->get("/sitescp1/newsletter", function () {
+$app->get("/newsletter", function () {
 
-    header("Location: /sitescp1");
+    header("Location: " . project() . "");
     exit;
 
 });
@@ -70,7 +70,7 @@ $app->get("/sitescp1/newsletter", function () {
 ///                    PROJETOS                    ///
 //////////////////////////////////////////////////////
 
-$app->get("/sitescp1/projects", function () {
+$app->get("/projects", function () {
 
     (!isset($_SESSION['SortProjectByField'])) ? $sort_field = $_SESSION['SortProjectByField'] = "idproject" : $sort_field = $_SESSION['SortProjectByField'];
     (!isset($_SESSION['SortProjectByOrder'])) ? $sort_order = $_SESSION['SortProjectByOrder'] = "ASC" : $sort_order = $_SESSION['SortProjectByOrder'];
@@ -102,14 +102,14 @@ $app->get("/sitescp1/projects", function () {
 
 });
 
-$app->get("/sitescp1/projects/create", function () {
+$app->get("/projects/create", function () {
 
     $page = new Page();
     $page->setTpl("projects-create");
 
 });
 
-$app->post("/sitescp1/projects/create", function () {
+$app->post("/projects/create", function () {
 
     $project = new Project();
     $project->setData($_POST);
@@ -117,12 +117,12 @@ $app->post("/sitescp1/projects/create", function () {
 
     Message::setSuccess("Dados incluídos com sucesso!");
 
-    header("Location: /sitescp1/projects");
+    header("Location: " . project() . "/projects");
     exit;
 
 });
 
-$app->get("/sitescp1/projects/:idproject/update", function ($idproject) {
+$app->get("/projects/:idproject/update", function ($idproject) {
 
     $project = new Project();
     $project->get((int)$idproject);
@@ -136,7 +136,7 @@ $app->get("/sitescp1/projects/:idproject/update", function ($idproject) {
 
 });
 
-$app->post("/sitescp1/projects/:idproject/update", function ($idproject) {
+$app->post("/projects/:idproject/update", function ($idproject) {
 
     $project = new Project();
     $project->get((int)$idproject);
@@ -152,12 +152,12 @@ $app->post("/sitescp1/projects/:idproject/update", function ($idproject) {
 
     Message::setSuccess("Dados alterados com sucesso!");
 
-    header("Location: /sitescp1/projects");
+    header("Location: " . project() . "/projects");
     exit;
 
 });
 
-$app->get("/sitescp1/projects/:idproject/details", function ($idproject) {
+$app->get("/projects/:idproject/details", function ($idproject) {
 
     $project = new Project();
     $project->get((int)$idproject);
@@ -173,12 +173,12 @@ $app->get("/sitescp1/projects/:idproject/details", function ($idproject) {
 
 });
 
-$app->get("/sitescp1/projects/:idproject/delete", function ($idproject) {
+$app->get("/projects/:idproject/delete", function ($idproject) {
 
     $checkTaks = Project::checkTask($idproject);
     if (count($checkTaks) > 0) {
         Message::setError("Existem tarefas vinculadas a esse projeto!");
-        header("Location: /sitescp1/projects");
+        header("Location: " . project() . "/projects");
         exit;
     }
 
@@ -188,7 +188,7 @@ $app->get("/sitescp1/projects/:idproject/delete", function ($idproject) {
 
     Message::setSuccess("Dados excluídos com sucesso!");
 
-    header("Location: /sitescp1/projects");
+    header("Location: " . project() . "/projects");
     exit;
 
 });
@@ -198,7 +198,7 @@ $app->get("/sitescp1/projects/:idproject/delete", function ($idproject) {
 ///                    TAREFAS                     ///
 //////////////////////////////////////////////////////
 
-$app->get("/sitescp1/tasks", function () {
+$app->get("/tasks", function () {
 
     (!isset($_SESSION['SortTaskByField'])) ? $sort_field = $_SESSION['SortTaskByField'] = "idtask" : $sort_field = $_SESSION['SortTaskByField'];
     (!isset($_SESSION['SortTaskByOrder'])) ? $sort_order = $_SESSION['SortTaskByOrder'] = "ASC" : $sort_order = $_SESSION['SortTaskByOrder'];
@@ -233,7 +233,7 @@ $app->get("/sitescp1/tasks", function () {
 
 });
 
-$app->get("/sitescp1/tasks/create", function () {
+$app->get("/tasks/create", function () {
 
     $page = new Page();
     $page->setTpl("tasks-create", [
@@ -242,7 +242,7 @@ $app->get("/sitescp1/tasks/create", function () {
 
 });
 
-$app->post("/sitescp1/tasks/create", function () {
+$app->post("/tasks/create", function () {
 
     $tasks = new Task();
     $tasks->setData($_POST);
@@ -253,12 +253,12 @@ $app->post("/sitescp1/tasks/create", function () {
 
     Message::setSuccess("Dados incluídos com sucesso!");
 
-    header("Location: /sitescp1/tasks");
+    header("Location: " . project() . "/tasks");
     exit;
 
 });
 
-$app->get("/sitescp1/tasks/:idtask/update", function ($idtask) {
+$app->get("/tasks/:idtask/update", function ($idtask) {
 
     $tasks = new Task();
     $tasks->get((int)$idtask);
@@ -273,7 +273,7 @@ $app->get("/sitescp1/tasks/:idtask/update", function ($idtask) {
 
 });
 
-$app->post("/sitescp1/tasks/:idtask/update", function ($idtask) {
+$app->post("/tasks/:idtask/update", function ($idtask) {
 
     $tasks = new Task();
     $tasks->get((int)$idtask);
@@ -286,12 +286,12 @@ $app->post("/sitescp1/tasks/:idtask/update", function ($idtask) {
 
     Message::setSuccess("Dados alterados com sucesso!");
 
-    header("Location: /sitescp1/tasks");
+    header("Location: " . project() . "/tasks");
     exit;
 
 });
 
-$app->get("/sitescp1/tasks/:idtask/situation/:page", function ($idtask, $page) {
+$app->get("/tasks/:idtask/situation/:page", function ($idtask, $page) {
 
     $pagination = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
 
@@ -304,12 +304,12 @@ $app->get("/sitescp1/tasks/:idtask/situation/:page", function ($idtask, $page) {
 
     Message::setSuccess("Dados alterados com sucesso!");
 
-    ($page == "index") ? header("Location: /sitescp1") : header("Location: /sitescp1/tasks?page=$pagination");
+    ($page == "index") ? header("Location: " . project() . "") : header("Location: " . project() . "/tasks?page=$pagination");
     exit;
 
 });
 
-$app->get("/sitescp1/tasks/:idtask/delete", function ($idtask) {
+$app->get("/tasks/:idtask/delete", function ($idtask) {
 
     $tasks = new Task();
     $tasks->get((int)$idtask);
@@ -317,7 +317,7 @@ $app->get("/sitescp1/tasks/:idtask/delete", function ($idtask) {
 
     Message::setSuccess("Dados excluídos com sucesso!");
 
-    header("Location: /sitescp1/tasks");
+    header("Location: " . project() . "/tasks");
     exit;
 
 });
@@ -327,7 +327,7 @@ $app->get("/sitescp1/tasks/:idtask/delete", function ($idtask) {
 ///                    STATUS                      ///
 //////////////////////////////////////////////////////
 
-$app->get("/sitescp1/status", function () {
+$app->get("/status", function () {
 
     (!isset($_SESSION['SortLateByField'])) ? $sort_late_field = $_SESSION['SortLateByField'] = "idproject" : $sort_late_field = $_SESSION['SortLateByField'];
     (!isset($_SESSION['SortLateByOrder'])) ? $sort_late_order = $_SESSION['SortLateByOrder'] = "ASC" : $sort_late_order = $_SESSION['SortLateByOrder'];
